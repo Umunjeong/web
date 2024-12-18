@@ -42,3 +42,12 @@ export const Home_Todo_Box_Topber_create = styled.span`
   color: #fff;
   font-size: 24px;
 `;
+
+export const Home_Todo_Box_Display_Box = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  overflow-y: auto;
+  max-height: 58vh;
+`;

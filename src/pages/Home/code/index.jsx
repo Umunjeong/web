@@ -12,9 +12,9 @@ function Home() {
     <Dev>
       <Header></Header>
       <Field_Box>
-        <Home_Field name="web"></Home_Field>
-        <Home_Field name="server"></Home_Field>
-        <Home_Field name="app"></Home_Field>
+        <Home_Field name="web" count={10}></Home_Field>
+        <Home_Field name="server" count={2}></Home_Field>
+        <Home_Field name="app" count={3}></Home_Field>
       </Field_Box>
     </Dev>
   );
