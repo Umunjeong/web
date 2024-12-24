@@ -11,4 +11,5 @@ export const Auth_inpput_input = styled.input`
   height: 100%;
   border-radius: 20px;
   border: 3px rgb(237, 237, 237) solid;
+  font-size: 20px;
 `;

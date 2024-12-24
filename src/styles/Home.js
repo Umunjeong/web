@@ -12,5 +12,5 @@ export const Field_Box = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
 `;

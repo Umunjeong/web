@@ -1,7 +1,5 @@
 // 메인 페이지
 
-import React from "react";
-
 import { Dev, Field_Box } from "../../../styles/Home";
 
 import Header from "../../../components/header/header";

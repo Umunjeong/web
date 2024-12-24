@@ -39,3 +39,12 @@ export const Style_Signin_Input_Box = styled.div`
   flex-direction: column;
   gap: 16%;
 `;
+
+export const EyeIcon = styled.span`
+  position: absolute;
+  top: 54px;
+  margin-left: 440px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.2rem;
+`;
