@@ -10,6 +10,11 @@ import Home from "./pages/Home/code/index";
 import Field from "./pages/Field/Field/code/index";
 import Pin from "./pages/Pin/Pin/code/index";
 import CreatePin from "./pages/Pin/CreatePin/code";
+import UpdatePin from "./pages/Pin/UpdatePin/code/index";
+import CreateField from "./pages/Field/CreateField/code/index";
+import UpdateField from "./pages/Field/UpdateField/code/index";
+import CreateTodo from "./pages/Todo/CreateTodo/code/index";
+import UpdateTodo from "./pages/Todo/UpdateTodo/code/index";
 
 function App() {
   const queryClient = new QueryClient();
@@ -28,6 +33,11 @@ function App() {
             <Route path="/field" element={<Field />} />
             <Route path="/pin" element={<Pin />} />
             <Route path="/createPin" element={<CreatePin />} />
+            <Route path="/updatePin" element={<UpdatePin />} />
+            <Route path="/createField" element={<CreateField />}></Route>
+            <Route path="/updateField" element={<UpdateField />}></Route>
+            <Route path="/createTodo" element={<CreateTodo />}></Route>
+            <Route path="/updateTodo" element={<UpdateTodo />}></Route>
           </Routes>
         </BrowserRouter>
       </QueryClientProvider>

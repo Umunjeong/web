@@ -4,6 +4,7 @@ export const Dev = styled.div`
   background-color: #3f3f3f;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 `;
 
 export const Field_Box = styled.div`

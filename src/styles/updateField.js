@@ -7,7 +7,7 @@ export const Dev = styled.div`
   overflow: hidden;
 `;
 
-export const CreatePin_Box = styled.div`
+export const UpdateField_Box = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,12 +35,14 @@ export const From_name_Box = styled.div`
 
 export const From_else_Box = styled.div`
   margin-top: 40px;
-  width: 88%;
+  width: 70%;
   height: 16vh;
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: space-evenly;
+  justify-content: flex-end;
+  margin-right: 12px;
 `;
 
 export const Button_Box = styled.div`

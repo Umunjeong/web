@@ -7,7 +7,7 @@ export const Dev = styled.div`
   overflow: hidden;
 `;
 
-export const CreatePin_Box = styled.div`
+export const UpdatePin_Box = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;

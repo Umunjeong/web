@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 
 import {
   Dev,
@@ -30,5 +30,10 @@ function Home_Field({ name, count }) {
     </Dev>
   );
 }
+
+Home_Field.propTypes = {
+  name: PropTypes.string.isRequired,
+  count: PropTypes.string.isRequired,
+};
 
 export default Home_Field;

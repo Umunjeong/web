@@ -4,6 +4,7 @@ export const Dev = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 `;
 
 export const StyleHeroImageBox = styled.div`

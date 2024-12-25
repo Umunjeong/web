@@ -51,6 +51,7 @@ export const Update_Box = styled.div`
   width: 80%;
   font-family: "Inter", sans-serif;
   font-size: 16px;
+  margin-top: 6px;
 
   > :first-child {
     background-color: white;

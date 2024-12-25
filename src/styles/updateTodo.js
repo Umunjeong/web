@@ -7,7 +7,7 @@ export const Dev = styled.div`
   overflow: hidden;
 `;
 
-export const CreatePin_Box = styled.div`
+export const CreateTodo_Box = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,6 +41,28 @@ export const From_else_Box = styled.div`
   justify-content: center;
   align-items: center;
   justify-content: space-evenly;
+`;
+
+export const Date_input_Box = styled.div`
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34%;
+  justify-content: space-around;
+`;
+
+export const Date_input = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  & input {
+    width: 12vw;
+    height: 6vh;
+    border-radius: 20px;
+  }
 `;
 
 export const Button_Box = styled.div`
