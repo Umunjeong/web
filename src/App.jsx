@@ -15,6 +15,8 @@ import CreateField from "./pages/Field/CreateField/code/index";
 import UpdateField from "./pages/Field/UpdateField/code/index";
 import CreateTodo from "./pages/Todo/CreateTodo/code/index";
 import UpdateTodo from "./pages/Todo/UpdateTodo/code/index";
+import Email from "./pages/Email/index";
+import NotFound from "./pages/NotFound/index";
 
 function App() {
   const queryClient = new QueryClient();
@@ -24,7 +26,7 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Navigate to="/field" />} />
+            <Route path="/" element={<Navigate to="/home" />} />
             <Route path="/firstPage" element={<FirstPage />} />
             <Route path="/signin" element={<Signin />} />
             <Route path="/signup_info" element={<Signup_info />} />
@@ -38,6 +40,9 @@ function App() {
             <Route path="/updateField" element={<UpdateField />}></Route>
             <Route path="/createTodo" element={<CreateTodo />}></Route>
             <Route path="/updateTodo" element={<UpdateTodo />}></Route>
+            {/*이메일은 나중에 삭제 필요 */}
+            <Route path="/email" element={<Email />}></Route>
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </QueryClientProvider>

@@ -12,18 +12,14 @@ function Pin() {
     <Dev>
       <Header></Header>
       <Pin_Box>
-        <All_search></All_search>
+        <All_search type={"Pin"}></All_search>
         <Pin_Grid_Box>
-          <Pin_item Pin_Name={"문서"} Field_Name={"app"}>
+          <Pin_item
+            Pin_Name={"리엑트"}
+            Pin_Src={"https://ko.legacy.reactjs.org/"}
+          >
             Item 1
           </Pin_item>
-          <Pin_item>Item 1</Pin_item>
-          <Pin_item>Item 1</Pin_item>
-          <Pin_item>Item 1</Pin_item>
-          <Pin_item>Item 1</Pin_item>
-          <Pin_item>Item 1</Pin_item>
-          <Pin_item>Item 1</Pin_item>
-          <Pin_item>Item 1</Pin_item>
         </Pin_Grid_Box>
       </Pin_Box>
     </Dev>

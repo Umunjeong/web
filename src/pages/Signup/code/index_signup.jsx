@@ -1,7 +1,5 @@
 // 2번 : 회원가입
 
-import React from "react";
-
 import {
   Dev,
   StyleHeroImageBox,

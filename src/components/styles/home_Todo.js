@@ -11,6 +11,9 @@ export const Dev = styled.div`
   align-items: center;
   justify-content: space-around;
   color: white;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const Home_Todo_Work_spen = styled.div`

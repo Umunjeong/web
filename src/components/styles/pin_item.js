@@ -53,8 +53,9 @@ export const Update_Box = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 24%;
+    width: 26%;
     margin-right: 24px;
+    height: 100%;
     &:hover {
       cursor: Pointer;
     }
@@ -68,7 +69,8 @@ export const Update_Box = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 24%;
+    width: 26%;
+    height: 100%;
     &:hover {
       cursor: Pointer;
     }

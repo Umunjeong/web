@@ -51,7 +51,8 @@ export const Update_Box = styled.div`
   width: 80%;
   font-family: "Inter", sans-serif;
   font-size: 16px;
-  margin-top: 6px;
+  margin-top: 10px;
+  height: 20px;
 
   > :first-child {
     background-color: white;
@@ -60,8 +61,9 @@ export const Update_Box = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 24%;
+    width: 26%;
     margin-right: 24px;
+    height: 100%;
     &:hover {
       cursor: Pointer;
     }
@@ -75,7 +77,8 @@ export const Update_Box = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 24%;
+    width: 26%;
+    height: 100%;
     &:hover {
       cursor: Pointer;
     }

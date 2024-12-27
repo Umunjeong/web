@@ -1,7 +1,5 @@
 // 1번 : 유저정보 입력
 
-import React from "react";
-
 import {
   Dev,
   StyleHeroImageBox,

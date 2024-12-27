@@ -11,6 +11,13 @@ export const Home_Feld_Name = styled.div`
   font-family: "Inter", sans-serif;
   font-weight: bold;
   font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const Home_Todo_Box = styled.div`
@@ -23,19 +30,24 @@ export const Home_Todo_Box = styled.div`
 
 export const Home_Todo_Box_Topber_Box = styled.div`
   width: 88%;
-  border-bottom: solid white 3px;
+  border-bottom: solid white 4px;
   margin: auto;
   padding-top: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: space-between;
+
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const Home_Todo_Box_Topber_spean = styled.span`
   color: #fff;
   font-size: 20px;
   font-weight: 300px;
+  padding-bottom: 8px;
 `;
 
 export const Home_Todo_Box_Topber_create = styled.span`
@@ -47,7 +59,7 @@ export const Home_Todo_Box_Display_Box = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+
   overflow-y: auto;
   max-height: 58vh;
 `;

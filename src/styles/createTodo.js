@@ -47,9 +47,10 @@ export const Date_input_Box = styled.div`
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 34%;
+  width: 79%;
   justify-content: space-around;
+  display: flex;
+  justify-content: flex-start;
 `;
 
 export const Date_input = styled.div`

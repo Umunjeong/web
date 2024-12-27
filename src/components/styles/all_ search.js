@@ -32,8 +32,12 @@ export const Field_search_name_Box = styled.div`
 `;
 
 export const Field_search_name = styled.span`
-  font-size: 40px;
+  font-size: 34px;
   padding: 20px;
+  font-weight: bold;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const SearchContainer = styled.div`

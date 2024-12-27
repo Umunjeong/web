@@ -17,15 +17,18 @@ import Update_input from "../../../../components/update_input/update_input";
 import Update_submit_button from "../../../../components/update_submit_button/update_submit_button";
 
 function CreatePin() {
+  const GropName = localStorage.getItem("Grop");
+  const filed = localStorage.getItem("filed");
+
   return (
     <Dev>
       <Header></Header>
       <CreatePin_Box>
-        <All_check></All_check>
+        <All_check name={`${GropName} > ${filed} > 핀 추가`}></All_check>
         <From_Box>
           <From_name_Box>
             <Update_input name="핀 이름"></Update_input>
-            <Update_input name="소속 분야 이름"></Update_input>
+            <Update_input name="소속 분야 이름" value={filed}></Update_input>
           </From_name_Box>
           <From_else_Box>
             <Update_input name="링크"></Update_input>

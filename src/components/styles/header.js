@@ -13,6 +13,9 @@ export const StyleLogo = styled.img`
   width: 10%;
   height: 22%;
   margin-left: 4%;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const StyleMemu = styled.div`
@@ -27,4 +30,7 @@ export const StyleSpen = styled.span`
   font-size: 140%;
   margin-right: 80%;
   font-family: "Quicksand", sans-serif;
+  :hover {
+    cursor: pointer;
+  }
 `;

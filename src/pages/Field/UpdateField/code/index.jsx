@@ -17,22 +17,27 @@ import Update_input from "../../../../components/update_input/update_input";
 import Update_submit_button from "../../../../components/update_submit_button/update_submit_button";
 
 function UpdateField() {
+  const Grop = localStorage.getItem("Grop");
+  const type = localStorage.getItem("filed");
+
+  const Field_Name = localStorage.getItem("filed");
+
   return (
     <Dev>
       <Header></Header>
       <UpdateField_Box>
-        <All_check></All_check>
+        <All_check name={`${Grop} > ${type}의 정보`}></All_check>
         <From_Box>
           <From_name_Box>
-            <Update_input name="핀 이름"></Update_input>
-            <Update_input name="소속 분야 이름"></Update_input>
+            <Update_input name="분야 이름" value={Field_Name}></Update_input>
+            <Update_input name="소속 그룹 이름" value={Grop}></Update_input>
           </From_name_Box>
           <From_else_Box>
             <Update_input name="이미지"></Update_input>
           </From_else_Box>
         </From_Box>
         <Button_Box>
-          <Update_submit_button type="create"></Update_submit_button>
+          <Update_submit_button type="update"></Update_submit_button>
         </Button_Box>
       </UpdateField_Box>
     </Dev>
