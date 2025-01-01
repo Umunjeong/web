@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import {
   Dev,
@@ -10,8 +10,6 @@ import {
 } from "../styles/todo_date_input";
 
 function Todo_date_input({ type, date_Type }) {
-  const Name = localStorage.getItem("Todo_Name");
-
   // 기본 시작 날짜와 종료 날짜 설정
   const StartDate = localStorage.getItem("Todo_StartDate") || "01.01"; // 기본값 설정
   const EndDate = localStorage.getItem("Todo_EndDate") || "01.01"; // 기본값 설정
@@ -45,6 +43,15 @@ function Todo_date_input({ type, date_Type }) {
   };
 
   const [date, setDate] = useState(getCurrentDate());
+
+  // 상태 변경 시 localStorage 업데이트
+  useEffect(() => {
+    if (date_Type === "start") {
+      localStorage.setItem("changeStartDate", date);
+    } else if (date_Type === "end") {
+      localStorage.setItem("changeEndDate", date);
+    }
+  }, [date]); // `date`와 `type`이 변경될 때 실행
 
   const handleChange = (e) => {
     setDate(e.target.value);

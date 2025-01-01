@@ -15,7 +15,13 @@ function Field() {
         <All_search></All_search>
         <Field_Grid_Box>
           <Field_item name={"문서"} subordinatePin={3}></Field_item>
-          <Field_item name={"회의"} subordinatePin={3}></Field_item>
+          <Field_item name={"문서"} subordinatePin={3}></Field_item>
+          <Field_item name={"문서"} subordinatePin={3}></Field_item>
+          <Field_item name={"문서"} subordinatePin={3}></Field_item>
+          <Field_item name={"문서"} subordinatePin={3}></Field_item>
+          <Field_item name={"문서"} subordinatePin={3}></Field_item>
+          <Field_item name={"문서"} subordinatePin={3}></Field_item>
+          <Field_item name={"문서"} subordinatePin={3}></Field_item>
           <Field_item name={"문서"} subordinatePin={3}></Field_item>
           <Field_item name={"문서"} subordinatePin={3}></Field_item>
           <Field_item name={"문서"} subordinatePin={3}></Field_item>

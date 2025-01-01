@@ -42,13 +42,13 @@ export const From_else_Box = styled.div`
   align-items: center;
   justify-content: space-evenly;
   justify-content: flex-end;
-  margin-right: 12px;
 `;
 
 export const Button_Box = styled.div`
   margin-top: 10px;
   height: 12vh;
-  width: 88%;
+  width: 84%;
   display: flex;
+  gap: 100px;
   justify-content: flex-end;
 `;

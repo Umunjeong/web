@@ -42,11 +42,12 @@ function Home_Field({ name, count }) {
         <Home_Todo_Box_Display_Box>
           {Array.from({ length: Number(count) }).map((_, index) => (
             <Home_Todo
-              key={index} // key를 소문자로 변경
+              key={index} 
               Todo_Name="웹 과제"
               Todo_WtartDate="11.11"
               Todo_EndDate="12.11"
               name={name}
+              state="완료"
             />
           ))}
         </Home_Todo_Box_Display_Box>

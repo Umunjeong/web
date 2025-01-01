@@ -39,7 +39,7 @@ function UpdatePin() {
           </From_else_Box>
         </From_Box>
         <Button_Box>
-          <Update_submit_button type="update"></Update_submit_button>
+          <Update_submit_button type="update" />
         </Button_Box>
       </UpdatePin_Box>
     </Dev>

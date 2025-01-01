@@ -35,24 +35,25 @@ export const From_name_Box = styled.div`
 
 export const From_else_Box = styled.div`
   margin-top: 40px;
-  width: 88%;
+  width: 70%;
   height: 16vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
 `;
 
 export const Date_input_Box = styled.div`
   height: 100%;
   display: flex;
   justify-content: center;
-  width: 79%;
+  align-items: center;
+  width: 120%;
   justify-content: space-around;
   display: flex;
   justify-content: flex-start;
+  gap: 14px;
 `;
-
 export const Date_input = styled.div`
   display: flex;
   justify-content: center;
@@ -69,7 +70,8 @@ export const Date_input = styled.div`
 export const Button_Box = styled.div`
   margin-top: 10px;
   height: 12vh;
-  width: 88%;
+  width: 84%;
   display: flex;
+  gap: 100px;
   justify-content: flex-end;
 `;

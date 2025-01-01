@@ -42,11 +42,9 @@ export const Update_input_input = styled.input`
 
 export const CustomFileUpload = styled.label`
   display: inline-block;
-  padding: 10px 20px;
   background-color: #007bff;
   color: white;
-  font-size: 16px;
-  cursor: pointer;
+
   border-radius: 5px;
   text-align: center;
   width: 100%;

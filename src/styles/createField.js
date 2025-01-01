@@ -42,7 +42,6 @@ export const From_else_Box = styled.div`
   align-items: center;
   justify-content: space-evenly;
   justify-content: flex-end;
-  margin-right: 12px;
 `;
 
 export const Button_Box = styled.div`

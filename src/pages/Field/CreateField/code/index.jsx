@@ -33,7 +33,8 @@ function CreateField() {
           </From_else_Box>
         </From_Box>
         <Button_Box>
-          <Update_submit_button type="create"></Update_submit_button>
+          <Update_submit_button type="delete" />
+          <Update_submit_button type="create" />
         </Button_Box>
       </CreateField_Box>
     </Dev>

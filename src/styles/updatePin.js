@@ -35,18 +35,19 @@ export const From_name_Box = styled.div`
 
 export const From_else_Box = styled.div`
   margin-top: 40px;
-  width: 88%;
+  width: 80%;
   height: 16vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
 `;
 
 export const Button_Box = styled.div`
   margin-top: 10px;
   height: 12vh;
-  width: 88%;
+  width: 84%;
   display: flex;
+  gap: 100px;
   justify-content: flex-end;
 `;
