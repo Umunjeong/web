@@ -12,11 +12,15 @@ import CustomDropdown from "../custom_dropdown/custom_dropdown"; // 드롭다운
 export default function Update_input({ name, value = "web", onChange }) {
   const [imageSelected, setImageSelected] = useState(false);
 
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
     if (file) {
-      setImageSelected(true);
-      onChange(file);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        localStorage.setItem("img", reader.result);
+        setImageSelected(reader.result);
+      };
+      reader.readAsDataURL(file);
     }
   };
 
@@ -61,5 +65,5 @@ export default function Update_input({ name, value = "web", onChange }) {
 Update_input.propTypes = {
   name: PropTypes.string.isRequired,
   value: PropTypes.string,
-  onChange: PropTypes.func.isRequired, 
+  onChange: PropTypes.func,
 };

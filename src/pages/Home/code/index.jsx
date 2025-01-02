@@ -8,7 +8,6 @@ function Home() {
   localStorage.removeItem("changeStartDate");
   localStorage.removeItem("changeEndDate");
   localStorage.removeItem("Pin_Name");
-
   localStorage.removeItem("Todo_EndDate");
   localStorage.removeItem("Todo_Name");
   localStorage.removeItem("filed");
@@ -16,6 +15,7 @@ function Home() {
   localStorage.removeItem("Todo_StartDate");
   localStorage.removeItem("Grop");
   localStorage.removeItem("Pin_Src");
+  localStorage.removeItem("img");
 
   return (
     <Dev>

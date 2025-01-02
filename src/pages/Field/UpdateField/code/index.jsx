@@ -16,22 +16,10 @@ import Update_submit_button from "../../../../components/update_submit_button/up
 
 function UpdateField() {
   const Grop = localStorage.getItem("Grop");
-  const filed = localStorage.getItem("filed");
+  const filed = localStorage.getItem("field");
 
-  const [updateGrop, setUpdateGrop] = useState("app"); // 초기값을 "app"으로 설정
-  const [fieldName, setFieldName] = useState(filed); // "분야 이름" 초기값 설정
-  const [image, setImage] = useState(null);
-
-  // 필드 값 변경 핸들러
-  const handleFieldChange = (name, value) => {
-    if (name === "소속 그룹 이름") {
-      setUpdateGrop(value);
-    } else if (name === "소속 분야 이름") {
-      setFieldName(value); // "분야 이름"의 값 업데이트
-    } else if (name === "이미지") {
-      setImage(value);
-    }
-  };
+  const [updateGrop, setUpdateGrop] = useState(Grop); // 소속 그룹 초기값 설정
+  const [fieldName, setFieldName] = useState(filed); // 소속 분야 초기값 설정
 
   return (
     <Dev>
@@ -43,20 +31,16 @@ function UpdateField() {
             <Update_input
               name="분야 이름"
               value={fieldName}
-              onChange={(val) => handleFieldChange("소속 분야 이름", val)} // 값 변경 시 "소속 분야 이름" 처리
+              onChange={(e) => setFieldName(e.target.value)}
             />
             <Update_input
               name="소속 그룹 이름"
               value={updateGrop}
-              onChange={(val) => handleFieldChange("소속 그룹 이름", val)} // 값 변경 시 "소속 그룹 이름" 처리
+              onChange={(e) => setUpdateGrop(e.target.value)}
             />
           </From_name_Box>
           <From_else_Box>
-            <Update_input
-              name="이미지"
-              value={image}
-              onChange={(val) => handleFieldChange("이미지", val)} // 값 변경 시 "이미지" 처리
-            />
+            <Update_input name="이미지" type="file" accept="image/*" />
           </From_else_Box>
         </From_Box>
         <Button_Box>

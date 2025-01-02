@@ -17,7 +17,7 @@ function All_search({ type }) {
     GropName = "해당하는 분야를 찾을수 없음";
   }
 
-  const fieldName = localStorage.getItem("filed");
+  const fieldName = localStorage.getItem("field");
 
   const navigate = useNavigate(); // 네비게이션 훅 사용
 

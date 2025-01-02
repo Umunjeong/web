@@ -26,7 +26,7 @@ export default function CreateTodo() {
 
   // 상태 관리
   const [todoName, setTodoName] = useState(""); // 할일 이름 상태
-  const [fieldName, setFieldName] = useState(Grop_Name); // 소속 분야 이름 상태
+  const [GropName, setGropName] = useState(Grop_Name); // 소속 분야 이름 상태
   const [toodoState, setTodoState] = useState("진행중");
 
   // 입력 값 변경 핸들러
@@ -35,7 +35,7 @@ export default function CreateTodo() {
   };
 
   const handleFieldNameChange = (newValue) => {
-    setFieldName(newValue); // 소속 분야 이름 업데이트
+    setGropName(newValue); // 소속 그룹 이름 업데이트
   };
 
   return (
@@ -47,8 +47,8 @@ export default function CreateTodo() {
           <From_name_Box>
             <Update_input
               name="소속 그룹 이름"
-              onChange={handleFieldNameChange} // 필드 이름 변경 핸들러
-              value={fieldName} // 선택된 값으로 업데이트
+              onChange={handleFieldNameChange} 
+              value={GropName} // 선택된 값으로 업데이트
             />
             <Update_input
               name="일정 이름"

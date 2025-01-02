@@ -19,7 +19,7 @@ function Field_item({ name, subordinatePin }) {
     event.stopPropagation();
 
     // 로컬스토리지에 name 저장
-    localStorage.setItem("filed", name);
+    localStorage.setItem("field", name);
 
     // /pin 경로로 네비게이션
     navigate("/pin");
@@ -30,7 +30,7 @@ function Field_item({ name, subordinatePin }) {
     event.stopPropagation(); // 이벤트 전파 막기
 
     // 로컬스토리지에 name 저장
-    localStorage.setItem("filed", name);
+    localStorage.setItem("field", name);
     // 수정 처리 로직 추가 (예: updatePin 페이지로 이동)
     navigate("/updateField");
   };
