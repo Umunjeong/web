@@ -2,19 +2,19 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import { Route, Routes, Navigate, BrowserRouter } from "react-router-dom";
 
-import FirstPage from "./pages/FirstPage/code";
-import Signin from "./pages/Signin/code/index";
-import Signup_info from "./pages/Signup/code/index_info";
-import Signup_signup from "./pages/Signup/code/index_signup";
-import Home from "./pages/Home/code/index";
-import Field from "./pages/Field/Field/code/index";
-import Pin from "./pages/Pin/Pin/code/index";
-import CreatePin from "./pages/Pin/CreatePin/code";
-import UpdatePin from "./pages/Pin/UpdatePin/code/index";
-import CreateField from "./pages/Field/CreateField/code/index";
-import UpdateField from "./pages/Field/UpdateField/code/index";
-import CreateTodo from "./pages/Todo/CreateTodo/code/index";
-import UpdateTodo from "./pages/Todo/UpdateTodo/code/index";
+import FirstPage from "./pages/FirstPage/index";
+import Signin from "./pages/Signin/index";
+import Signup_info from "./pages/Signup/index_info";
+import Signup_signup from "./pages/Signup/index_signup";
+import Home from "./pages/Home/index";
+import Field from "./pages/Field/Field/index";
+import Pin from "./pages/Pin/Pin/index";
+import CreatePin from "./pages/Pin/CreatePin/index";
+import UpdatePin from "./pages/Pin/UpdatePin/index";
+import CreateField from "./pages/Field/CreateField/index";
+import UpdateField from "./pages/Field/UpdateField/index";
+import CreateTodo from "./pages/Todo/CreateTodo/index";
+import UpdateTodo from "./pages/Todo/UpdateTodo/index";
 import Email from "./pages/Email/index";
 import NotFound from "./pages/NotFound/index";
 

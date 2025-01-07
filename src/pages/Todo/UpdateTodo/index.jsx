@@ -7,14 +7,14 @@ import {
   From_name_Box,
   From_else_Box,
   Date_input_Box,
-} from "../../../../styles/updateTodo";
+} from "../../../styles/updateTodo";
 
-import Header from "../../../../components/header/header";
-import All_check from "../../../../components/Field_ Pin_check/Field_ Pin_check";
+import Header from "../../../components/header/header";
+import All_check from "../../../components/Field_ Pin_check/Field_ Pin_check";
 
-import Update_input from "../../../../components/update_input/update_input";
-import Update_submit_button from "../../../../components/update_submit_button/update_submit_button";
-import Todo_date_input from "../../../../components/todo_date_input/todo_date_input";
+import Update_input from "../../../components/update_input/update_input";
+import Update_submit_button from "../../../components/update_submit_button/update_submit_button";
+import Todo_date_input from "../../../components/todo_date_input/todo_date_input";
 
 function UpdateTodo() {
   const Grop_Name = localStorage.getItem("Grop");

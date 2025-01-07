@@ -7,13 +7,13 @@ import {
   StyleSignupBox,
   Style_Signup_Box_Img,
   Style_Signup_Input_Box,
-} from "../../../styles/signup";
+} from "../../styles/signup";
 
-import HeroImage from "../../../assets/img/Signup.png";
-import Logo from "../../../assets/img/umunjeong-b.png";
+import HeroImage from "../../assets/img/Signup.png";
+import Logo from "../../assets/img/umunjeong-b.png";
 
-import Auth_input from "../../../components/auth_input/auth_input";
-import Auth_Button from "../../../components/auth_button/auth_button";
+import Auth_input from "../../components/auth_input/auth_input";
+import Auth_Button from "../../components/auth_button/auth_button";
 
 function Signup_info() {
   return (

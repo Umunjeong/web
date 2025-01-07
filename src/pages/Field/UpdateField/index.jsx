@@ -6,13 +6,13 @@ import {
   Button_Box,
   From_name_Box,
   From_else_Box,
-} from "../../../../styles/updateField";
+} from "../../../styles/updateField";
 
-import Header from "../../../../components/header/header";
-import All_check from "../../../../components/Field_ Pin_check/Field_ Pin_check";
+import Header from "../../../components/header/header";
+import All_check from "../../../components/Field_ Pin_check/Field_ Pin_check";
 
-import Update_input from "../../../../components/update_input/update_input";
-import Update_submit_button from "../../../../components/update_submit_button/update_submit_button";
+import Update_input from "../../../components/update_input/update_input";
+import Update_submit_button from "../../../components/update_submit_button/update_submit_button";
 
 function UpdateField() {
   const Grop = localStorage.getItem("Grop");

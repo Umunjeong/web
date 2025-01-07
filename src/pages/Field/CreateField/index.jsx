@@ -7,12 +7,12 @@ import {
   Button_Box,
   From_name_Box,
   From_else_Box,
-} from "../../../../styles/createField";
+} from "../../../styles/createField";
 
-import Header from "../../../../components/header/header";
-import All_check from "../../../../components/Field_ Pin_check/Field_ Pin_check";
-import Update_input from "../../../../components/update_input/update_input";
-import Update_submit_button from "../../../../components/update_submit_button/update_submit_button";
+import Header from "../../../components/header/header";
+import All_check from "../../../components/Field_ Pin_check/Field_ Pin_check";
+import Update_input from "../../../components/update_input/update_input";
+import Update_submit_button from "../../../components/update_submit_button/update_submit_button";
 
 function CreateField() {
   const name = localStorage.getItem("Grop"); // 로컬스토리지에서 그룹 이름 가져오기

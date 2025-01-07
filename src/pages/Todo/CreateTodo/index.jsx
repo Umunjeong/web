@@ -11,14 +11,13 @@ import {
   From_name_Box,
   From_else_Box,
   Date_input_Box,
-} from "../../../../styles/createTodo";
+} from "../../../styles/createTodo";
 
-import Header from "../../../../components/header/header";
-import All_check from "../../../../components/Field_ Pin_check/Field_ Pin_check";
-
-import Update_input from "../../../../components/update_input/update_input";
-import Update_submit_button from "../../../../components/update_submit_button/update_submit_button";
-import Todo_date_input from "../../../../components/todo_date_input/todo_date_input";
+import Header from "../../../components/header/header";
+import All_check from "../../../components/Field_ Pin_check/Field_ Pin_check";
+import Update_input from "../../../components/update_input/update_input";
+import Update_submit_button from "../../../components/update_submit_button/update_submit_button";
+import Todo_date_input from "../../../components/todo_date_input/todo_date_input";
 
 export default function CreateTodo() {
   const Grop_Name = localStorage.getItem("Grop");
@@ -47,7 +46,7 @@ export default function CreateTodo() {
           <From_name_Box>
             <Update_input
               name="소속 그룹 이름"
-              onChange={handleFieldNameChange} 
+              onChange={handleFieldNameChange}
               value={GropName} // 선택된 값으로 업데이트
             />
             <Update_input

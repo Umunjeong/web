@@ -1,11 +1,11 @@
 // 분야 전채보기 페이지
 
-import { Dev, Field_Box, Field_Grid_Box } from "../../../../styles/Field";
+import { Dev, Field_Box, Field_Grid_Box } from "../../../styles/Field";
 
-import Field_item from "../../../../components/field_item/field_item";
+import Field_item from "../../../components/field_item/field_item";
 
-import Header from "../../../../components/header/header";
-import All_search from "../../../../components/Field_ Pin_search/Field_Pin_search";
+import Header from "../../../components/header/header";
+import All_search from "../../../components/Field_ Pin_search/Field_Pin_search";
 
 function Field() {
   return (
