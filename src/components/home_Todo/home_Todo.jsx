@@ -3,10 +3,18 @@ import { useNavigate } from "react-router-dom";
 
 import { Dev, Home_Todo_Work_spen } from "../../components/styles/home_Todo";
 
-function Home_Todo({ Todo_Name, Todo_WtartDate, Todo_EndDate, name, state }) {
+function Home_Todo({
+  id,
+  Todo_Name,
+  Todo_WtartDate,
+  Todo_EndDate,
+  name,
+  state,
+}) {
   const Navigat = useNavigate();
 
   const goTo_UpDate_Todo_Heldle = () => {
+    localStorage.setItem("Todo_id", id);
     localStorage.setItem("Todo_Name", Todo_Name);
     localStorage.setItem("Todo_StartDate", Todo_WtartDate);
     localStorage.setItem("Todo_EndDate", Todo_EndDate);
@@ -21,8 +29,14 @@ function Home_Todo({ Todo_Name, Todo_WtartDate, Todo_EndDate, name, state }) {
         goTo_UpDate_Todo_Heldle();
       }}
     >
-      <Home_Todo_Work_spen>{`${Todo_Name}-(${state})`}</Home_Todo_Work_spen>
-      <Home_Todo_Work_spen>{`${Todo_WtartDate}~${Todo_EndDate}`}</Home_Todo_Work_spen>
+      <Home_Todo_Work_spen>
+        <span>{Todo_Name}</span>
+        <span>{`(${state})`}</span>
+      </Home_Todo_Work_spen>
+      <Home_Todo_Work_spen>
+        <span>{Todo_WtartDate}</span>
+        <span>{Todo_EndDate}</span>
+      </Home_Todo_Work_spen>
     </Dev>
   );
 }

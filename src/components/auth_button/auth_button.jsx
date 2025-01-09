@@ -1,30 +1,28 @@
 import PropTypes from "prop-types";
+import axios from "axios";
 
 import {
   Style_Button,
   Style_Link_Text,
   Style_Auth_Container,
 } from "../styles/auth_button";
-import auth from "../../store/store";
+import { auth } from "../../store/store";
 import useNavigation from "../../router/router";
 
 const Auth_Button = ({ name, type }) => {
   const { getEmailData, getPasswordData } = auth();
   const { navigateHome, navigateSignin, navigateSignupSignup } =
     useNavigation();
-  //로그인 서버통신 함수
+
+  // 로그인 서버통신 함수
   const authsigninFromSubmit = async () => {
     try {
-      const response = await fetch("http://localhost:3000/auth/signin", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: getEmailData(),
-          password: getPasswordData(),
-        }),
+      const response = await axios.post("http://localhost:3000/auth/signin", {
+        email: getEmailData(),
+        password: getPasswordData(),
       });
 
-      const data = await response.json();
+      const data = response.data;
 
       if (data.type === "success") {
         localStorage.setItem("refreshToken", data.refreshToken);
@@ -32,39 +30,36 @@ const Auth_Button = ({ name, type }) => {
         alert("로그인에 성공하였습니다.");
         navigateHome();
       } else {
-        alert("로그인에 실페하였습니다.");
+        alert("로그인에 실패하였습니다.");
       }
     } catch (error) {
-      alert("로그인에 실페하였습니다.");
+      alert("로그인에 실패하였습니다.");
     }
   };
 
-  //회원가입 서버통신 함수
+  // 회원가입 서버통신 함수
   const authSignupFromSubmit = async () => {
     const email = getEmailData();
     const password = getPasswordData();
 
     try {
-      const response = await fetch("http://localhost:3000/auth/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: email,
-          password: password,
-        }),
+      const response = await axios.post("http://localhost:3000/auth/signup", {
+        email: email,
+        password: password,
       });
 
-      const data = await response.json();
+      const data = response.data;
+
       if (data.type === "success") {
         localStorage.setItem("refreshToken", data.refreshToken);
         localStorage.setItem("accessToken", data.accessToken);
         alert("회원가입에 성공하였습니다.");
         navigateHome();
       } else {
-        alert("회원가입에 실페하였습니다.");
+        alert("회원가입에 실패하였습니다.");
       }
     } catch (error) {
-      alert("회원가입에 실페하였습니다.");
+      alert("회원가입에 실패하였습니다.");
     }
   };
 

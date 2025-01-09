@@ -19,6 +19,10 @@ export const Dev = styled.div`
 export const Home_Todo_Work_spen = styled.div`
   font-weight: bold;
   font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   font-size: 24px;
   padding-top: 40px;
   padding-bottom: 40px;

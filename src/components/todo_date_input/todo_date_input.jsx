@@ -16,30 +16,41 @@ function Todo_date_input({ type, date_Type }) {
 
   // 날짜 계산 함수
   const getCurrentDate = () => {
-    const today = new Date();
-    const year = today.getFullYear();
-
-    let month, day;
-
     if (type === "create") {
+      const today = new Date();
+      const year = today.getFullYear();
+
       // 시작 날짜는 현재 날짜
-      month = String(today.getMonth() + 1).padStart(2, "0");
-      day = String(today.getDate()).padStart(2, "0");
+      let month = String(today.getMonth() + 1).padStart(2, "0");
+      let day = String(today.getDate()).padStart(2, "0");
 
       if (date_Type === "end") {
         // 종료 날짜는 시작 날짜에서 1일 후
-        today.setDate(today.getDate() + 1); // 오늘 날짜에서 1일을 더함
+        today.setDate(today.getDate() + 1);
         month = String(today.getMonth() + 1).padStart(2, "0");
         day = String(today.getDate()).padStart(2, "0");
       }
+      return `${year}-${month}-${day}`;
     } else {
-      [month, day] = StartDate.split(".");
-      if (date_Type === "end") {
-        [month, day] = EndDate.split(".");
-      }
-    }
+      let year, month, day;
 
-    return `${year}-${month}-${day}`;
+      if (date_Type === "start") {
+        let dateParts = StartDate.split("-");
+
+        year = dateParts[0] || "01";
+        month = dateParts[1] || "01";
+        day = dateParts[2] || "01";
+      }
+
+      if (date_Type === "end") {
+        let dateParts = EndDate.split("-");
+
+        year = dateParts[0] || "01";
+        month = dateParts[1] || "01";
+        day = dateParts[2] || "01";
+      }
+      return `${year}-${month}-${day}`;
+    }
   };
 
   const [date, setDate] = useState(getCurrentDate());
@@ -51,7 +62,7 @@ function Todo_date_input({ type, date_Type }) {
     } else if (date_Type === "end") {
       localStorage.setItem("changeEndDate", date);
     }
-  }, [date]); // `date`와 `type`이 변경될 때 실행
+  }, [date]);
 
   const handleChange = (e) => {
     setDate(e.target.value);

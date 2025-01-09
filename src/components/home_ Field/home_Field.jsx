@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
-import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 import {
   Dev,
@@ -12,20 +12,62 @@ import {
 } from "../../components/styles/home_Field";
 
 import Home_Todo from "../home_Todo/home_Todo";
+import useNavigation from "../../router/router";
 
-function Home_Field({ name, count }) {
-  const Navigat = useNavigate();
+function Home_Field({ name }) {
+  const { navigateField, navigateCreateTodo } = useNavigation();
+  const [todos, setTodos] = useState([]);
+
+  // 날짜를 YYYY-MM-DD 형식으로 변환하는 함수
+  const getCurrentDate = () => {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  };
+
+  const token = localStorage.getItem("accessToken");
+
+  useEffect(() => {
+    const fetchTodos = async () => {
+      const date = getCurrentDate();
+      try {
+        const response = await axios.get("http://localhost:3000/todolist/", {
+          params: {
+            date: date,
+            grop: name,
+          },
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        if (response.data.type === "success") {
+          const todoData = Object.values(response.data.todoInfo);
+
+          setTodos(todoData);
+        } else {
+          console.error("Failed to fetch todos:", response.data);
+        }
+      } catch (error) {
+        console.error("Failed to fetch todos:", error);
+      }
+    };
+
+    fetchTodos();
+  }, [name]);
 
   const goToF_ield_Heldle = (name) => {
     if (name === "web" || name === "server" || name === "app") {
       localStorage.setItem("Grop", name);
-      Navigat("/field");
+      navigateField();
     }
   };
 
   const goTo_UpdateToDo_Heldle = (name) => {
     localStorage.setItem("Grop", name);
-    Navigat("/createTodo");
+    navigateCreateTodo();
   };
 
   return (
@@ -40,14 +82,15 @@ function Home_Field({ name, count }) {
           <Home_Todo_Box_Topber_create>+</Home_Todo_Box_Topber_create>
         </Home_Todo_Box_Topber_Box>
         <Home_Todo_Box_Display_Box>
-          {Array.from({ length: Number(count) }).map((_, index) => (
+          {todos.map((todo) => (
             <Home_Todo
-              key={index} 
-              Todo_Name="웹 과제"
-              Todo_WtartDate="11.11"
-              Todo_EndDate="12.11"
+              key={todo.id}
+              id={todo.id}
+              Todo_Name={todo.name}
+              Todo_WtartDate={todo.start}
+              Todo_EndDate={todo.end}
               name={name}
-              state="완료"
+              state={todo.state}
             />
           ))}
         </Home_Todo_Box_Display_Box>
@@ -55,10 +98,5 @@ function Home_Field({ name, count }) {
     </Dev>
   );
 }
-
-Home_Field.propTypes = {
-  name: PropTypes.string.isRequired,
-  count: PropTypes.number.isRequired,
-};
 
 export default Home_Field;

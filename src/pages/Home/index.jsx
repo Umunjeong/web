@@ -8,8 +8,6 @@ import Home_Field from "../../components/home_ Field/home_Field";
 import useNavigation from "../../router/router";
 
 function Home() {
-  const { navigateSignin } = useNavigation();
-
   localStorage.removeItem("changeStartDate");
   localStorage.removeItem("changeEndDate");
   localStorage.removeItem("Pin_Name");
@@ -29,7 +27,7 @@ function Home() {
     ) {
       navigate("/signin");
     }
-  });
+  }, []);
 
   return (
     <Dev>
@@ -37,7 +35,7 @@ function Home() {
       <Field_Box>
         <Field_Box>
           {["web", "server", "app"].map((name, index) => (
-            <Home_Field key={index} name={name} count={index + 1} />
+            <Home_Field key={index} name={name} />
           ))}
         </Field_Box>
       </Field_Box>

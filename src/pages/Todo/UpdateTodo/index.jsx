@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   Dev,
   CreateTodo_Box,
@@ -21,20 +20,6 @@ function UpdateTodo() {
   const name = localStorage.getItem("Todo_Name");
   const ToodoState = localStorage.getItem("ToodoState");
 
-  // 상태 관리
-  const [todoName, setTodoName] = useState(name); // 할일 이름 상태
-  const [fieldName, setFieldName] = useState(Grop_Name); // 소속 분야 이름 상태
-  const [toodoState, setTodoState] = useState(ToodoState);
-
-  // 입력 값 변경 핸들러
-  const handleTodoNameChange = (newValue) => {
-    setTodoName(newValue); // 할일 이름 업데이트
-  };
-
-  const handleFieldNameChange = (newValue) => {
-    setFieldName(newValue); // 소속 분야 이름 업데이트
-  };
-
   return (
     <Dev>
       <Header />
@@ -44,13 +29,11 @@ function UpdateTodo() {
           <From_name_Box>
             <Update_input
               name="소속 그룹 이름"
-              value={fieldName} // 상태값 전달
-              onChange={handleFieldNameChange} // 상태 업데이트 함수 전달
+              value={Grop_Name} // 상태값 전달
             />
             <Update_input
               name="일정 이름"
-              value={todoName} // 상태값 전달
-              onChange={handleTodoNameChange} // 상태 업데이트 함수 전달
+              value={name} // 상태값 전달
             />
           </From_name_Box>
           <From_else_Box>
@@ -60,8 +43,7 @@ function UpdateTodo() {
             </Date_input_Box>
             <Update_input
               name="일정 상테"
-              value={toodoState} // 상태값 전달
-              onChange={handleTodoNameChange} // 상태 업데이트 함수 전달
+              value={ToodoState} // 상태값 전달
             />
           </From_else_Box>
         </From_Box>
