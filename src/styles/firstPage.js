@@ -53,4 +53,5 @@ export const Style_First_Button = styled.div`
   font-weight: bold;
   font-size: x-large;
   font-family: "Pretendard", sans-serif;
+  cursor: pointer;
 `;

@@ -40,3 +40,12 @@ export const Style_Signup_Input_Box = styled.div`
   flex-direction: column;
   gap: 16%;
 `;
+
+export const EyeIcon = styled.span`
+  position: absolute;
+  top: 56px;
+  margin-left: 440px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.2rem;
+`;

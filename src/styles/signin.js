@@ -43,7 +43,7 @@ export const Style_Signin_Input_Box = styled.div`
 
 export const EyeIcon = styled.span`
   position: absolute;
-  top: 54px;
+  top: 56px;
   margin-left: 440px;
   transform: translateY(-50%);
   cursor: pointer;

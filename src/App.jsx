@@ -4,8 +4,7 @@ import { Route, Routes, Navigate, BrowserRouter } from "react-router-dom";
 
 import FirstPage from "./pages/FirstPage/index";
 import Signin from "./pages/Signin/index";
-import Signup_info from "./pages/Signup/index_info";
-import Signup_signup from "./pages/Signup/index_signup";
+import Signup_signup from "./pages/Signup";
 import Home from "./pages/Home/index";
 import Field from "./pages/Field/Field/index";
 import Pin from "./pages/Pin/Pin/index";
@@ -26,11 +25,10 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Navigate to="/home" />} />
+            <Route path="/" element={<Navigate to="/signin" />} />
             <Route path="/firstPage" element={<FirstPage />} />
             <Route path="/signin" element={<Signin />} />
-            <Route path="/signup_info" element={<Signup_info />} />
-            <Route path="/signup_signup" element={<Signup_signup />} />
+            <Route path="/signup" element={<Signup_signup />} />
             <Route path="/home" element={<Home />} />
             <Route path="/field" element={<Field />} />
             <Route path="/pin" element={<Pin />} />

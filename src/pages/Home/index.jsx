@@ -1,10 +1,15 @@
 // 메인 페이지
 import { Dev, Field_Box } from "../../styles/Home";
+import { useEffect } from "react";
 
 import Header from "../../components/header/header";
 import Home_Field from "../../components/home_ Field/home_Field";
 
+import useNavigation from "../../router/router";
+
 function Home() {
+  const { navigateSignin } = useNavigation();
+
   localStorage.removeItem("changeStartDate");
   localStorage.removeItem("changeEndDate");
   localStorage.removeItem("Pin_Name");
@@ -16,6 +21,15 @@ function Home() {
   localStorage.removeItem("Grop");
   localStorage.removeItem("Pin_Src");
   localStorage.removeItem("img");
+
+  useEffect(() => {
+    if (
+      !localStorage.getItem("accessToken") ||
+      !localStorage.getItem("refreshToken")
+    ) {
+      navigate("/signin");
+    }
+  });
 
   return (
     <Dev>
