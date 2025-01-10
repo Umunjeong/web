@@ -12,20 +12,21 @@ export const auth = create((set, get) => ({
 }));
 
 export const Todo = create((set, get) => ({
-  GropData: "",
+  TodoGropData: "",
   TodoNameData: "",
   TodoStartDateData: "",
   TodoEndDateData: "",
   TodoStateData: "",
 
-  setGropData: (Data) => set(() => ({ GropData: Data })),
-  setTodoNameData: (Data) => set(() => ({ TodoNameData: Data })),
-  setTodoStartDateData: (Data) => set(() => ({ TodoStartDateData: Data })),
-  setTodoStateData: (Data) => set(() => ({ TodoStateData: Data })),
+  setTodoGropData: (TodoGropData) => set({ TodoGropData }),
+  setTodoNameData: (TodoNameData) => set({ TodoNameData }),
+  setTodoStartDateData: (TodoStartDateData) => set({ TodoStartDateData }),
+  setTodoEndDateData: (TodoEndDateData) => set({ TodoEndDateData }),
+  setTodoStateData: (TodoStateData) => set({ TodoStateData }),
 
-  getGropData: () => get().GropData,
-  getTodoNameData: () => get.TodoNameData,
-  getTodoStartDateData: () => get.TodoStartDateData,
-  getTodoEndDateData: () => get.TodoEndDateData,
-  getTodoStateData: () => get.TodoStateData,
+  getTodoGropData: () => get().TodoGropData,
+  getTodoNameData: () => get().TodoNameData,
+  getTodoStartDateData: () => get().TodoStartDateData,
+  getTodoEndDateData: () => get().TodoEndDateData,
+  getTodoStateData: () => get().TodoStateData,
 }));

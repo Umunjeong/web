@@ -48,8 +48,8 @@ function UpdateTodo() {
           </From_else_Box>
         </From_Box>
         <Button_Box>
-          <Update_submit_button type="delete" />
-          <Update_submit_button type="update" />
+          <Update_submit_button type="delete" control="todo" />
+          <Update_submit_button type="update" control="todo" />
         </Button_Box>
       </CreateTodo_Box>
     </Dev>

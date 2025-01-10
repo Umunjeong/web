@@ -1,3 +1,5 @@
+// todo 처럼 변경
+
 import { useState } from "react";
 import {
   Dev,
@@ -37,22 +39,6 @@ function UpdatePin() {
     }
   };
 
-  // 데이터 저장 핸들러
-  const handleUpdateToLocalStorage = () => {
-    if (!pinName || !fieldName || !link || !imgBase64) {
-      alert("모든 필드를 입력해주세요.");
-      return;
-    }
-
-    // 로컬스토리지에 저장
-    localStorage.setItem("Pin_Name", pinName);
-    localStorage.setItem("Pin_Src", imgBase64);
-    localStorage.setItem("field", fieldName);
-    localStorage.setItem("link", link);
-
-    alert("데이터가 로컬스토리지에 업데이트되었습니다.");
-  };
-
   return (
     <Dev>
       <Header />
@@ -86,10 +72,7 @@ function UpdatePin() {
           </From_else_Box>
         </From_Box>
         <Button_Box>
-          <Update_submit_button
-            type="update"
-            onClick={handleUpdateToLocalStorage} // 업데이트 버튼 클릭 시 호출
-          />
+          <Update_submit_button type={["pin", "update"]} />
         </Button_Box>
       </UpdatePin_Box>
     </Dev>

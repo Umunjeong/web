@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   Dev,
   Update_input_input_Box,
@@ -10,50 +9,72 @@ import CustomDropdown from "../custom_dropdown/custom_dropdown";
 import { Todo } from "../../store/store";
 
 export default function Update_input({ name, value }) {
+  const [imageSelected, setImageSelected] = useState(false);
+
+  // zustand 상태 값과 메서드 가져오기
   const {
-    setGropData,
+    setTodoGropData,
     setTodoNameData,
     setTodoStartDateData,
     setTodoEndDateData,
     setTodoStateData,
-    getGropData,
-    getTodoNameData,
-  } = Todo(); // zustand 상태 관리 메서드 가져오기
+    TodoGropData,
+    TodoNameData,
+    TodoStartDateData,
+    TodoEndDateData,
+    TodoStateData,
+  } = Todo();
 
-  const [imageSelected, setImageSelected] = useState(false);
+  // name에 따른 zustand 상태 값을 매핑
+  const getStateValue = () => {
+    switch (name) {
+      case "소속 그룹 이름":
+        return TodoGropData;
+      case "일정 이름":
+        return TodoNameData;
+      case "시작 날짜":
+        return TodoStartDateData;
+      case "종료 날짜":
+        return TodoEndDateData;
+      case "일정 상테":
+        return TodoStateData;
+      default:
+        return "";
+    }
+  };
 
+  const setStateValue = (inputValue) => {
+    switch (name) {
+      case "소속 그룹 이름":
+        setTodoGropData(inputValue);
+        break;
+      case "일정 이름":
+        setTodoNameData(inputValue);
+        break;
+      case "시작 날짜":
+        setTodoStartDateData(inputValue);
+        break;
+      case "종료 날짜":
+        setTodoEndDateData(inputValue);
+        break;
+      case "일정 상테":
+        setTodoStateData(inputValue);
+        break;
+      default:
+        break;
+    }
+  };
+
+  // 초기 값 설정
   useEffect(() => {
-    if (name === "소속 그룹 이름") {
-      setGropData(value);
-    } else if (name === "할 일 이름") {
-      setTodoNameData(value);
-    } else if (name === "시작 날짜") {
-      setTodoStartDateData(value);
-    } else if (name === "종료 날짜") {
-      setTodoEndDateData(value);
-    } else if (name === "상태") {
-      setTodoStateData(value);
+    if (!getStateValue()) {
+      setStateValue(value);
     }
-  }, []);
+  }, [name, value]);
 
-  const handleInputChange = (eventOrValue) => {
-    const inputValue =
-      typeof eventOrValue === "string"
-        ? eventOrValue
-        : eventOrValue.target.value;
-
-    console.log(inputValue);
-    if (name === "소속 그룹 이름") {
-      setGropData(inputValue); // 그룹 데이터 저장
-    } else if (name === "할 일 이름") {
-      setTodoNameData(inputValue); // 할 일 이름 저장
-    } else if (name === "시작 날짜") {
-      setTodoStartDateData(inputValue); // 시작 날짜 저장
-    } else if (name === "종료 날짜") {
-      setTodoEndDateData(inputValue); // 종료 날짜 저장
-    } else if (name === "상태") {
-      setTodoStateData(inputValue); // 상태 저장
-    }
+  const handleInputChange = (event) => {
+    const inputValue = event.target.value;
+    setStateValue(inputValue);
   };
 
   const handleImageChange = (event) => {
@@ -90,13 +111,13 @@ export default function Update_input({ name, value }) {
           </>
         ) : name === "소속 그룹 이름" ? (
           <CustomDropdown
-            value={getGropData() || "app"} // zustand 상태에서 현재 값 가져오기
-            onChange={(selectedValue) => setGropData(selectedValue)} // 상태 업데이트
+            value={getStateValue() || "app"}
+            onChange={(selectedValue) => setTodoGropData(selectedValue)}
           />
         ) : (
           <Update_input_input
             type="text"
-            value={getTodoNameData()} // 상태를 반영
+            value={getStateValue() || ""}
             onChange={handleInputChange}
           />
         )}
