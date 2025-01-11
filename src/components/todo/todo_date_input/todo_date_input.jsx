@@ -7,12 +7,15 @@ import {
   InputWrapper,
   StyledInput,
   StyledSpan,
-} from "../styles/todo_date_input";
+} from "../../styles/todo_date_input";
+import { Todo } from "../../../store/store";
 
 function Todo_date_input({ type, date_Type }) {
   // 기본 시작 날짜와 종료 날짜 설정
-  const StartDate = localStorage.getItem("Todo_StartDate") || "01.01"; // 기본값 설정
-  const EndDate = localStorage.getItem("Todo_EndDate") || "01.01"; // 기본값 설정
+  const StartDate = localStorage.getItem("Todo_StartDate") || "2025.01.01"; // 기본값 설정
+  const EndDate = localStorage.getItem("Todo_EndDate") || "2025.01.01"; // 기본값 설정
+
+  const { setTodoEndDateData, setTodoStartDateData } = Todo();
 
   // 날짜 계산 함수
   const getCurrentDate = () => {
@@ -58,9 +61,9 @@ function Todo_date_input({ type, date_Type }) {
   // 상태 변경 시 localStorage 업데이트
   useEffect(() => {
     if (date_Type === "start") {
-      localStorage.setItem("changeStartDate", date);
+      setTodoStartDateData(date);
     } else if (date_Type === "end") {
-      localStorage.setItem("changeEndDate", date);
+      setTodoEndDateData(date);
     }
   }, [date]);
 

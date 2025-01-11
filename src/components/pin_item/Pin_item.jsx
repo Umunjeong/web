@@ -1,32 +1,28 @@
-import { useNavigate } from "react-router-dom"; // useNavigate를 임포트
+import { useNavigate } from "react-router-dom";
 import { Dev, Img_Box, Img, Info_Box, Update_Box } from "../styles/pin_item";
 import Pin_Primary_Image from "../../assets/img/Pin_Primary_Image.png";
 
 function Pin_item({ Pin_Name, Pin_Src }) {
-  const navigate = useNavigate(); // useNavigate 훅 사용
+  const navigate = useNavigate();
 
-  // 수정 버튼 클릭 시 updatePin 페이지로 이동
   const handleUpdate = (event) => {
-    event.stopPropagation(); // 이벤트 전파를 막음
+    event.stopPropagation();
     localStorage.setItem("Pin_Name", Pin_Name);
     localStorage.setItem("Pin_Src", Pin_Src);
-    navigate("/updatePin"); // React Router로 페이지 이동
+    navigate("/updatePin");
   };
 
-  // 삭제 버튼 클릭 시 확인 알림
   const handleDelete = (event) => {
-    const isConfirmed = window.confirm(
-      `정말 ${Pin_Name}를(을) 삭제하시겠습니까?`
-    );
-    event.stopPropagation(); // 이벤트 전파를 막음
+    const isConfirmed = window.confirm(`정말 삭제하시겠습니까?`);
+    event.stopPropagation();
     if (isConfirmed) {
-      // api 호출 코드 작성
-      console.log(`${Pin_Name}이(가) 삭제되었습니다.`);
+      //api
+      alert("삭제에 성공하였습니다.");
     }
   };
 
   const handleDevClick = () => {
-    window.location.href = Pin_Src; // Pin_Src로 이동 (React Router 외부 링크로 이동)
+    window.location.href = Pin_Src;
   };
 
   return (

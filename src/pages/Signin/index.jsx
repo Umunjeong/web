@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import {
   StyleHeroImageBox,
@@ -19,12 +19,25 @@ import Auth_Button from "../../components/auth_button/auth_button";
 import showPassword from "../../assets/img/signin_Passeord_Show.png";
 import hidepassword from "../../assets/img/sinin_password_hide.png";
 
+import useNavigation from "../../router/router";
+
 function Signin() {
   const [showPasswordType, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
   };
+
+  const { navigateHome } = useNavigation();
+
+  useEffect(() => {
+    if (
+      localStorage.getItem("accessToken") &&
+      localStorage.getItem("refreshToken")
+    ) {
+      navigateHome();
+    }
+  }, []);
 
   return (
     <Dev>

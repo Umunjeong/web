@@ -11,39 +11,29 @@ import {
 import Field_Primary_Image from "../../assets/img/Field_Primary_Image.png";
 
 function Field_item({ name, subordinatePin }) {
-  const navigate = useNavigate(); // 네비게이션 훅 사용
+  const navigate = useNavigate();
 
-  // Dev 클릭 시 실행되는 함수
   const handleClick = (event) => {
-    // 수정이나 삭제 버튼 클릭 시 이벤트 전파를 막기 위해
     event.stopPropagation();
-
-    // 로컬스토리지에 name 저장
     localStorage.setItem("field", name);
-
-    // /pin 경로로 네비게이션
     navigate("/pin");
   };
 
-  // 수정 버튼 클릭 시 처리 함수
   const handleEdit = (event) => {
-    event.stopPropagation(); // 이벤트 전파 막기
+    event.stopPropagation();
 
-    // 로컬스토리지에 name 저장
     localStorage.setItem("field", name);
-    // 수정 처리 로직 추가 (예: updatePin 페이지로 이동)
     navigate("/updateField");
   };
 
-  // 삭제 버튼 클릭 시 처리 함수
   const handleDelete = (event) => {
     name = localStorage.getItem("filed");
 
-    event.stopPropagation(); // 이벤트 전파 막기
-    const isConfirmed = window.confirm(`정말 ${name}를(을) 삭제하시겠습니까?`);
+    event.stopPropagation();
+    const isConfirmed = window.confirm(`정말 삭제하시겠습니까?`);
     if (isConfirmed) {
-      // 삭제 로직을 여기에 추가 (예: API 호출)
-      console.log(`${name}이(가) 삭제되었습니다.`);
+      //api
+      alert("삭제에 성공하였습니다.");
     }
   };
 

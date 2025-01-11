@@ -11,8 +11,8 @@ import {
 import Header from "../../../components/header/header";
 import All_check from "../../../components/Field_ Pin_check/Field_ Pin_check";
 
-import Update_input from "../../../components/update_input/update_input";
-import Update_submit_button from "../../../components/update_submit_button/update_submit_button";
+import Update_input from "../../../components/pin/pin_input/pin_input";
+import Submit_button from "../../../components/submit_button/submit_button";
 
 function CreatePin() {
   const GropName = localStorage.getItem("Grop");
@@ -93,7 +93,7 @@ function CreatePin() {
           </From_else_Box>
         </From_Box>
         <Button_Box>
-          <Update_submit_button
+          <Submit_button
             type="create"
             onClick={handleSaveToLocalStorage} // 저장 버튼 클릭 시 호출
           />

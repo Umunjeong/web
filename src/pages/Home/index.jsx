@@ -6,26 +6,41 @@ import Header from "../../components/header/header";
 import Home_Field from "../../components/home_ Field/home_Field";
 
 import useNavigation from "../../router/router";
+import { Todo } from "../../store/store";
 
 function Home() {
-  localStorage.removeItem("changeStartDate");
-  localStorage.removeItem("changeEndDate");
-  localStorage.removeItem("Pin_Name");
-  localStorage.removeItem("Todo_EndDate");
-  localStorage.removeItem("Todo_Name");
-  localStorage.removeItem("filed");
-  localStorage.removeItem("ToodoState");
-  localStorage.removeItem("Todo_StartDate");
-  localStorage.removeItem("Grop");
-  localStorage.removeItem("Pin_Src");
-  localStorage.removeItem("img");
+  const { navigateSignin } = useNavigation();
+  const {
+    setTodoGropData,
+    setTodoNameData,
+    setTodoStartDateData,
+    setTodoEndDateData,
+    setTodoStateData,
+  } = Todo();
 
   useEffect(() => {
+    localStorage.removeItem("changeStartDate");
+    localStorage.removeItem("changeEndDate");
+    localStorage.removeItem("Pin_Name");
+    localStorage.removeItem("Todo_EndDate");
+    localStorage.removeItem("Todo_Name");
+    localStorage.removeItem("filed");
+    localStorage.removeItem("ToodoState");
+    localStorage.removeItem("Todo_StartDate");
+    localStorage.removeItem("Grop");
+    localStorage.removeItem("Pin_Src");
+    localStorage.removeItem("img");
+    setTodoGropData("");
+    setTodoNameData("");
+    setTodoStartDateData("");
+    setTodoEndDateData("");
+    setTodoStateData("");
+
     if (
       !localStorage.getItem("accessToken") ||
       !localStorage.getItem("refreshToken")
     ) {
-      navigate("/signin");
+      navigateSignin();
     }
   }, []);
 

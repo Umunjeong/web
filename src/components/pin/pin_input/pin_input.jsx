@@ -4,11 +4,11 @@ import {
   Update_input_input_Box,
   Update_input_span,
   Update_input_input,
-} from "../styles/update_input";
-import CustomDropdown from "../custom_dropdown/custom_dropdown";
-import { Todo } from "../../store/store";
+} from "../../styles/update_input";
+import CustomDropdown from "../../custom_dropdown/custom_dropdown";
 
-export default function Update_input({ name, value }) {
+
+export default function Pin_input({ name, value }) {
   const [imageSelected, setImageSelected] = useState(false);
 
   // zustand 상태 값과 메서드 가져오기
@@ -93,7 +93,7 @@ export default function Update_input({ name, value }) {
     <Dev>
       <Update_input_span>{name}</Update_input_span>
       <Update_input_input_Box>
-        {name === "이미지" ? (
+        {name === "이미지" && (
           <>
             <label htmlFor="file-upload" className="custom-file-upload">
               {!imageSelected && "이미지 선택"}
@@ -109,12 +109,16 @@ export default function Update_input({ name, value }) {
               <span style={{ color: "green" }}>이미지가 선택되었습니다.</span>
             )}
           </>
-        ) : name === "소속 그룹 이름" ? (
+        )}
+
+        {name === "소속 그룹 이름" && (
           <CustomDropdown
             value={getStateValue() || "app"}
             onChange={(selectedValue) => setTodoGropData(selectedValue)}
           />
-        ) : (
+        )}
+
+        {name !== "이미지" && name !== "소속 그룹 이름" && (
           <Update_input_input
             type="text"
             value={getStateValue() || ""}

@@ -3,8 +3,13 @@
 
 import { Dev } from "../styles/update_submit_button";
 import { Todo } from "../../store/store";
+import { toDoPatch, toDoPost, toDoDelete } from "../../api/TodoApi";
+import useNavigation from "../../router/router";
 
-function Update_submit_button({ control, type }) {
+function Submit_button({ control, type }) {
+  const { navigateHome } = useNavigation();
+  const token = localStorage.getItem("accessToken");
+
   const {
     getTodoGropData,
     getTodoNameData,
@@ -13,17 +18,25 @@ function Update_submit_button({ control, type }) {
     getTodoStateData,
   } = Todo();
 
-  const CreateSubmit = () => {
+  const CreateSubmit = async () => {
     const CreateSubmit = window.confirm("추가 하시겠습니까?");
     if (CreateSubmit) {
       if (control === "todo") {
-        console.log(
+        const response = await toDoPost(
           getTodoGropData(),
           getTodoNameData(),
+          getTodoStateData(),
           getTodoStartDateData(),
           getTodoEndDateData(),
-          getTodoStateData()
+          token
         );
+
+        if (response === "success") {
+          alert("생성에 성공하였습니다.");
+          navigateHome();
+        } else {
+          alert("생성에 실패하였습니디.");
+        }
       }
       // } else if (control === "todo") {
       // } else if (control === "field") {
@@ -34,22 +47,28 @@ function Update_submit_button({ control, type }) {
     }
   };
 
-  const UpdateSubmit = () => {
+  const UpdateSubmit = async () => {
     const UpdateSubmit = window.confirm("수정 하시겠습니까?");
     if (UpdateSubmit) {
       if (control === "todo") {
-        console.log(
-          "그룹",
+        const response = await toDoPatch(
+          localStorage.getItem("Todo_id"),
           getTodoGropData(),
-          "이름",
           getTodoNameData(),
-          "상테",
+          getTodoStateData(),
           getTodoStartDateData(),
-          "날짜",
           getTodoEndDateData(),
-          getTodoStateData()
+          token
         );
+
+        if (response === "success") {
+          alert("수정에 성공하였습니다.");
+          navigateHome();
+        } else {
+          alert("수정에 실패하였습니디.");
+        }
       }
+
       // else if (control === "todo") {
       // } else if (control === "field") {
       else {
@@ -58,21 +77,21 @@ function Update_submit_button({ control, type }) {
     }
   };
 
-  const DeleteSubmit = () => {
+  const DeleteSubmit = async () => {
     const DeleteSubmit = window.confirm("삭제 하시겠습니까?");
     if (DeleteSubmit) {
       if (control === "todo") {
-        console.log(
-          "그룹",
-          getTodoGropData(),
-          "이름",
-          getTodoNameData(),
-          "상테",
-          getTodoStartDateData(),
-          "날짜",
-          getTodoEndDateData(),
-          getTodoStateData()
+        const response = await toDoDelete(
+          localStorage.getItem("Todo_id"),
+          token
         );
+
+        if (response === "success") {
+          alert("삭제에 성공하였습니다.");
+          navigateHome();
+        } else {
+          alert("삭제에 실패하였습니디.");
+        }
       }
       // else if (control === "todo") {
       // } else if (control === "field") {
@@ -100,4 +119,4 @@ function Update_submit_button({ control, type }) {
     </Dev>
   );
 }
-export default Update_submit_button;
+export default Submit_button;
