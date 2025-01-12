@@ -1,17 +1,14 @@
 import { create } from "zustand";
 
-export const auth = create((set, get) => ({
+export const auth = create((set) => ({
   EmailData: "",
   PasswordData: "",
 
   setEmailData: (Data) => set(() => ({ EmailData: Data })),
   setPasswordData: (Data) => set(() => ({ PasswordData: Data })),
-
-  getEmailData: () => get().EmailData,
-  getPasswordData: () => get().PasswordData,
 }));
 
-export const Todo = create((set, get) => ({
+export const Todo = create((set) => ({
   TodoGropData: "",
   TodoNameData: "",
   TodoStartDateData: "",
@@ -23,10 +20,26 @@ export const Todo = create((set, get) => ({
   setTodoStartDateData: (TodoStartDateData) => set({ TodoStartDateData }),
   setTodoEndDateData: (TodoEndDateData) => set({ TodoEndDateData }),
   setTodoStateData: (TodoStateData) => set({ TodoStateData }),
+}));
 
-  getTodoGropData: () => get().TodoGropData,
-  getTodoNameData: () => get().TodoNameData,
-  getTodoStartDateData: () => get().TodoStartDateData,
-  getTodoEndDateData: () => get().TodoEndDateData,
-  getTodoStateData: () => get().TodoStateData,
+export const Field = create((set) => ({
+  FieldGropData: "",
+  FieldNameData: "",
+  FieldImgData: "",
+
+  setFieldGropData: (FieldGropData) => set({ FieldGropData }),
+  setFieldNameData: (FieldNameData) => set({ FieldNameData }),
+  setFieldImgData: (FieldImgData) => set({ FieldImgData }),
+}));
+
+export const Pin = create((set) => ({
+  PinFieldData: "",
+  PinNameData: "",
+  PinLinkData: "",
+  PinImgData: "",
+
+  setPinFieldData: (PinFieldData) => set({ PinFieldData }),
+  setPinNameData: (PinNameData) => set({ PinNameData }),
+  setPinLinkData: (PinLinkData) => set({PinLinkData}),
+  setPinImgData: (PinImgData) => set({ PinImgData }),
 }));

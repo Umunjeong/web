@@ -6,86 +6,75 @@ import {
   Update_input_input,
 } from "../../styles/update_input";
 import CustomDropdown from "../../custom_dropdown/custom_dropdown";
-
+import { Pin } from "../../../store/store";
 
 export default function Pin_input({ name, value }) {
   const [imageSelected, setImageSelected] = useState(false);
 
-  // zustand 상태 값과 메서드 가져오기
   const {
-    setTodoGropData,
-    setTodoNameData,
-    setTodoStartDateData,
-    setTodoEndDateData,
-    setTodoStateData,
-    TodoGropData,
-    TodoNameData,
-    TodoStartDateData,
-    TodoEndDateData,
-    TodoStateData,
-  } = Todo();
+    PinFieldData,
+    PinNameData,
+    PinLinkData,
+    PinImgData,
+    setPinFieldData,
+    setPinNameData,
+    setPinLinkData,
+    setPinImgData,
+  } = Pin();
 
-  // name에 따른 zustand 상태 값을 매핑
   const getStateValue = () => {
     switch (name) {
-      case "소속 그룹 이름":
-        return TodoGropData;
-      case "일정 이름":
-        return TodoNameData;
-      case "시작 날짜":
-        return TodoStartDateData;
-      case "종료 날짜":
-        return TodoEndDateData;
-      case "일정 상테":
-        return TodoStateData;
-      default:
-        return "";
+      case "소속 분야 이름":
+        return PinFieldData;
+      case "핀 이름":
+        return PinNameData;
+      case "이미지":
+        return PinImgData;
+      case "링크":
+        return PinLinkData;
     }
   };
 
-  const setStateValue = (inputValue) => {
-    switch (name) {
-      case "소속 그룹 이름":
-        setTodoGropData(inputValue);
-        break;
-      case "일정 이름":
-        setTodoNameData(inputValue);
-        break;
-      case "시작 날짜":
-        setTodoStartDateData(inputValue);
-        break;
-      case "종료 날짜":
-        setTodoEndDateData(inputValue);
-        break;
-      case "일정 상테":
-        setTodoStateData(inputValue);
-        break;
-      default:
-        break;
-    }
-  };
-
-  // 초기 값 설정
   useEffect(() => {
     if (!getStateValue()) {
       setStateValue(value);
     }
   }, [name, value]);
 
-  const handleInputChange = (event) => {
-    const inputValue = event.target.value;
-    setStateValue(inputValue);
+  const setStateValue = (inputValue) => {
+    console.log(inputValue);
+    switch (name) {
+      case "소속 분야 이름":
+        setPinFieldData(inputValue);
+        break;
+      case "핀 이름":
+        setPinNameData(inputValue);
+        break;
+      case "링크":
+        setPinLinkData(inputValue);
+        break;
+      case "이미지":
+        setPinImgData(inputValue);
+        break;
+    }
   };
 
-  const handleImageChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        localStorage.setItem("img", reader.result);
-        setImageSelected(reader.result);
-      };
-      reader.readAsDataURL(file);
+  const handleInputChange = (eventOrValue) => {
+    if (name === "이미지") {
+      const file = eventOrValue.target?.files?.[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          setFieldImgDatas(reader.result);
+        };
+        reader.readAsDataURL(file);
+        setImageSelected(true);
+      }
+    } else if (typeof eventOrValue === "object" && eventOrValue.target) {
+      const inputValue = eventOrValue.target.value;
+      setStateValue(inputValue);
+    } else {
+      setStateValue(eventOrValue);
     }
   };
 
@@ -103,7 +92,7 @@ export default function Pin_input({ name, value }) {
               type="file"
               accept="image/*"
               style={{ display: "none" }}
-              onChange={handleImageChange}
+              onChange={handleInputChange}
             />
             {imageSelected && (
               <span style={{ color: "green" }}>이미지가 선택되었습니다.</span>
@@ -111,18 +100,27 @@ export default function Pin_input({ name, value }) {
           </>
         )}
 
-        {name === "소속 그룹 이름" && (
-          <CustomDropdown
-            value={getStateValue() || "app"}
-            onChange={(selectedValue) => setTodoGropData(selectedValue)}
-          />
-        )}
-
-        {name !== "이미지" && name !== "소속 그룹 이름" && (
+        {name === "소속 분야 이름" && (
           <Update_input_input
             type="text"
             value={getStateValue() || ""}
-            onChange={handleInputChange}
+            onChange={(selectedValue) => handleInputChange(selectedValue)}
+          />
+        )}
+
+        {name === "핀 이름" && (
+          <Update_input_input
+            type="text"
+            value={getStateValue() || ""}
+            onChange={(selectedValue) => handleInputChange(selectedValue)}
+          />
+        )}
+
+        {name === "링크" && (
+          <Update_input_input
+            type="text"
+            value={getStateValue() || ""}
+            onChange={(selectedValue) => handleInputChange(selectedValue)}
           />
         )}
       </Update_input_input_Box>

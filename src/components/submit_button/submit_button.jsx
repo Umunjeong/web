@@ -1,33 +1,37 @@
-//todo 서버통신 부터는 함수화
-//id와 토큰은 로컬스토리지에서
-
 import { Dev } from "../styles/update_submit_button";
-import { Todo } from "../../store/store";
 import { toDoPatch, toDoPost, toDoDelete } from "../../api/TodoApi";
 import useNavigation from "../../router/router";
 
-function Submit_button({ control, type }) {
+import { Todo } from "../../store/store";
+import { Field } from "../../store/store";
+import { Pin } from "../../store/store";
+
+export default function Submit_button({ control, type }) {
   const { navigateHome } = useNavigation();
   const token = localStorage.getItem("accessToken");
 
   const {
-    getTodoGropData,
-    getTodoNameData,
-    getTodoStartDateData,
-    getTodoEndDateData,
-    getTodoStateData,
+    TodoGropData,
+    TodoNameData,
+    TodoStartDateData,
+    TodoEndDateData,
+    TodoStateData,
   } = Todo();
+
+  const { FieldGropData, FieldNameData, FieldImgData } = Field();
+
+  const { PinFieldData, PinNameData, PinLinkData, PinImgData } = Pin();
 
   const CreateSubmit = async () => {
     const CreateSubmit = window.confirm("추가 하시겠습니까?");
     if (CreateSubmit) {
       if (control === "todo") {
         const response = await toDoPost(
-          getTodoGropData(),
-          getTodoNameData(),
-          getTodoStateData(),
-          getTodoStartDateData(),
-          getTodoEndDateData(),
+          TodoGropData(),
+          TodoNameData(),
+          TodoStateData(),
+          TodoStartDateData(),
+          TodoEndDateData(),
           token
         );
 
@@ -38,8 +42,9 @@ function Submit_button({ control, type }) {
           alert("생성에 실패하였습니디.");
         }
       }
-      // } else if (control === "todo") {
       // } else if (control === "field") {
+      // }
+      // else if (control === "pin") {
       // }
       else {
         console.log("control 값 이상", control);
@@ -53,11 +58,11 @@ function Submit_button({ control, type }) {
       if (control === "todo") {
         const response = await toDoPatch(
           localStorage.getItem("Todo_id"),
-          getTodoGropData(),
-          getTodoNameData(),
-          getTodoStateData(),
-          getTodoStartDateData(),
-          getTodoEndDateData(),
+          TodoGropData(),
+          TodoNameData(),
+          TodoStateData(),
+          TodoStartDateData(),
+          TodoEndDateData(),
           token
         );
 
@@ -69,8 +74,10 @@ function Submit_button({ control, type }) {
         }
       }
 
-      // else if (control === "todo") {
       // } else if (control === "field") {
+      // }
+      // else if (control === "pin") {
+      // }
       else {
         console.log("control 값 이상", control);
       }
@@ -93,8 +100,9 @@ function Submit_button({ control, type }) {
           alert("삭제에 실패하였습니디.");
         }
       }
-      // else if (control === "todo") {
       // } else if (control === "field") {
+      // }
+      // else if (control === "pin") {
       // }
       else {
         console.log("control 값 이상", control);
@@ -119,4 +127,3 @@ function Submit_button({ control, type }) {
     </Dev>
   );
 }
-export default Submit_button;

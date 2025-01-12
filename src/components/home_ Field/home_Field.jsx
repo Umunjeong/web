@@ -1,5 +1,5 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
+import axiosInstance from "../../api/token/Intersaptor";
 
 import {
   Dev,
@@ -18,7 +18,6 @@ function Home_Field({ name }) {
   const { navigateField, navigateCreateTodo } = useNavigation();
   const [todos, setTodos] = useState([]);
 
-  // 날짜를 YYYY-MM-DD 형식으로 변환하는 함수
   const getCurrentDate = () => {
     const date = new Date();
     const year = date.getFullYear();
@@ -33,15 +32,18 @@ function Home_Field({ name }) {
     const fetchTodos = async () => {
       const date = getCurrentDate();
       try {
-        const response = await axios.get("http://localhost:3000/todolist/", {
-          params: {
-            date: date,
-            grop: name,
-          },
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await axiosInstance.get(
+          "http://localhost:3000/todolist/",
+          {
+            params: {
+              date,
+              grop: name,
+            },
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
 
         if (response.data.type === "success") {
           const todoData = Object.values(response.data.todoInfo);

@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import axios from "axios";
 
 import {
@@ -10,16 +9,16 @@ import { auth } from "../../store/store";
 import useNavigation from "../../router/router";
 
 const Auth_Button = ({ name, type }) => {
-  const { getEmailData, getPasswordData } = auth();
-  const { navigateHome, navigateSignin, navigateSignupSignup } =
-    useNavigation();
+  const { EmailData, PasswordData } = auth();
+
+  const { navigateHome, navigateSignin, navigateSignup } = useNavigation();
 
   // 로그인 서버통신 함수
   const authsigninFromSubmit = async () => {
     try {
       const response = await axios.post("http://localhost:3000/auth/signin", {
-        email: getEmailData(),
-        password: getPasswordData(),
+        email: EmailData,
+        password: PasswordData,
       });
 
       const data = response.data;
@@ -39,22 +38,17 @@ const Auth_Button = ({ name, type }) => {
 
   // 회원가입 서버통신 함수
   const authSignupFromSubmit = async () => {
-    const email = getEmailData();
-    const password = getPasswordData();
-
     try {
       const response = await axios.post("http://localhost:3000/auth/signup", {
-        email: email,
-        password: password,
+        email: EmailData,
+        password: PasswordData,
       });
 
       const data = response.data;
 
       if (data.type === "success") {
-        localStorage.setItem("refreshToken", data.refreshToken);
-        localStorage.setItem("accessToken", data.accessToken);
         alert("회원가입에 성공하였습니다.");
-        navigateHome();
+        //navigateSignin();
       } else {
         alert("회원가입에 실패하였습니다.");
       }
@@ -69,7 +63,7 @@ const Auth_Button = ({ name, type }) => {
         <Style_Button onClick={() => authsigninFromSubmit()}>
           {name}
         </Style_Button>
-        <Style_Link_Text onClick={() => navigateSignupSignup()}>
+        <Style_Link_Text onClick={() => navigateSignup()}>
           계정이 없으신가요? 회원가입
         </Style_Link_Text>
       </Style_Auth_Container>
@@ -86,11 +80,6 @@ const Auth_Button = ({ name, type }) => {
       </Style_Auth_Container>
     );
   }
-};
-
-Auth_Button.propTypes = {
-  name: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(["signin", "signup"]).isRequired,
 };
 
 export default Auth_Button;

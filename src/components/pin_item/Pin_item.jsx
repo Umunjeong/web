@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Dev, Img_Box, Img, Info_Box, Update_Box } from "../styles/pin_item";
 import Pin_Primary_Image from "../../assets/img/Pin_Primary_Image.png";
 
-function Pin_item({ Pin_Name, Pin_Src }) {
+function Pin_item({ id, Pin_Name, Pin_Src, img}) {
   const navigate = useNavigate();
 
   const handleUpdate = (event) => {

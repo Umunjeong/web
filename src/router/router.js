@@ -7,7 +7,7 @@ const useNavigation = () => {
     navigateHome: () => navigate("/home"),
     navigateFirstPage: () => navigate("/firstPage"),
     navigateSignin: () => navigate("/signin"),
-    navigateSignupSignup: () => navigate("/signup"),
+    navigateSignup: () => navigate("/signup"),
     navigateField: () => navigate("/field"),
     navigatePin: () => navigate("/pin"),
     navigateCreatePin: () => navigate("/createPin"),
