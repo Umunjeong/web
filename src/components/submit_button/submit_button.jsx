@@ -2,9 +2,9 @@ import { Dev } from "../styles/update_submit_button";
 import { toDoPatch, toDoPost, toDoDelete } from "../../api/TodoApi";
 import useNavigation from "../../router/router";
 
-import { Todo } from "../../store/store";
-import { Field } from "../../store/store";
-import { Pin } from "../../store/store";
+import { Sotre_Todo } from "../../store/store";
+import { Sotre_Field } from "../../store/store";
+import { Sotre_Pin } from "../../store/store";
 
 export default function Submit_button({ control, type }) {
   const { navigateHome } = useNavigation();
@@ -16,11 +16,11 @@ export default function Submit_button({ control, type }) {
     TodoStartDateData,
     TodoEndDateData,
     TodoStateData,
-  } = Todo();
+  } = Sotre_Todo();
 
-  const { FieldGropData, FieldNameData, FieldImgData } = Field();
+  const { FieldGropData, FieldNameData, FieldImgData } = Sotre_Field();
 
-  const { PinFieldData, PinNameData, PinLinkData, PinImgData } = Pin();
+  const { PinFieldData, PinNameData, PinLinkData, PinImgData } = Sotre_Pin();
 
   const CreateSubmit = async () => {
     const CreateSubmit = window.confirm("추가 하시겠습니까?");

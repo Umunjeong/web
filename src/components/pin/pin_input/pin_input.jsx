@@ -5,8 +5,7 @@ import {
   Update_input_span,
   Update_input_input,
 } from "../../styles/update_input";
-import CustomDropdown from "../../custom_dropdown/custom_dropdown";
-import { Pin } from "../../../store/store";
+import { Sotre_Pin } from "../../../store/store";
 
 export default function Pin_input({ name, value }) {
   const [imageSelected, setImageSelected] = useState(false);
@@ -20,7 +19,7 @@ export default function Pin_input({ name, value }) {
     setPinNameData,
     setPinLinkData,
     setPinImgData,
-  } = Pin();
+  } = Sotre_Pin();
 
   const getStateValue = () => {
     switch (name) {

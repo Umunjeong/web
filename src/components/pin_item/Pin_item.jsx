@@ -2,13 +2,14 @@ import { useNavigate } from "react-router-dom";
 import { Dev, Img_Box, Img, Info_Box, Update_Box } from "../styles/pin_item";
 import Pin_Primary_Image from "../../assets/img/Pin_Primary_Image.png";
 
-function Pin_item({ id, Pin_Name, Pin_Src, img}) {
+function Pin_item({ id, name, link, img }) {
   const navigate = useNavigate();
+  let imgSrc = img;
 
   const handleUpdate = (event) => {
     event.stopPropagation();
-    localStorage.setItem("Pin_Name", Pin_Name);
-    localStorage.setItem("Pin_Src", Pin_Src);
+    localStorage.setItem("Pin_Name", name);
+    localStorage.setItem("Pin_Src", link);
     navigate("/updatePin");
   };
 
@@ -22,8 +23,12 @@ function Pin_item({ id, Pin_Name, Pin_Src, img}) {
   };
 
   const handleDevClick = () => {
-    window.location.href = Pin_Src;
+    window.location.href = link;
   };
+
+  if (img === null || img === "null" || img === undefined) {
+    imgSrc = Pin_Primary_Image;
+  }
 
   return (
     <Dev onClick={handleDevClick}>
@@ -33,7 +38,7 @@ function Pin_item({ id, Pin_Name, Pin_Src, img}) {
 
       <Info_Box>
         <div>
-          <span>{Pin_Name}</span>
+          <span>{name}</span>
         </div>
 
         <Update_Box>

@@ -6,7 +6,7 @@ import {
   Update_input_input,
 } from "../../styles/update_input";
 import CustomDropdown from "../../custom_dropdown/custom_dropdown";
-import { Todo } from "../../../store/store";
+import { Sotre_Todo } from "../../../store/store";
 
 export default function Todo_input({ name, value }) {
   const [imageSelected, setImageSelected] = useState(false);
@@ -23,7 +23,7 @@ export default function Todo_input({ name, value }) {
     TodoStartDateData,
     TodoEndDateData,
     TodoStateData,
-  } = Todo();
+  } = Sotre_Todo();
 
   // name에 따른 zustand 상태 값을 매핑
   const getStateValue = () => {

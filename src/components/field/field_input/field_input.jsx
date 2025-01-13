@@ -6,7 +6,7 @@ import {
   Update_input_input,
 } from "../../styles/update_input";
 import CustomDropdown from "../../custom_dropdown/custom_dropdown";
-import { Field } from "../../../store/store";
+import { Sotre_Field } from "../../../store/store";
 
 export default function Field_input({ name, value }) {
   const [imageSelected, setImageSelected] = useState(false);
@@ -18,7 +18,7 @@ export default function Field_input({ name, value }) {
     FieldGropData,
     FieldNameData,
     FieldImgData,
-  } = Field();
+  } = Sotre_Field();
 
   const getStateValue = () => {
     switch (name) {

@@ -6,17 +6,29 @@ import Header from "../../components/header/header";
 import Home_Field from "../../components/home_ Field/home_Field";
 
 import useNavigation from "../../router/router";
-import { Todo } from "../../store/store";
+import {
+  Sotre_auth,
+  Sotre_Todo,
+  Sotre_Field,
+  Sotre_Pin,
+} from "../../store/store";
 
 function Home() {
   const { navigateSignin } = useNavigation();
+
+  const { setEmailData, setPasswordData } = Sotre_auth();
+
   const {
     setTodoGropData,
     setTodoNameData,
     setTodoStartDateData,
     setTodoEndDateData,
     setTodoStateData,
-  } = Todo();
+  } = Sotre_Todo();
+
+  const { setFieldGropData, setFieldNameData } = Sotre_Field();
+
+  const { setPinFieldData, setPinNameData, setPinLinkData } = Sotre_Pin();
 
   useEffect(() => {
     localStorage.removeItem("changeStartDate");
@@ -30,18 +42,25 @@ function Home() {
     localStorage.removeItem("Grop");
     localStorage.removeItem("Pin_Src");
     localStorage.removeItem("img");
+    setEmailData("");
+    setPasswordData("");
     setTodoGropData("");
     setTodoNameData("");
     setTodoStartDateData("");
     setTodoEndDateData("");
     setTodoStateData("");
+    setFieldGropData("");
+    setFieldNameData("");
+    setPinFieldData("");
+    setPinNameData("");
+    setPinLinkData("");
 
     if (
       !localStorage.getItem("accessToken") ||
       !localStorage.getItem("refreshToken")
     ) {
       navigateSignin();
-    } 
+    }
   }, []);
 
   return (

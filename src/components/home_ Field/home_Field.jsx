@@ -25,9 +25,7 @@ function Home_Field({ name }) {
     const day = String(date.getDate()).padStart(2, "0");
     return `${year}-${month}-${day}`;
   };
-
-  const token = localStorage.getItem("accessToken");
-
+  
   useEffect(() => {
     const fetchTodos = async () => {
       const date = getCurrentDate();
@@ -38,9 +36,6 @@ function Home_Field({ name }) {
             params: {
               date,
               grop: name,
-            },
-            headers: {
-              Authorization: `Bearer ${token}`,
             },
           }
         );
@@ -86,7 +81,6 @@ function Home_Field({ name }) {
         <Home_Todo_Box_Display_Box>
           {todos.map((todo) => (
             <Home_Todo
-              key={todo.id}
               id={todo.id}
               Todo_Name={todo.name}
               Todo_WtartDate={todo.start}

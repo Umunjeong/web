@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-export const auth = create((set) => ({
+export const Sotre_auth = create((set) => ({
   EmailData: "",
   PasswordData: "",
 
@@ -8,7 +8,7 @@ export const auth = create((set) => ({
   setPasswordData: (Data) => set(() => ({ PasswordData: Data })),
 }));
 
-export const Todo = create((set) => ({
+export const Sotre_Todo = create((set) => ({
   TodoGropData: "",
   TodoNameData: "",
   TodoStartDateData: "",
@@ -22,24 +22,28 @@ export const Todo = create((set) => ({
   setTodoStateData: (TodoStateData) => set({ TodoStateData }),
 }));
 
-export const Field = create((set) => ({
+export const Sotre_Field = create((set) => ({
   FieldGropData: "",
   FieldNameData: "",
   FieldImgData: "",
+  FetchFieldsData: [],
 
   setFieldGropData: (FieldGropData) => set({ FieldGropData }),
   setFieldNameData: (FieldNameData) => set({ FieldNameData }),
   setFieldImgData: (FieldImgData) => set({ FieldImgData }),
+  setFetchFieldsData: (FetchFieldsData) => set({ FetchFieldsData }),
 }));
 
-export const Pin = create((set) => ({
+export const Sotre_Pin = create((set) => ({
   PinFieldData: "",
   PinNameData: "",
   PinLinkData: "",
   PinImgData: "",
+  FetchPinsData: [],
 
   setPinFieldData: (PinFieldData) => set({ PinFieldData }),
   setPinNameData: (PinNameData) => set({ PinNameData }),
-  setPinLinkData: (PinLinkData) => set({PinLinkData}),
+  setPinLinkData: (PinLinkData) => set({ PinLinkData }),
   setPinImgData: (PinImgData) => set({ PinImgData }),
+  setFetchPinsData: (FetchPinsData) => set({ FetchPinsData }),
 }));

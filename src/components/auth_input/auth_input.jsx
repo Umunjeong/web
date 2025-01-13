@@ -1,8 +1,8 @@
 import { Auth_input_spen, Auth_inpput_input } from "../styles/auth_input";
-import { auth } from "../../store/store";
+import { Sotre_auth } from "../../store/store";
 
 function Auth_input({ name, type }) {
-  const { setEmailData, setPasswordData } = auth();
+  const { setEmailData, setPasswordData } = Sotre_auth();
 
   const handleChange = (event) => {
     const value = event.target.value;

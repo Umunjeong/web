@@ -25,13 +25,13 @@ axiosInstance.interceptors.request.use(
     if (!(await CheckToken(accessToken))) {
       await IssuanceToken(() => (window.location.href = "/signin"));
       const newAccessToken = localStorage.getItem("accessToken");
-      console.log(newAccessToken);
+
       config.headers["Authorization"] = `Bearer ${newAccessToken}`;
     } else {
-      console.log(accessToken);
       config.headers["Authorization"] = `Bearer ${accessToken}`;
     }
 
+    console.log(config);
     return config;
   },
   (error) => Promise.reject(error)

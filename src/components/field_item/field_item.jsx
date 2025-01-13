@@ -10,20 +10,21 @@ import {
 
 import Field_Primary_Image from "../../assets/img/Field_Primary_Image.png";
 
-function Field_item({ name, subordinatePin }) {
+function Field_item({ id, name, pincount, img }) {
   const navigate = useNavigate();
+  let imgSrc = img;
+
+  const handleEdit = (event) => {
+    event.stopPropagation();
+    localStorage.setItem("field", name);
+    navigate("/updateField");
+  };
 
   const handleClick = (event) => {
     event.stopPropagation();
     localStorage.setItem("field", name);
+    localStorage.setItem("fieldId", id);
     navigate("/pin");
-  };
-
-  const handleEdit = (event) => {
-    event.stopPropagation();
-
-    localStorage.setItem("field", name);
-    navigate("/updateField");
   };
 
   const handleDelete = (event) => {
@@ -37,16 +38,20 @@ function Field_item({ name, subordinatePin }) {
     }
   };
 
+  if (img === null || img === "null" || img === undefined) {
+    imgSrc = Field_Primary_Image;
+  }
+
   return (
     <Dev onClick={handleClick}>
       <Img_Box>
-        <Img src={Field_Primary_Image} alt="이미지를 로드하고 있습니다." />
+        <Img src={imgSrc} />
       </Img_Box>
 
       <Info_Box>
         <Name_Box>
           <span>{name}</span>
-          <span>(하위핀 {subordinatePin}개)</span>
+          <span>(하위핀 {pincount}개)</span>
         </Name_Box>
 
         <Update_Box>

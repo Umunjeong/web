@@ -5,11 +5,11 @@ import {
   Style_Link_Text,
   Style_Auth_Container,
 } from "../styles/auth_button";
-import { auth } from "../../store/store";
+import { Sotre_auth } from "../../store/store";
 import useNavigation from "../../router/router";
 
 const Auth_Button = ({ name, type }) => {
-  const { EmailData, PasswordData } = auth();
+  const { EmailData, PasswordData } = Sotre_auth();
 
   const { navigateHome, navigateSignin, navigateSignup } = useNavigation();
 
@@ -47,8 +47,8 @@ const Auth_Button = ({ name, type }) => {
       const data = response.data;
 
       if (data.type === "success") {
-        alert("회원가입에 성공하였습니다.");
-        //navigateSignin();
+        alert("회원가입에 성공하였습니다. 이메일을 확인하여 인증하여 주세요");
+        navigateSignin();
       } else {
         alert("회원가입에 실패하였습니다.");
       }

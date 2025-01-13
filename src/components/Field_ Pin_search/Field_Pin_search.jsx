@@ -9,8 +9,11 @@ import {
 } from "../styles/all_ search";
 
 import search from "../../assets/img/search.png";
+import { Sotre_Field } from "../../store/store";
 
 function All_search({ type }) {
+  const { FetchFieldsData} = Sotre_Field();
+
   let GropName = localStorage.getItem("Grop");
 
   if (!GropName) {
@@ -19,14 +22,13 @@ function All_search({ type }) {
 
   const fieldName = localStorage.getItem("field");
 
-  const navigate = useNavigate(); // 네비게이션 훅 사용
-
-  // + 버튼 클릭 시 페이지 이동
+  const navigate = useNavigate();
+  
   const handleAddClick = () => {
     if (type === "Pin") {
-      navigate("/createPin"); // Pin 타입일 때는 createPin으로 이동
+      navigate("/createPin");
     } else {
-      navigate("/createField"); // 다른 경우에는 createField로 이동
+      navigate("/createField");
     }
   };
 
