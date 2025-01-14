@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Dev, Field_Box, Field_Grid_Box } from "../../../styles/Field";
 
 import Field_item from "../../../components/field_item/field_item";
@@ -9,11 +9,13 @@ import axiosInstance from "../../../api/token/Intersaptor";
 import { Sotre_Field } from "../../../store/store";
 
 function Field() {
+  localStorage.removeItem("Field");
+  localStorage.removeItem("Field_id");
+
   const { FetchFieldsData, setFetchFieldsData } = Sotre_Field();
+  const [grop, setGrop] = useState(localStorage.getItem("Grop"));
 
   useEffect(() => {
-    const grop = localStorage.getItem("Grop");
-
     const fetchFields = async () => {
       try {
         const response = await axiosInstance.get(
@@ -46,11 +48,11 @@ function Field() {
     };
 
     fetchFields();
-  }, []);
+  }, [grop]);
 
   return (
     <Dev>
-      <Header />
+      <Header setGrop={setGrop} />
       <Field_Box>
         <All_search />
         <Field_Grid_Box>

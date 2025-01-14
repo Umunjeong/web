@@ -26,9 +26,11 @@ function Home() {
     setTodoStateData,
   } = Sotre_Todo();
 
-  const { setFieldGropData, setFieldNameData } = Sotre_Field();
+  const { setFieldGropData, setFieldNameData, setFetchFieldsData } =
+    Sotre_Field();
 
-  const { setPinFieldData, setPinNameData, setPinLinkData } = Sotre_Pin();
+  const { setPinFieldData, setPinNameData, setPinLinkData, setFetchPinsData } =
+    Sotre_Pin();
 
   useEffect(() => {
     localStorage.removeItem("changeStartDate");
@@ -42,6 +44,9 @@ function Home() {
     localStorage.removeItem("Grop");
     localStorage.removeItem("Pin_Src");
     localStorage.removeItem("img");
+    localStorage.removeItem("Field_id");
+    localStorage.removeItem("Pin_id");
+    localStorage.removeItem("Field");
     setEmailData("");
     setPasswordData("");
     setTodoGropData("");
@@ -54,6 +59,8 @@ function Home() {
     setPinFieldData("");
     setPinNameData("");
     setPinLinkData("");
+    setFetchFieldsData([]);
+    setFetchPinsData([]);
 
     if (
       !localStorage.getItem("accessToken") ||

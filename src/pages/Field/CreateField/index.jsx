@@ -42,7 +42,7 @@ function CreateField() {
           </From_else_Box>
         </From_Box>
         <Button_Box>
-          <Submit_button type="create" />
+          <Submit_button control="field" type="create" />
         </Button_Box>
       </CreateField_Box>
     </Dev>

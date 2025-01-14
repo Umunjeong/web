@@ -33,7 +33,7 @@ function UpdateField() {
           </From_else_Box>
         </From_Box>
         <Button_Box>
-          <Submit_button type="update" />
+          <Submit_button control="field" type="update" />
         </Button_Box>
       </UpdateField_Box>
     </Dev>

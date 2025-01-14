@@ -12,7 +12,7 @@ import search from "../../assets/img/search.png";
 import { Sotre_Field } from "../../store/store";
 
 function All_search({ type }) {
-  const { FetchFieldsData} = Sotre_Field();
+  const { FetchFieldsData } = Sotre_Field();
 
   let GropName = localStorage.getItem("Grop");
 
@@ -20,10 +20,10 @@ function All_search({ type }) {
     GropName = "해당하는 분야를 찾을수 없음";
   }
 
-  const fieldName = localStorage.getItem("field");
+  const fieldName = localStorage.getItem("Field");
 
   const navigate = useNavigate();
-  
+
   const handleAddClick = () => {
     if (type === "Pin") {
       navigate("/createPin");

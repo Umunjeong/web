@@ -10,6 +10,7 @@ import { Sotre_Field } from "../../../store/store";
 
 export default function Field_input({ name, value }) {
   const [imageSelected, setImageSelected] = useState(false);
+  const [imageFile, setImageFile] = useState(null); // 이미지 파일 상태 추가
 
   const {
     setFieldGropData,
@@ -53,12 +54,9 @@ export default function Field_input({ name, value }) {
     if (name === "이미지") {
       const file = eventOrValue.target?.files?.[0];
       if (file) {
-        const reader = new FileReader();
-        reader.onloadend = () => {
-          setFieldImgData(reader.result);
-        };
-        reader.readAsDataURL(file);
+        setImageFile(file); // 이미지 파일 상태에 저장
         setImageSelected(true);
+        setFieldImgData(file); // 파일을 상태에 저장 (필요한 경우)
       }
     } else if (typeof eventOrValue === "object" && eventOrValue.target) {
       const inputValue = eventOrValue.target.value;

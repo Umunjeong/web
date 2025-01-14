@@ -25,7 +25,7 @@ export const Sotre_Todo = create((set) => ({
 export const Sotre_Field = create((set) => ({
   FieldGropData: "",
   FieldNameData: "",
-  FieldImgData: "",
+  FieldImgData: null,
   FetchFieldsData: [],
 
   setFieldGropData: (FieldGropData) => set({ FieldGropData }),
@@ -38,7 +38,7 @@ export const Sotre_Pin = create((set) => ({
   PinFieldData: "",
   PinNameData: "",
   PinLinkData: "",
-  PinImgData: "",
+  PinImgData: null,
   FetchPinsData: [],
 
   setPinFieldData: (PinFieldData) => set({ PinFieldData }),

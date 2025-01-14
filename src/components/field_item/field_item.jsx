@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom"; // useNavigate 임포트
 import {
   Dev,
   Img_Box,
@@ -10,35 +9,45 @@ import {
 
 import Field_Primary_Image from "../../assets/img/Field_Primary_Image.png";
 
+import { FieldDelete } from "../../api/FieldApi";
+import useNavigation from "../../router/router";
+
 function Field_item({ id, name, pincount, img }) {
-  const navigate = useNavigate();
+  const { navigateHome, navigateUpdateField, navigatePin } = useNavigation();
+
   let imgSrc = img;
+  console.log(imgSrc);
 
   const handleEdit = (event) => {
     event.stopPropagation();
-    localStorage.setItem("field", name);
-    navigate("/updateField");
+    localStorage.setItem("Field", name);
+    localStorage.setItem("Field_id", id);
+    navigateUpdateField();
   };
 
   const handleClick = (event) => {
     event.stopPropagation();
-    localStorage.setItem("field", name);
-    localStorage.setItem("fieldId", id);
-    navigate("/pin");
+    localStorage.setItem("Field", name);
+    navigatePin();
   };
 
-  const handleDelete = (event) => {
-    name = localStorage.getItem("filed");
+  const handleDelete = async (event) => {
+    name = localStorage.getItem("Field");
 
     event.stopPropagation();
     const isConfirmed = window.confirm(`정말 삭제하시겠습니까?`);
     if (isConfirmed) {
-      //api
-      alert("삭제에 성공하였습니다.");
+      const response = await FieldDelete(id);
+      if (response === "success") {
+        alert("삭제에 성공하였습니다.");
+        navigateHome();
+      } else {
+        alert("삭제에 실패하였습니다");
+      }
     }
   };
 
-  if (img === null || img === "null" || img === undefined) {
+  if (img === null || img === "null" || img === undefined || img === "") {
     imgSrc = Field_Primary_Image;
   }
 

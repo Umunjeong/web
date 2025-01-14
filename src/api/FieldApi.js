@@ -1,65 +1,75 @@
-import axios from "axios";
+import axiosInstance from "../api/token/Intersaptor";
 
 //추가
-export const FieldPost = async (grop, name, img, token) => {
+export const FieldPost = async (grop, name, img) => {
   try {
-    const response = await axios.post(
+    const formData = new FormData();
+    formData.append("grop", grop);
+    formData.append("field", name);
+    if (img) {
+      formData.append("img", img); // 이미지 파일을 FormData에 추가
+    }
+
+    const response = await axiosInstance.post(
       "http://localhost:3000/field/post",
-      {
-        grop,
-        field: name,
-        img,
-      },
+      formData,
       {
         headers: {
-          Authorization: `Bearer ${token}`,
+          "Content-Type": "multipart/form-data", // 헤더에 multipart/form-data 명시
         },
       }
     );
+
     if (response.data.type === "success") {
       return "success";
     }
-  } catch {
+  } catch (error) {
+    console.error(error);
     return "error";
   }
 };
 
 //수정
-export const FieldPatch = async (id, afterGrop, afterField, img, token) => {
+export const FieldPatch = async (id, afterGrop, afterField, img) => {
   try {
-    const response = await axios.patch(
+    const formData = new FormData();
+    formData.append("id", id);
+    formData.append("afterGrop", afterGrop);
+    formData.append("afterField", afterField);
+    if (img) {
+      formData.append("img", img); // 이미지 파일을 FormData에 추가
+    }
+
+    const response = await axiosInstance.patch(
       "http://localhost:3000/field/patch",
-      {
-        id,
-        afterGrop,
-        afterField,
-        img,
-      },
+      formData,
       {
         headers: {
-          Authorization: `Bearer ${token}`,
+          "Content-Type": "multipart/form-data", // 헤더에 multipart/form-data 명시
         },
       }
     );
+
     if (response.data.type === "success") {
       return "success";
     }
-  } catch {
+  } catch (error) {
+    console.error(error);
     return "error";
   }
 };
 
 //삭제
-export const FieldDelete = async (id, token) => {
+export const FieldDelete = async (id) => {
   try {
-    const response = await axios.delete("http://localhost:3000/field/delete", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      data: {
-        id,
-      },
-    });
+    const response = await axiosInstance.delete(
+      "http://localhost:3000/field/delete",
+      {
+        data: {
+          id,
+        },
+      }
+    );
 
     if (response.data.type === "success") {
       return "success";

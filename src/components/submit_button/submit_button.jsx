@@ -1,5 +1,7 @@
 import { Dev } from "../styles/update_submit_button";
-import { toDoPatch, toDoPost, toDoDelete } from "../../api/TodoApi";
+import { ToDoPatch, ToDoPost, ToDoDelete } from "../../api/TodoApi";
+import { FieldPatch, FieldPost } from "../../api/FieldApi";
+import { PinPatch, PinPost } from "../../api/PinApi";
 import useNavigation from "../../router/router";
 
 import { Sotre_Todo } from "../../store/store";
@@ -8,7 +10,7 @@ import { Sotre_Pin } from "../../store/store";
 
 export default function Submit_button({ control, type }) {
   const { navigateHome } = useNavigation();
-  const token = localStorage.getItem("accessToken");
+  let response = null;
 
   const {
     TodoGropData,
@@ -22,32 +24,37 @@ export default function Submit_button({ control, type }) {
 
   const { PinFieldData, PinNameData, PinLinkData, PinImgData } = Sotre_Pin();
 
+  //추가
   const CreateSubmit = async () => {
     const CreateSubmit = window.confirm("추가 하시겠습니까?");
     if (CreateSubmit) {
-      if (control === "todo") {
-        const response = await toDoPost(
-          TodoGropData(),
-          TodoNameData(),
-          TodoStateData(),
-          TodoStartDateData(),
-          TodoEndDateData(),
-          token
+      if (control === "Todo") {
+        response = await ToDoPost(
+          TodoGropData,
+          TodoNameData,
+          TodoStateData,
+          TodoStartDateData,
+          TodoEndDateData
         );
-
-        if (response === "success") {
-          alert("생성에 성공하였습니다.");
-          navigateHome();
-        } else {
-          alert("생성에 실패하였습니디.");
-        }
-      }
-      // } else if (control === "field") {
-      // }
-      // else if (control === "pin") {
-      // }
-      else {
+      } else if (control === "field") {
+        response = await FieldPost(FieldGropData, FieldNameData, FieldImgData);
+      } else if (control === "pin") {
+        response = await PinPost(
+          localStorage.getItem("Grop"),
+          PinFieldData,
+          PinNameData,
+          PinLinkData,
+          PinImgData
+        );
+      } else {
         console.log("control 값 이상", control);
+      }
+
+      if (response === "success") {
+        alert("생성에 성공하였습니다.");
+        navigateHome();
+      } else {
+        alert("생성에 실패하였습니디.");
       }
     }
   };
@@ -55,31 +62,40 @@ export default function Submit_button({ control, type }) {
   const UpdateSubmit = async () => {
     const UpdateSubmit = window.confirm("수정 하시겠습니까?");
     if (UpdateSubmit) {
-      if (control === "todo") {
-        const response = await toDoPatch(
+      if (control === "Todo") {
+        response = await ToDoPatch(
           localStorage.getItem("Todo_id"),
-          TodoGropData(),
-          TodoNameData(),
-          TodoStateData(),
-          TodoStartDateData(),
-          TodoEndDateData(),
-          token
+          TodoGropData,
+          TodoNameData,
+          TodoStateData,
+          TodoStartDateData,
+          TodoEndDateData
         );
-
-        if (response === "success") {
-          alert("수정에 성공하였습니다.");
-          navigateHome();
-        } else {
-          alert("수정에 실패하였습니디.");
-        }
+      } else if (control === "field") {
+        response = await FieldPatch(
+          localStorage.getItem("Field_id"),
+          FieldGropData,
+          FieldNameData,
+          FieldImgData
+        );
+      } else if (control === "pin") {
+        response = await PinPatch(
+          localStorage.getItem("Pin_id"),
+          localStorage.getItem("Grop"),
+          PinFieldData,
+          PinNameData,
+          PinLinkData,
+          PinImgData
+        );
+      } else {
+        console.log("control 값 이상", control);
       }
 
-      // } else if (control === "field") {
-      // }
-      // else if (control === "pin") {
-      // }
-      else {
-        console.log("control 값 이상", control);
+      if (response === "success") {
+        alert("수정에 성공하였습니다.");
+        navigateHome();
+      } else {
+        alert("수정에 실패하였습니디.");
       }
     }
   };
@@ -87,25 +103,17 @@ export default function Submit_button({ control, type }) {
   const DeleteSubmit = async () => {
     const DeleteSubmit = window.confirm("삭제 하시겠습니까?");
     if (DeleteSubmit) {
-      if (control === "todo") {
-        const response = await toDoDelete(
-          localStorage.getItem("Todo_id"),
-          token
-        );
-
-        if (response === "success") {
-          alert("삭제에 성공하였습니다.");
-          navigateHome();
-        } else {
-          alert("삭제에 실패하였습니디.");
-        }
-      }
-      // } else if (control === "field") {
-      // }
-      // else if (control === "pin") {
-      // }
-      else {
+      if (control === "Todo") {
+        response = await ToDoDelete(localStorage.getItem("Todo_id"));
+      } else {
         console.log("control 값 이상", control);
+      }
+
+      if (response === "success") {
+        alert("삭제에 성공하였습니다.");
+        navigateHome();
+      } else {
+        alert("삭제에 실패하였습니디.");
       }
     }
   };

@@ -2,23 +2,35 @@ import { useNavigate } from "react-router-dom";
 import { Dev, Img_Box, Img, Info_Box, Update_Box } from "../styles/pin_item";
 import Pin_Primary_Image from "../../assets/img/Pin_Primary_Image.png";
 
+import { PinDelete } from "../../api/PinApi";
+
+import useNavigation from "../../router/router";
+
 function Pin_item({ id, name, link, img }) {
   const navigate = useNavigate();
+  const { navigateField } = useNavigation();
+
   let imgSrc = img;
 
   const handleUpdate = (event) => {
     event.stopPropagation();
     localStorage.setItem("Pin_Name", name);
     localStorage.setItem("Pin_Src", link);
+    localStorage.setItem("Pin_id", id);
     navigate("/updatePin");
   };
 
-  const handleDelete = (event) => {
+  const handleDelete = async (event) => {
     const isConfirmed = window.confirm(`정말 삭제하시겠습니까?`);
     event.stopPropagation();
     if (isConfirmed) {
-      //api
-      alert("삭제에 성공하였습니다.");
+      const response = await PinDelete(id);
+      if (response === "success") {
+        alert("삭제에 성공하였습니다.");
+        navigateField();
+      } else {
+        alert("삭제에 실패하였습니디.");
+      }
     }
   };
 
@@ -26,7 +38,7 @@ function Pin_item({ id, name, link, img }) {
     window.location.href = link;
   };
 
-  if (img === null || img === "null" || img === undefined) {
+  if (img === null || img === "null" || img === undefined || img === "") {
     imgSrc = Pin_Primary_Image;
   }
 

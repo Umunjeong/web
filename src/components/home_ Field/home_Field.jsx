@@ -17,6 +17,9 @@ import useNavigation from "../../router/router";
 function Home_Field({ name }) {
   const { navigateField, navigateCreateTodo } = useNavigation();
   const [todos, setTodos] = useState([]);
+  const group = localStorage.getItem("Grop")
+    ? localStorage.getItem("Grop")
+    : name;
 
   const getCurrentDate = () => {
     const date = new Date();
@@ -25,7 +28,7 @@ function Home_Field({ name }) {
     const day = String(date.getDate()).padStart(2, "0");
     return `${year}-${month}-${day}`;
   };
-  
+
   useEffect(() => {
     const fetchTodos = async () => {
       const date = getCurrentDate();
@@ -35,7 +38,7 @@ function Home_Field({ name }) {
           {
             params: {
               date,
-              grop: name,
+              grop: group,
             },
           }
         );
@@ -53,7 +56,7 @@ function Home_Field({ name }) {
     };
 
     fetchTodos();
-  }, [name]);
+  }, [group]);
 
   const goToF_ield_Heldle = (name) => {
     if (name === "web" || name === "server" || name === "app") {

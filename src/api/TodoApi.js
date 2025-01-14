@@ -1,16 +1,9 @@
-import axios from "axios";
+import axiosInstance from "../api/token/Intersaptor";
 
 //추가
-export const toDoPost = async (
-  grop,
-  name,
-  state,
-  todoStartDay,
-  todoEndDay,
-  token
-) => {
+export const ToDoPost = async (grop, name, state, todoStartDay, todoEndDay) => {
   try {
-    const response = await axios.post(
+    const response = await axiosInstance.post(
       "http://localhost:3000/todolist/post",
       {
         grop,
@@ -18,11 +11,6 @@ export const toDoPost = async (
         state,
         todoStartDay,
         todoEndDay,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
       }
     );
     if (response.data.type === "success") {
@@ -34,17 +22,16 @@ export const toDoPost = async (
 };
 
 //수정
-export const toDoPatch = async (
+export const ToDoPatch = async (
   id,
   afterGrop,
   afterTodo,
   state,
   afterStartDay,
-  afterEndDay,
-  token
+  afterEndDay
 ) => {
   try {
-    const response = await axios.patch(
+    const response = await axiosInstance.patch(
       "http://localhost:3000/todolist/patch",
       {
         id,
@@ -53,11 +40,6 @@ export const toDoPatch = async (
         state,
         afterStartDay,
         afterEndDay,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
       }
     );
     if (response.data.type === "success") {
@@ -69,14 +51,11 @@ export const toDoPatch = async (
 };
 
 //삭제
-export const toDoDelete = async (id, token) => {
+export const ToDoDelete = async (id) => {
   try {
-    const response = await axios.delete(
+    const response = await axiosInstance.delete(
       "http://localhost:3000/todolist/delete",
       {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
         data: {
           id,
         },

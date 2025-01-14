@@ -3,25 +3,18 @@ import { useNavigate } from "react-router-dom";
 
 import Logo from "../../assets/img/umunjeong-w.png";
 
-function Header() {
+function Header({ setGrop }) {
   const Navigate = useNavigate();
 
   const goTo_Main_handle = () => {
     Navigate("/home");
   };
 
-  const goTo_Field_Web = () => {
-    localStorage.setItem("Grop", "web");
-    Navigate("/field");
-  };
-
-  const goTo_Field_Server = () => {
-    localStorage.setItem("Grop", "srver");
-    Navigate("/field");
-  };
-
-  const goTo_Field_App = () => {
-    localStorage.setItem("Grop", "app");
+  const goTo_Field = (gropValue) => {
+    localStorage.setItem("Grop", gropValue);
+    if (setGrop) {
+      setGrop(gropValue); // setGrop이 있으면 실행
+    }
     Navigate("/field");
   };
 
@@ -29,9 +22,9 @@ function Header() {
     <StyleHeader>
       <StyleLogo src={Logo} onClick={goTo_Main_handle}></StyleLogo>
       <StyleMemu>
-        <StyleSpen onClick={goTo_Field_Web}>web</StyleSpen>
-        <StyleSpen onClick={goTo_Field_Server}>server</StyleSpen>
-        <StyleSpen onClick={goTo_Field_App}>app</StyleSpen>
+        <StyleSpen onClick={() => goTo_Field("web")}>web</StyleSpen>
+        <StyleSpen onClick={() => goTo_Field("server")}>server</StyleSpen>
+        <StyleSpen onClick={() => goTo_Field("app")}>app</StyleSpen>
       </StyleMemu>
     </StyleHeader>
   );
