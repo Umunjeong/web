@@ -27,11 +27,13 @@ export const Sotre_Field = create((set) => ({
   FieldNameData: "",
   FieldImgData: null,
   FetchFieldsData: [],
+  FiledSearchData: "",
 
   setFieldGropData: (FieldGropData) => set({ FieldGropData }),
   setFieldNameData: (FieldNameData) => set({ FieldNameData }),
   setFieldImgData: (FieldImgData) => set({ FieldImgData }),
   setFetchFieldsData: (FetchFieldsData) => set({ FetchFieldsData }),
+  setFieldSearchDara: (FiledSearchData) => set({ FiledSearchData }),
 }));
 
 export const Sotre_Pin = create((set) => ({
@@ -40,10 +42,12 @@ export const Sotre_Pin = create((set) => ({
   PinLinkData: "",
   PinImgData: null,
   FetchPinsData: [],
+  PinSearchData: "",
 
   setPinFieldData: (PinFieldData) => set({ PinFieldData }),
   setPinNameData: (PinNameData) => set({ PinNameData }),
   setPinLinkData: (PinLinkData) => set({ PinLinkData }),
   setPinImgData: (PinImgData) => set({ PinImgData }),
   setFetchPinsData: (FetchPinsData) => set({ FetchPinsData }),
+  setPinSearchDara: (PinSearchData) => set({ PinSearchData }),
 }));

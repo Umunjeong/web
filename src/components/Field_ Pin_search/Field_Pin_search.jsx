@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom"; // useNavigate 임포트
+import useNavigation from "../../router/router";
 import {
   Dev,
   Field_search_name_Box,
@@ -12,7 +12,8 @@ import search from "../../assets/img/search.png";
 import { Sotre_Field } from "../../store/store";
 
 function All_search({ type }) {
-  const { FetchFieldsData } = Sotre_Field();
+  const { setFieldSearchDara, setPinSearchDara } = Sotre_Field();
+  const { navigateCreatePin, navigateCreateField } = useNavigation();
 
   let GropName = localStorage.getItem("Grop");
 
@@ -22,13 +23,11 @@ function All_search({ type }) {
 
   const fieldName = localStorage.getItem("Field");
 
-  const navigate = useNavigate();
-
   const handleAddClick = () => {
     if (type === "Pin") {
-      navigate("/createPin");
+      navigateCreatePin();
     } else {
-      navigate("/createField");
+      navigateCreateField();
     }
   };
 
@@ -41,7 +40,14 @@ function All_search({ type }) {
         <Field_search_name onClick={handleAddClick}>+</Field_search_name>
       </Field_search_name_Box>
       <SearchContainer>
-        <SearchInput placeholder="검색" />
+        <SearchInput
+          placeholder="검색"
+          onChange={(event) => {
+            type === "Pin"
+              ? setPinSearchDara(event.target.value)
+              : setFieldSearchDara(event.target.value);
+          }}
+        />
         <SearchIcon src={search} />
       </SearchContainer>
     </Dev>

@@ -12,7 +12,8 @@ function Field() {
   localStorage.removeItem("Field");
   localStorage.removeItem("Field_id");
 
-  const { FetchFieldsData, setFetchFieldsData } = Sotre_Field();
+  const { FetchFieldsData, setFetchFieldsData, FiledSearchData } =
+    Sotre_Field();
   const [grop, setGrop] = useState(localStorage.getItem("Grop"));
 
   useEffect(() => {
@@ -23,8 +24,8 @@ function Field() {
           {
             params: {
               grop: grop,
-              type: 1,
-              text: "없음",
+              type: FiledSearchData ? 2 : 1,
+              text: FiledSearchData ? FiledSearchData : "없음",
             },
           }
         );
@@ -34,9 +35,9 @@ function Field() {
             setFetchFieldsData([]);
             return;
           } else {
-            const todoData = Object.values(response.data.fieldInfo);
-            console.log(todoData);
-            setFetchFieldsData(todoData);
+            const FieldData = Object.values(response.data.fieldInfo);
+            console.log(FieldData);
+            setFetchFieldsData(FieldData);
           }
         } else {
           console.error("분야 가져오는중 오류 발생:", response.data);
@@ -48,13 +49,13 @@ function Field() {
     };
 
     fetchFields();
-  }, [grop]);
+  }, [FiledSearchData]);
 
   return (
     <Dev>
       <Header setGrop={setGrop} />
       <Field_Box>
-        <All_search />
+        <All_search type={"Field"} />
         <Field_Grid_Box>
           {FetchFieldsData.map((field) => {
             return (

@@ -9,7 +9,7 @@ import axiosInstance from "../../../api/token/Intersaptor";
 import { Sotre_Pin } from "../../../store/store";
 
 function Pin() {
-  const { FetchPinsData, setFetchPinsData } = Sotre_Pin();
+  const { FetchPinsData, setFetchPinsData, PinSearchData } = Sotre_Pin();
 
   useEffect(() => {
     const grop = localStorage.getItem("Grop");
@@ -21,8 +21,8 @@ function Pin() {
           params: {
             grop: grop,
             field: field,
-            type: 1,
-            text: "없음",
+            type: PinSearchData ? 2 : 1,
+            text: PinSearchData ? PinSearchData : "없음",
           },
         });
 
@@ -31,9 +31,9 @@ function Pin() {
             setFetchPinsData([]);
             return;
           } else {
-            const todoData = Object.values(response.data.pinInfo);
-            console.log(todoData);
-            setFetchPinsData(todoData);
+            const PinData = Object.values(response.data.pinInfo);
+            console.log(PinData);
+            setFetchPinsData(PinData);
           }
         } else {
           console.error("핀 가져오는중 오류 발생:", response.data);
@@ -45,7 +45,7 @@ function Pin() {
     };
 
     fetchPins();
-  }, []);
+  }, [PinSearchData]);
 
   return (
     <Dev>
