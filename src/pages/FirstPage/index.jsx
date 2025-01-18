@@ -10,8 +10,8 @@ import {
 
 import useNavigation from "../../router/router";
 
-import HeroImage from "../../assets/img/FirstPage.png";
-import Logo from "../../assets/img/umunjeong-b.png";
+import HeroImage from "../../assets/Img/FirstPage/Img_FirstPage_Hero.png";
+import Logo from "../../assets/Img/Logos/Img_umunjeong-Black_Logo.png";
 
 function FirstPage() {
   const { navigateSignin, navigateSignupInfo } = useNavigation();

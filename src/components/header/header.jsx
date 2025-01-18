@@ -1,21 +1,21 @@
-import { StyleHeader, StyleLogo, StyleMemu, StyleSpen } from "../styles/header";
-import { useNavigate } from "react-router-dom";
+import { StyleHeader, StyleLogo, StyleMemu, StyleSpen } from "../Styles/header";
 
-import Logo from "../../assets/img/umunjeong-w.png";
+import Logo from "../../Assets/Img/Logos/Img_umunjeong-White_logo.png";
+import useNavigation from "../../router/router";
 
-function Header({ setGrop }) {
-  const Navigate = useNavigate();
+function Header({ setGroup }) {
+  const { navigateHome, navigateField } = useNavigation();
 
   const goTo_Main_handle = () => {
-    Navigate("/home");
+    navigateHome();
   };
 
-  const goTo_Field = (gropValue) => {
-    localStorage.setItem("Grop", gropValue);
-    if (setGrop) {
-      setGrop(gropValue); // setGrop이 있으면 실행
+  const goTo_Field = (groupValue) => {
+    localStorage.setItem("Group", groupValue);
+    if (setGroup) {
+      setGroup(groupValue);
     }
-    Navigate("/field");
+    navigateField();
   };
 
   return (
@@ -25,6 +25,8 @@ function Header({ setGrop }) {
         <StyleSpen onClick={() => goTo_Field("web")}>web</StyleSpen>
         <StyleSpen onClick={() => goTo_Field("server")}>server</StyleSpen>
         <StyleSpen onClick={() => goTo_Field("app")}>app</StyleSpen>
+        <StyleSpen onClick={() => goTo_Field("work")}>work</StyleSpen>
+        <StyleSpen onClick={() => goTo_Field("other")}>other</StyleSpen>
       </StyleMemu>
     </StyleHeader>
   );

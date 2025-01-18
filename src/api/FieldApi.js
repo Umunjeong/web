@@ -1,10 +1,10 @@
-import axiosInstance from "../api/token/Intersaptor";
+import axiosInstance from "./Token/Intersaptor";
 
 //추가
-export const FieldPost = async (grop, name, img) => {
+export const FieldPost = async (group, name, img) => {
   try {
     const formData = new FormData();
-    formData.append("grop", grop);
+    formData.append("group", group);
     formData.append("field", name);
     if (img) {
       formData.append("img", img); // 이미지 파일을 FormData에 추가
@@ -30,11 +30,11 @@ export const FieldPost = async (grop, name, img) => {
 };
 
 //수정
-export const FieldPatch = async (id, afterGrop, afterField, img) => {
+export const FieldPatch = async (id, afterGroup, afterField, img) => {
   try {
     const formData = new FormData();
     formData.append("id", id);
-    formData.append("afterGrop", afterGrop);
+    formData.append("afterGroup", afterGroup);
     formData.append("afterField", afterField);
     if (img) {
       formData.append("img", img); // 이미지 파일을 FormData에 추가

@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { Dev, Pin_Box, Pin_Grid_Box } from "../../../styles/Pin";
 
-import Pin_item from "../../../components/pin_item/Pin_item";
+import Pin_item from "../../../Components/Pin/Grid_item/Grid_item";
 import Header from "../../../components/header/header";
-import All_search from "../../../components/Field_ Pin_search/Field_Pin_search";
+import All_search from "../../../Components/Page/Search_Ber/Search_Ber";
 
 import axiosInstance from "../../../api/token/Intersaptor";
 import { Sotre_Pin } from "../../../store/store";
@@ -12,14 +12,14 @@ function Pin() {
   const { FetchPinsData, setFetchPinsData, PinSearchData } = Sotre_Pin();
 
   useEffect(() => {
-    const grop = localStorage.getItem("Grop");
-    const field = localStorage.getItem("field");
+    const group = localStorage.getItem("Group");
+    const field = localStorage.getItem("Field");
 
     const fetchPins = async () => {
       try {
         const response = await axiosInstance.get("http://localhost:3000/pin/", {
           params: {
-            grop: grop,
+            group: group,
             field: field,
             type: PinSearchData ? 2 : 1,
             text: PinSearchData ? PinSearchData : "없음",

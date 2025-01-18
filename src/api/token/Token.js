@@ -1,10 +1,8 @@
 import axios from "axios";
 
-// 토큰 발급 함수
 export const IssuanceToken = async (navigateSignin) => {
   const refreshToken = localStorage.getItem("refreshToken");
 
-  // refreshToken이 없다면 로그인 페이지로 이동
   if (!refreshToken) {
     console.log("로그인이 필요합니다, 로그인으로 이동합니다.");
     navigateSignin();
@@ -20,7 +18,7 @@ export const IssuanceToken = async (navigateSignin) => {
     if (response.data.type === "success") {
       const newAccessToken = response.data.accessToken;
       localStorage.setItem("accessToken", newAccessToken);
-      navigateSignin(); // 토큰 발급 후 리디렉션
+      navigateSignin();
     } else {
       console.log("로그인이 필요합니다, 로그인으로 이동합니다.");
       navigateSignin();

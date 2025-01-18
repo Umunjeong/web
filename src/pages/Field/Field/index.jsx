@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { Dev, Field_Box, Field_Grid_Box } from "../../../styles/Field";
 
-import Field_item from "../../../components/field_item/field_item";
+import Field_item from "../../../Components/Field/Grid_Item/Grid_Item";
 import Header from "../../../components/header/header";
-import All_search from "../../../components/Field_ Pin_search/Field_Pin_search";
+import All_search from "../../../Components/Page/Search_Ber/Search_Ber";
 
-import axiosInstance from "../../../api/token/Intersaptor";
+import axiosInstance from "../../../Api/Token/Intersaptor";
 import { Sotre_Field } from "../../../store/store";
 
 function Field() {
@@ -14,7 +14,7 @@ function Field() {
 
   const { FetchFieldsData, setFetchFieldsData, FiledSearchData } =
     Sotre_Field();
-  const [grop, setGrop] = useState(localStorage.getItem("Grop"));
+  const [group, setGroup] = useState(localStorage.getItem("Group"));
 
   useEffect(() => {
     const fetchFields = async () => {
@@ -23,7 +23,7 @@ function Field() {
           "http://localhost:3000/field/",
           {
             params: {
-              grop: grop,
+              group: group,
               type: FiledSearchData ? 2 : 1,
               text: FiledSearchData ? FiledSearchData : "없음",
             },
@@ -53,7 +53,7 @@ function Field() {
 
   return (
     <Dev>
-      <Header setGrop={setGrop} />
+      <Header setGroup={setGroup} />
       <Field_Box>
         <All_search type={"Field"} />
         <Field_Grid_Box>

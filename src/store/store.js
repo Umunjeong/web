@@ -9,13 +9,13 @@ export const Sotre_auth = create((set) => ({
 }));
 
 export const Sotre_Todo = create((set) => ({
-  TodoGropData: "",
+  TodoGroupData: "",
   TodoNameData: "",
   TodoStartDateData: "",
   TodoEndDateData: "",
   TodoStateData: "",
 
-  setTodoGropData: (TodoGropData) => set({ TodoGropData }),
+  setTodoGroupData: (TodoGroupData) => set({ TodoGroupData }),
   setTodoNameData: (TodoNameData) => set({ TodoNameData }),
   setTodoStartDateData: (TodoStartDateData) => set({ TodoStartDateData }),
   setTodoEndDateData: (TodoEndDateData) => set({ TodoEndDateData }),
@@ -23,13 +23,13 @@ export const Sotre_Todo = create((set) => ({
 }));
 
 export const Sotre_Field = create((set) => ({
-  FieldGropData: "",
+  FieldGroupData: "",
   FieldNameData: "",
   FieldImgData: null,
   FetchFieldsData: [],
   FiledSearchData: "",
 
-  setFieldGropData: (FieldGropData) => set({ FieldGropData }),
+  setFieldGroupData: (FieldGroupData) => set({ FieldGroupData }),
   setFieldNameData: (FieldNameData) => set({ FieldNameData }),
   setFieldImgData: (FieldImgData) => set({ FieldImgData }),
   setFetchFieldsData: (FetchFieldsData) => set({ FetchFieldsData }),

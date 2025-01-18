@@ -4,8 +4,8 @@ import {
   Update_input_input_Box,
   Update_input_span,
   Update_input_input,
-} from "../../styles/update_input";
-import CustomDropdown from "../../custom_dropdown/custom_dropdown";
+} from "../../Styles/update_input";
+import CustomDropdown from "../../Dropdown_Input/Dropdown_Input";
 import { Sotre_Todo } from "../../../store/store";
 
 export default function Todo_input({ name, value }) {

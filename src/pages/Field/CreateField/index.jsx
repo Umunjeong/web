@@ -10,12 +10,12 @@ import {
 } from "../../../styles/createField";
 
 import Header from "../../../components/header/header";
-import All_check from "../../../components/Field_ Pin_check/Field_ Pin_check";
-import Field_input from "../../../components/field/field_input/field_input";
-import Submit_button from "../../../components/submit_button/submit_button";
+import All_check from "../../../Components/Page/Check_Bar/Check_Ber";
+import Field_input from "../../../Components/Field/input/input";
+import Submit_button from "../../../Components/Page/Submit_button/Submit_button";
 
 function CreateField() {
-  const name = localStorage.getItem("Grop"); // 로컬스토리지에서 그룹 이름 가져오기
+  const name = localStorage.getItem("Group"); // 로컬스토리지에서 그룹 이름 가져오기
   const [fieldName, setFieldName] = useState(""); // 분야 이름 상태
   const [groupName, setGroupName] = useState(name); // 소속 그룹 이름 상태
 

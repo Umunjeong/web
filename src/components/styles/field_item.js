@@ -20,8 +20,10 @@ export const Img_Box = styled.div`
 `;
 
 export const Img = styled.img`
-  width: 90%;
-  height: 90%;
+  width: 80%;
+  height: 80%;
+  border-radius: 10px;
+  padding-bottom: 4px;
 `;
 
 export const Info_Box = styled.div`

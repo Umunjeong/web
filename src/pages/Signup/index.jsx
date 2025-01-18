@@ -1,5 +1,3 @@
-// 2번 : 회원가입
-
 import React, { useState } from "react";
 
 import {
@@ -12,14 +10,14 @@ import {
   EyeIcon,
 } from "../../styles/signup";
 
-import HeroImage from "../../assets/img/Signup.png";
-import Logo from "../../assets/img/umunjeong-b.png";
+import HeroImage from "../../assets/img/Auth/Img_Signup_Hero.png";
+import Logo from "../../Assets/Img/Logos/Img_umunjeong-Black_Logo.png";
 
-import Auth_input from "../../components/auth_input/auth_input";
-import Auth_Button from "../../components/auth_button/auth_button";
+import Auth_input from "../../Components/Auth/Input/Input";
+import Auth_Button from "../../Components/Auth/Submit_Button/Submit_Button";
 
-import showPassword from "../../assets/img/signin_Passeord_Show.png";
-import hidepassword from "../../assets/img/sinin_password_hide.png";
+import showPassword from "../../Assets/Img/Auth/Img_Passeord_Show.png";
+import hidepassword from "../../Assets/Img/Auth/Img_Password_Hide.png";
 
 function Signup_signup() {
   const [showPasswordType, setShowPassword] = useState(false);

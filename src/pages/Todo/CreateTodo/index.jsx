@@ -14,18 +14,18 @@ import {
 } from "../../../styles/createTodo";
 
 import Header from "../../../components/header/header";
-import All_check from "../../../components/Field_ Pin_check/Field_ Pin_check";
+import All_check from "../../../Components/Page/Check_Bar/Check_Ber";
 import Todo_input from "../../../components/todo/todo_input/todo_input";
-import Submit_button from "../../../components/submit_button/submit_button";
-import Todo_date_input from "../../../components/todo/todo_date_input/todo_date_input";
+import Submit_button from "../../../components/Page/Submit_button/Submit_button";
+import Todo_date_input from "../../../components/Todo/Date_input/Date_Input";
 
 export default function CreateTodo() {
-  const Grop_Name = localStorage.getItem("Grop");
+  const Group_Name = localStorage.getItem("Group");
   const name = localStorage.getItem("Todo_Name");
 
   // 상태 관리
   const [todoName, setTodoName] = useState(""); // 할일 이름 상태
-  const [GropName, setGropName] = useState(Grop_Name); // 소속 분야 이름 상태
+  const [GroupName, setGroupName] = useState(Group_Name); // 소속 분야 이름 상태
   const [toodoState, setTodoState] = useState("진행중");
 
   // 입력 값 변경 핸들러
@@ -34,7 +34,7 @@ export default function CreateTodo() {
   };
 
   const handleFieldNameChange = (newValue) => {
-    setGropName(newValue); // 소속 그룹 이름 업데이트
+    setGroupName(newValue); // 소속 그룹 이름 업데이트
   };
 
   return (
@@ -47,7 +47,7 @@ export default function CreateTodo() {
             <Todo_input
               name="소속 그룹 이름"
               onChange={handleFieldNameChange}
-              value={GropName} // 선택된 값으로 업데이트
+              value={GroupName} // 선택된 값으로 업데이트
             />
             <Todo_input
               name="일정 이름"

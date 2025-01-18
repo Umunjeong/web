@@ -16,7 +16,7 @@ export const Img_Box = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: 98%;
 `;
 
 export const Img = styled.img`

@@ -10,14 +10,14 @@ import {
   EyeIcon,
 } from "../../styles/signin";
 
-import HeroImage from "../../assets/img/Signin.png";
-import Logo from "../../assets/img/umunjeong-b.png";
+import HeroImage from "../../assets/img/auth/Img_Signin_Hero.png";
+import Logo from "../../assets/img/Logos/Img_umunjeong-Black_Logo.png";
 
-import Auth_input from "../../components/auth_input/auth_input";
-import Auth_Button from "../../components/auth_button/auth_button";
+import Auth_input from "../../components/Auth/Input/Input";
+import Auth_Button from "../../components/Auth/Submit_Button/Submit_Button";
 
-import showPassword from "../../assets/img/signin_Passeord_Show.png";
-import hidepassword from "../../assets/img/sinin_password_hide.png";
+import showPassword from "../../Assets/Img/Auth/Img_Passeord_Show.png";
+import hidepassword from "../../Assets/Img/Auth/Img_Password_Hide.png";
 
 import useNavigation from "../../router/router";
 
@@ -29,15 +29,6 @@ function Signin() {
   };
 
   const { navigateHome } = useNavigation();
-
-  useEffect(() => {
-    if (
-      localStorage.getItem("accessToken") &&
-      localStorage.getItem("refreshToken")
-    ) {
-      navigateHome();
-    }
-  }, []);
 
   return (
     <Dev>

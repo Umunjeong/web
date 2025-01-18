@@ -1,5 +1,7 @@
 //이메일 인증 페이지
 //나중에 supabase에 올리려면 별도의 작업 필요함
+//로고, 스타일은 다른 방식으로 가져올 방법 찾아야 함
+
 import {
   Dev,
   Email_From_Box,
@@ -10,7 +12,7 @@ import {
   Submit_Button,
 } from "./Email";
 
-import Logo from "../../assets/img/umunjeong-b.png";
+import Logo from "../../assets/img/Logos/Img_umunjeong-Black_Logo.png";
 
 function Email() {
   return (

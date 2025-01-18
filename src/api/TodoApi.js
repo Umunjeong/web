@@ -1,12 +1,18 @@
 import axiosInstance from "../api/token/Intersaptor";
 
 //추가
-export const ToDoPost = async (grop, name, state, todoStartDay, todoEndDay) => {
+export const ToDoPost = async (
+  group,
+  name,
+  state,
+  todoStartDay,
+  todoEndDay
+) => {
   try {
     const response = await axiosInstance.post(
       "http://localhost:3000/todolist/post",
       {
-        grop,
+        group,
         name,
         state,
         todoStartDay,
@@ -24,7 +30,7 @@ export const ToDoPost = async (grop, name, state, todoStartDay, todoEndDay) => {
 //수정
 export const ToDoPatch = async (
   id,
-  afterGrop,
+  afterGroup,
   afterTodo,
   state,
   afterStartDay,
@@ -35,7 +41,7 @@ export const ToDoPatch = async (
       "http://localhost:3000/todolist/patch",
       {
         id,
-        afterGrop,
+        afterGroup,
         afterTodo,
         state,
         afterStartDay,

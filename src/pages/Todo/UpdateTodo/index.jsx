@@ -8,15 +8,15 @@ import {
   Date_input_Box,
 } from "../../../styles/updateTodo";
 
-import Header from "../../../components/header/header";
-import All_check from "../../../components/Field_ Pin_check/Field_ Pin_check";
+import Header from "../../../Components/header/header";
+import All_check from "../../../Components/Page/Check_Bar/Check_Ber";
 
-import Submit_button from "../../../components/submit_button/submit_button";
-import Todo_date_input from "../../../components/todo/todo_date_input/todo_date_input";
+import Submit_button from "../../../Components/Page/Submit_button/Submit_button";
+import Todo_date_input from "../../../Components/Todo/Date_input/Date_Input";
 import Todo_input from "../../../components/todo/todo_input/todo_input";
 
 function UpdateTodo() {
-  const Grop_Name = localStorage.getItem("Grop");
+  const Group_Name = localStorage.getItem("Group");
   const name = localStorage.getItem("Todo_Name");
   const ToodoState = localStorage.getItem("ToodoState");
 
@@ -29,7 +29,7 @@ function UpdateTodo() {
           <From_name_Box>
             <Todo_input
               name="소속 그룹 이름"
-              value={Grop_Name} // 상태값 전달
+              value={Group_Name} // 상태값 전달
             />
             <Todo_input
               name="일정 이름"

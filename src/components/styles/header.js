@@ -21,14 +21,14 @@ export const StyleLogo = styled.img`
 export const StyleMemu = styled.div`
   width: 10%;
   height: 22%;
-  margin-right: 20%;
+  margin-right: 28%;
 `;
 
 export const StyleSpen = styled.span`
   height: 100%;
   color: white;
   font-size: 140%;
-  margin-right: 80%;
+  margin-right: 50%;
   font-family: "Quicksand", sans-serif;
   :hover {
     cursor: pointer;

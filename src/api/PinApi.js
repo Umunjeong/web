@@ -1,11 +1,11 @@
 import axiosInstance from "../api/token/Intersaptor";
 
 //추가
-export const PinPost = async (grop, field, pin, link, img) => {
+export const PinPost = async (group, field, pin, link, img) => {
   try {
     const formData = new FormData();
     console.log(img);
-    formData.append("grop", grop);
+    formData.append("group", group);
     formData.append("field", field);
     formData.append("pin", pin);
     formData.append("link", link);
@@ -35,7 +35,7 @@ export const PinPost = async (grop, field, pin, link, img) => {
 //수정
 export const PinPatch = async (
   id,
-  afterGrop,
+  afterGroup,
   afterField,
   afterPin,
   afterLink,
@@ -44,7 +44,7 @@ export const PinPatch = async (
   try {
     const formData = new FormData();
     formData.append("id", id);
-    formData.append("afterGrop", afterGrop);
+    formData.append("afterGroup", afterGroup);
     formData.append("afterField", afterField);
     formData.append("afterPin", afterPin);
     formData.append("afterLink", afterLink);

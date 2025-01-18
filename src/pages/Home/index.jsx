@@ -3,7 +3,7 @@ import { Dev, Field_Box } from "../../styles/Home";
 import { useEffect } from "react";
 
 import Header from "../../components/header/header";
-import Home_Field from "../../components/home_ Field/home_Field";
+import Home_Field from "../../Components/Home/Home_Field_Box/Home_Field_Box";
 
 import useNavigation from "../../router/router";
 import {
@@ -19,14 +19,14 @@ function Home() {
   const { setEmailData, setPasswordData } = Sotre_auth();
 
   const {
-    setTodoGropData,
+    setTodoGroupData,
     setTodoNameData,
     setTodoStartDateData,
     setTodoEndDateData,
     setTodoStateData,
   } = Sotre_Todo();
 
-  const { setFieldGropData, setFieldNameData, setFetchFieldsData } =
+  const { setFieldGroupData, setFieldNameData, setFetchFieldsData } =
     Sotre_Field();
 
   const { setPinFieldData, setPinNameData, setPinLinkData, setFetchPinsData } =
@@ -41,7 +41,7 @@ function Home() {
     localStorage.removeItem("filed");
     localStorage.removeItem("ToodoState");
     localStorage.removeItem("Todo_StartDate");
-    localStorage.removeItem("Grop");
+    localStorage.removeItem("Group");
     localStorage.removeItem("Pin_Src");
     localStorage.removeItem("img");
     localStorage.removeItem("Field_id");
@@ -49,12 +49,12 @@ function Home() {
     localStorage.removeItem("Field");
     setEmailData("");
     setPasswordData("");
-    setTodoGropData("");
+    setTodoGroupData("");
     setTodoNameData("");
     setTodoStartDateData("");
     setTodoEndDateData("");
     setTodoStateData("");
-    setFieldGropData("");
+    setFieldGroupData("");
     setFieldNameData("");
     setPinFieldData("");
     setPinNameData("");
