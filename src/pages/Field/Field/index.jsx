@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Dev, Field_Box, Field_Grid_Box } from "../../../styles/Field";
 
-import Field_item from "../../../Components/Field/Grid_Item/Grid_Item";
+import Field_item from "../../../Components/Field/Grid_Item/Grid_Item.jsx";
 import Header from "../../../Components/Header/Header";
 import All_search from "../../../Components/Page/Search_Ber/Search_Ber";
 
