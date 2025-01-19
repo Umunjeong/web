@@ -5,7 +5,7 @@ import { PinPatch, PinPost } from "../../../Api/PinApi.js";
 import useNavigation from "../../../router/router.js";
 
 import { Sotre_Todo } from "../../../store/store.js";
-import { Sotre_Field } from "../../../store/store,js";
+import { Sotre_Field } from "../../../store/store.js";
 import { Sotre_Pin } from "../../../store/store.js";
 
 export default function Submit_button({ control, type }) {
