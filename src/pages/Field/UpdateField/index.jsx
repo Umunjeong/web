@@ -7,7 +7,7 @@ import {
   From_else_Box,
 } from "../../../styles/updateField";
 
-import Header from "../../../Components/header/header";
+import Header from "../../../Components/Header/header";
 import All_check from "../../../Components/Page/Check_Bar/Check_Ber";
 
 import Field_input from "../../../Components/Field/input/input";
