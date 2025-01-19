@@ -14,7 +14,6 @@ import CreateField from "./pages/Field/CreateField/index";
 import UpdateField from "./pages/Field/UpdateField/index";
 import CreateTodo from "./pages/Todo/CreateTodo/index";
 import UpdateTodo from "./pages/Todo/UpdateTodo/index";
-import Email from "./pages/Email/index";
 import NotFound from "./pages/NotFound/index";
 
 function App() {
@@ -38,8 +37,6 @@ function App() {
             <Route path="/updateField" element={<UpdateField />}></Route>
             <Route path="/createTodo" element={<CreateTodo />}></Route>
             <Route path="/updateTodo" element={<UpdateTodo />}></Route>
-            {/*이메일은 나중에 삭제 필요 */}
-            <Route path="/email" element={<Email />}></Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
