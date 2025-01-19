@@ -4,7 +4,7 @@ import {
   Style_Button,
   Style_Link_Text,
   Style_Auth_Container,
-} from "../../styles/auth_button";
+} from "../../styles/auth_button.js";
 import { Sotre_auth } from "../../../store/store.js";
 import useNavigation from "../../../router/router.js";
 
