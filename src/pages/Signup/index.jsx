@@ -13,7 +13,7 @@ import {
 import HeroImage from "../../Assets/Img/Auth/Img_Signup_Hero.png";
 import Logo from "../../Assets/Img/Logos/Img_umunjeong-Black_Logo.png";
 
-import Auth_input from "../../Components/Auth/Input/Input.jsx";
+import Auth_Input from "../../Components/Auth/Input/Input";
 import Auth_Button from "../../Components/Auth/Submit_Button/Submit_Button";
 
 import showPassword from "../../Assets/Img/Auth/Img_Passeord_Show.png";
@@ -34,7 +34,7 @@ function Signup_signup() {
       <StyleSignupBox>
         <Style_Signup_Box_Img src={Logo}></Style_Signup_Box_Img>
         <Style_Signup_Input_Box>
-          <Auth_input name="email" type="text"></Auth_input>
+          <Auth_Input name="email" type="text"></Auth_Input>
           <div
             style={{
               position: "relative",
@@ -43,10 +43,10 @@ function Signup_signup() {
               justifyContent: "center",
             }}
           >
-            <Auth_input
+            <Auth_Input
               name="password"
               type={showPasswordType ? "text" : "password"}
-            ></Auth_input>
+            ></Auth_Input>
             <EyeIcon onClick={togglePasswordVisibility}>
               <img src={showPasswordType ? showPassword : hidepassword}></img>
             </EyeIcon>
