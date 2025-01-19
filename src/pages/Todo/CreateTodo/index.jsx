@@ -13,9 +13,9 @@ import {
   Date_input_Box,
 } from "../../../styles/createTodo";
 
-import Header from "../../../components/header/header";
+import Header from "../../../Components/Header/header";
 import All_check from "../../../Components/Page/Check_Bar/Check_Ber";
-import Todo_input from "../../../components/todo/todo_input/todo_input";
+import Todo_input from "../../../components/Todo/Todo_Input/Todo_Input";
 import Submit_button from "../../../components/Page/Submit_button/Submit_button";
 import Todo_date_input from "../../../components/Todo/Date_input/Date_Input";
 

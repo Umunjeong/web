@@ -8,10 +8,10 @@ import {
   From_else_Box,
 } from "../../../styles/createPin";
 
-import Header from "../../../components/header/header";
+import Header from "../../../Components/Header/header.jsx"
 import All_check from "../../../Components/Page/Check_Bar/Check_Ber";
 
-import Pin_input from "../../../Components/Pin/Input/Input";
+import Pin_input from "../../../Components/Pin/Input/Input.jsx";
 import Submit_button from "../../../Components/Page/Submit_button/Submit_button";
 
 function CreatePin() {
