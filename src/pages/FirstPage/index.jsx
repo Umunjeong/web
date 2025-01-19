@@ -10,7 +10,7 @@ import {
 
 import useNavigation from "../../router/router";
 
-import HeroImage from "../../assets/Img/FirstPage/Img_FirstPage_Hero.png";
+import HeroImage from "../../Assets/Img/FirstPage/Img_FirstPage_Hero.png";
 import Logo from "../../assets/Img/Logos/Img_umunjeong-Black_Logo.png";
 
 function FirstPage() {
