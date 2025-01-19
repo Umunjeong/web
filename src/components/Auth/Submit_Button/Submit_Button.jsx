@@ -11,15 +11,19 @@ import useNavigation from "../../../router/router";
 const Auth_Button = ({ name, type }) => {
   const { EmailData, PasswordData } = Sotre_auth();
 
-  const { navigateHome, navigateSignin, navigateSignup } = useNavigation();
+  const { navigateHome, navigateSignin, navigateSignup, navigateFirstPage } =
+    useNavigation();
 
   // 로그인 서버통신 함수
   const authsigninFromSubmit = async () => {
     try {
-      const response = await axios.post("http://localhost:3000/auth/signin", {
-        email: EmailData,
-        password: PasswordData,
-      });
+      const response = await axios.post(
+        "https://web-umunjeong-server-m637n0dz9587ba58.sel4.cloudtype.app/auth/signin",
+        {
+          email: EmailData,
+          password: PasswordData,
+        }
+      );
 
       const data = response.data;
 
@@ -39,16 +43,21 @@ const Auth_Button = ({ name, type }) => {
   // 회원가입 서버통신 함수
   const authSignupFromSubmit = async () => {
     try {
-      const response = await axios.post("http://localhost:3000/auth/signup", {
-        email: EmailData,
-        password: PasswordData,
-      });
+      const response = await axios.post(
+        "https://web-umunjeong-server-m637n0dz9587ba58.sel4.cloudtype.app/auth/signup",
+        {
+          email: EmailData,
+          password: PasswordData,
+        }
+      );
 
       const data = response.data;
 
       if (data.type === "success") {
-        alert("회원가입에 성공하였습니다. 이메일을 확인하여 인증하여 주세요");
-        navigateSignin();
+        alert(
+          "회원가입에 성공하였습니다. 이메일을 확인하여 인증후 제 로그인 하여주세요"
+        );
+        navigateFirstPage();
       } else {
         alert("회원가입에 실패하였습니다.");
       }

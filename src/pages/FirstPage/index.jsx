@@ -14,7 +14,7 @@ import HeroImage from "../../assets/Img/FirstPage/Img_FirstPage_Hero.png";
 import Logo from "../../assets/Img/Logos/Img_umunjeong-Black_Logo.png";
 
 function FirstPage() {
-  const { navigateSignin, navigateSignupInfo } = useNavigation();
+  const { navigateSignin, navigateSignup } = useNavigation();
 
   return (
     <Dev>
@@ -28,7 +28,7 @@ function FirstPage() {
           <Style_First_Button onClick={() => navigateSignin()}>
             로그인
           </Style_First_Button>
-          <Style_First_Button onClick={() => navigateSignupInfo()}>
+          <Style_First_Button onClick={() => navigateSignup()}>
             회원가입
           </Style_First_Button>
         </Style_First_Button_Box>
