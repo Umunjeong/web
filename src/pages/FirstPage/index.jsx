@@ -11,7 +11,7 @@ import {
 import useNavigation from "../../router/router";
 
 import HeroImage from "../../Assets/Img/FirstPage/Img_FirstPage_Hero.png";
-import Logo from "../../assets/Img/Logos/Img_umunjeong-Black_Logo.png";
+import Logo from "../../Assets/Img/Logos/Img_umunjeong-Black_Logo.png";
 
 function FirstPage() {
   const { navigateSignin, navigateSignup } = useNavigation();
