@@ -13,7 +13,7 @@ import {
 import HeroImage from "../../Assets/Img/Auth/Img_Signin_Hero.png"
 import Logo from "../../Assets/Img/Logos/Img_umunjeong-Black_Logo.png";
 
-import Auth_input from "../../Components/Auth/Input/Input";
+import Auth_input from "../../Components/Auth/Input/Input.jsx";
 import Auth_Button from "../../Components/Auth/Submit_Button/Submit_Button";
 
 import showPassword from "../../Assets/Img/Auth/Img_Passeord_Show.png";
