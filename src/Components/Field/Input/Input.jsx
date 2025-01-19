@@ -4,7 +4,7 @@ import {
   Update_input_input_Box,
   Update_input_span,
   Update_input_input,
-} from "../../styles/update_input";
+} from "../../Styles/update_input";
 import CustomDropdown from "../../Dropdown_Input/Dropdown_Input.jsx";
 import { Sotre_Field } from "../../../store/store.js";
 

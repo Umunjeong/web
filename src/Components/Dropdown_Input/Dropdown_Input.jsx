@@ -4,7 +4,7 @@ import {
   DropdownButton,
   DropdownList,
   DropdownItem,
-} from "../styles/custom_dropdown";
+} from "../Styles/custom_dropdown";
 
 function CustomDropdown({ value, onChange }) {
   const [isOpen, setIsOpen] = useState(false);

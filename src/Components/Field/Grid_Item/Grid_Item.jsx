@@ -5,7 +5,7 @@ import {
   Info_Box,
   Update_Box,
   Name_Box,
-} from "../../styles/field_item";
+} from "../../Styles/field_item";
 
 import Field_Primary_Image from "../../../Assets/Img/Primarys/Img_Primary-Field.png";
 
