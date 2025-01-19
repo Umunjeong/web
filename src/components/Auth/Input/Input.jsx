@@ -1,4 +1,4 @@
-import { Auth_input_spen, Auth_inpput_input } from "../../styles/auth_input";
+import { Auth_input_spen, Auth_inpput_input } from "../../Styles/auth_input";
 import { Sotre_auth } from "../../../store/store";
 
 function Auth_input({ name, type }) {
