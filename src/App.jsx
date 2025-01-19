@@ -4,7 +4,7 @@ import { Route, Routes, Navigate, BrowserRouter } from "react-router-dom";
 
 import FirstPage from "./pages/FirstPage/index.jsx";
 import Signin from "./pages/Signin/index.jsx";
-import Signup_signup from "./pages/Signup.jsx";
+import Signup from "./pages/Signup/index.jsx";
 import Home from "./pages/Home/index.jsx";
 import Field from "./pages/Field/Field/index.jsx";
 import Pin from "./pages/Pin/Pin/index.jsx";
@@ -27,7 +27,7 @@ function App() {
             <Route path="/" element={<Navigate to="/home" />} />
             <Route path="/firstPage" element={<FirstPage />} />
             <Route path="/signin" element={<Signin />} />
-            <Route path="/signup" element={<Signup_signup />} />
+            <Route path="/signup" element={<Signup />} />
             <Route path="/home" element={<Home />} />
             <Route path="/field" element={<Field />} />
             <Route path="/pin" element={<Pin />} />
