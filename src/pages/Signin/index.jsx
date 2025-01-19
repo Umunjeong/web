@@ -10,11 +10,11 @@ import {
   EyeIcon,
 } from "../../styles/signin";
 
-import HeroImage from "../../assets/img/auth/Img_Signin_Hero.png";
+import HeroImage from "../../Assets/Img/Auth/Img_Signin_Hero.png"
 import Logo from "../../assets/img/Logos/Img_umunjeong-Black_Logo.png";
 
-import Auth_input from "../../components/Auth/Input/Input";
-import Auth_Button from "../../components/Auth/Submit_Button/Submit_Button";
+import Auth_input from "../../Components/Auth/Input/Input";
+import Auth_Button from "../../Components/Auth/Submit_Button/Submit_Button";
 
 import showPassword from "../../Assets/Img/Auth/Img_Passeord_Show.png";
 import hidepassword from "../../Assets/Img/Auth/Img_Password_Hide.png";
