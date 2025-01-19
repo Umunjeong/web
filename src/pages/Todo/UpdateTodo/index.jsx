@@ -6,7 +6,7 @@ import {
   From_name_Box,
   From_else_Box,
   Date_input_Box,
-} from "../../../styles/updateTodo";
+} from "../../../styles/updateTodo.js";
 
 import Header from "../../../Components/Header/Header.jsx";
 import All_check from "../../../Components/Page/Check_Bar/Check_Ber.jsx";

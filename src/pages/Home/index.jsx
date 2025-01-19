@@ -1,17 +1,17 @@
 // 메인 페이지
-import { Dev, Field_Box } from "../../styles/Home";
+import { Dev, Field_Box } from "../../styles/Home.js";
 import { useEffect } from "react";
 
 import Header from "../../Components/Header/Header.jsx";
 import Home_Field from "../../Components/Home/Home_Field_Box/Home_Field_Box.jsx";
 
-import useNavigation from "../../router/router";
+import useNavigation from "../../router/router.js";
 import {
   Sotre_auth,
   Sotre_Todo,
   Sotre_Field,
   Sotre_Pin,
-} from "../../store/store";
+} from "../../store/store.js";
 
 function Home() {
   const { navigateSignin } = useNavigation();

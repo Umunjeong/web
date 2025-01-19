@@ -8,7 +8,7 @@ import {
   Style_Signin_Box_Img,
   Style_Signin_Input_Box,
   EyeIcon,
-} from "../../styles/signin";
+} from "../../styles/signin.js";
 
 import HeroImage from "../../Assets/Img/Auth/Img_Signin_Hero.png";
 import Logo from "../../Assets/Img/Logos/Img_umunjeong-Black_Logo.png";

@@ -5,7 +5,7 @@ import {
   Button_Box,
   From_name_Box,
   From_else_Box,
-} from "../../../styles/updateField";
+} from "../../../styles/updateField.js";
 
 import Header from "../../../Components/Header/Header.jsx";
 import All_check from "../../../Components/Page/Check_Bar/Check_Ber.jsx";

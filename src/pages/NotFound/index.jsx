@@ -7,7 +7,7 @@ import {
   Spen_Goto_Box,
   GotoBehind,
   GotoHome,
-} from ".././../styles/notFound";
+} from ".././../styles/notFound.js";
 
 import Header from "../../Components/Header/Header.jsx"
 

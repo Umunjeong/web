@@ -6,7 +6,7 @@ import {
   Style_First_Box_Img,
   Style_First_Button,
   Style_First_Button_Box,
-} from "../../styles/firstPage";
+} from "../../styles/firstPage.js";
 
 import useNavigation from "../../router/router.js";
 

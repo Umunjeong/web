@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Dev, Pin_Box, Pin_Grid_Box } from "../../../styles/Pin";
+import { Dev, Pin_Box, Pin_Grid_Box } from "../../../styles/Pin.js";
 
 import Pin_item from "../../../Components/Pin/Grid_item/Grid_item.jsx";
 import Header from "../../../Components/Header/Header.jsx";

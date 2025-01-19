@@ -8,7 +8,7 @@ import {
   Style_Signup_Box_Img,
   Style_Signup_Input_Box,
   EyeIcon,
-} from "../../styles/signup";
+} from "../../styles/signup.js";
 
 import HeroImage from "../../Assets/Img/Auth/Img_Signup_Hero.png";
 import Logo from "../../Assets/Img/Logos/Img_umunjeong-Black_Logo.png";
