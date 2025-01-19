@@ -1,6 +1,6 @@
 //pin, field 페이지의 중간 바
 
-import useNavigation from "../../../router/router";
+import useNavigation from "../../../router/router.js";
 import {
   Dev,
   Field_search_name_Box,
@@ -12,7 +12,7 @@ import {
 
 import search from "../../../Assets/Img/Search/Img_Search.png";
 
-import { Sotre_Field } from "../../../store/store";
+import { Sotre_Field } from "../../../store/store.js";
 
 function All_search({ type }) {
   const { setFieldSearchDara, setPinSearchDara } = Sotre_Field();

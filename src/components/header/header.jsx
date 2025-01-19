@@ -1,7 +1,7 @@
 import { StyleHeader, StyleLogo, StyleMemu, StyleSpen } from "../Styles/header";
 
 import Logo from "../../Assets/Img/Logos/Img_umunjeong-White_logo.png";
-import useNavigation from "../../router/router";
+import useNavigation from "../../router/router.js";
 
 function Header({ setGroup }) {
   const { navigateHome, navigateField } = useNavigation();

@@ -1,13 +1,11 @@
-import { useNavigate } from "react-router-dom";
 import { Dev, Img_Box, Img, Info_Box, Update_Box } from "../../Styles/pin_item";
 import Pin_Primary_Image from "../../../Assets/Img/Primarys/Img_Primary_Pin.png";
 
-import { PinDelete } from "../../../Api/PinApi";
+import { PinDelete } from "../../../Api/PinApi.js";
 
-import useNavigation from "../../../router/router";
+import useNavigation from "../../../router/router.js";
 
 function Pin_item({ id, name, link, img }) {
-  const navigate = useNavigate();
   const { navigateField } = useNavigation();
 
   let imgSrc = img;
@@ -17,7 +15,7 @@ function Pin_item({ id, name, link, img }) {
     localStorage.setItem("Pin_Name", name);
     localStorage.setItem("Pin_Src", link);
     localStorage.setItem("Pin_id", id);
-    navigate("/updatePin");
+    navigateUpdatePin();
   };
 
   const handleDelete = async (event) => {

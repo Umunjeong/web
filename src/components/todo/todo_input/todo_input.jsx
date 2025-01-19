@@ -6,7 +6,7 @@ import {
   Update_input_input,
 } from "../../Styles/update_input";
 import CustomDropdown from "../../Dropdown_Input/Dropdown_Input";
-import { Sotre_Todo } from "../../../store/store";
+import { Sotre_Todo } from "../../../store/store.js";
 
 export default function Todo_input({ name, value }) {
   const [imageSelected, setImageSelected] = useState(false);

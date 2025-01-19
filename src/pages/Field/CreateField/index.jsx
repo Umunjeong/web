@@ -9,10 +9,10 @@ import {
   From_else_Box,
 } from "../../../styles/createField";
 
-import Header from "../../../Components/Header/Header";
-import All_check from "../../../Components/Page/Check_Bar/Check_Ber";
-import Field_input from "../../../Components/Field/Input/Input";
-import Submit_button from "../../../Components/Page/Submit_button/Submit_button";
+import Header from "../../../Components/Header/Header.jsx";
+import All_check from "../../../Components/Page/Check_Bar/Check_Ber.jsx";
+import Field_input from "../../../Components/Field/Input/Input.jsx";
+import Submit_button from "../../../Components/Page/Submit_button/Submit_button.jsx";
 
 function CreateField() {
   const name = localStorage.getItem("Group"); // 로컬스토리지에서 그룹 이름 가져오기

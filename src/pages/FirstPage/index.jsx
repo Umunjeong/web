@@ -8,7 +8,7 @@ import {
   Style_First_Button_Box,
 } from "../../styles/firstPage";
 
-import useNavigation from "../../router/router";
+import useNavigation from "../../router/router.js";
 
 import HeroImage from "../../Assets/Img/FirstPage/Img_FirstPage_Hero.png";
 import Logo from "../../Assets/Img/Logos/Img_umunjeong-Black_Logo.png";

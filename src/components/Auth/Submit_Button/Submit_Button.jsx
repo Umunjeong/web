@@ -5,8 +5,8 @@ import {
   Style_Link_Text,
   Style_Auth_Container,
 } from "../../styles/auth_button";
-import { Sotre_auth } from "../../../store/store";
-import useNavigation from "../../../router/router";
+import { Sotre_auth } from "../../../store/store.js";
+import useNavigation from "../../../router/router.js";
 
 const Auth_Button = ({ name, type }) => {
   const { EmailData, PasswordData } = Sotre_auth();

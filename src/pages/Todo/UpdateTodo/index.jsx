@@ -8,12 +8,12 @@ import {
   Date_input_Box,
 } from "../../../styles/updateTodo";
 
-import Header from "../../../Components/Header/Header";
-import All_check from "../../../Components/Page/Check_Bar/Check_Ber";
+import Header from "../../../Components/Header/Header.jsx";
+import All_check from "../../../Components/Page/Check_Bar/Check_Ber.jsx";
 
-import Submit_button from "../../../Components/Page/Submit_button/Submit_button";
-import Todo_date_input from "../../../Components/Todo/Date_input/Date_Input";
-import Todo_input from "../../../Components/Todo/Todo_Input/Todo_Input";
+import Submit_button from "../../../Components/Page/Submit_button/Submit_button.jsx";
+import Todo_date_input from "../../../Components/Todo/Date_input/Date_Input.jsx";
+import Todo_input from "../../../Components/Todo/Todo_Input/Todo_Input.jsx";
 
 function UpdateTodo() {
   const Group_Name = localStorage.getItem("Group");

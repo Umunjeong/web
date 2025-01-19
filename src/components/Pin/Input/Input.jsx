@@ -5,7 +5,7 @@ import {
   Update_input_span,
   Update_input_input,
 } from "../../styles/update_input";
-import { Sotre_Pin } from "../../../store/store";
+import { Sotre_Pin } from "../../../store/store.js";
 
 export default function Pin_input({ name, value }) {
   const {

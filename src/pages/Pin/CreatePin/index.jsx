@@ -9,10 +9,10 @@ import {
 } from "../../../styles/createPin";
 
 import Header from "../../../Components/Header/Header.jsx";
-import All_check from "../../../Components/Page/Check_Bar/Check_Ber";
+import All_check from "../../../Components/Page/Check_Bar/Check_Ber.jsx";
 
 import Pin_input from "../../../Components/Pin/Input/Input.jsx";
-import Submit_button from "../../../Components/Page/Submit_button/Submit_button";
+import Submit_button from "../../../Components/Page/Submit_button/Submit_button.jsx";
 
 function CreatePin() {
   const GroupName = localStorage.getItem("Group");

@@ -7,7 +7,7 @@ import {
   StyledInput,
   StyledSpan,
 } from "../../styles/todo_date_input";
-import { Sotre_Todo } from "../../../store/store";
+import { Sotre_Todo } from "../../../store/store.js";
 
 function Todo_date_input({ type, date_Type }) {
   const StartDate = localStorage.getItem("Todo_StartDate") || "2025.01.01";

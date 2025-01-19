@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axiosInstance from "../../../Api/Token/Intersaptor";
+import axiosInstance from "../../../Api/Token/Intersaptor.js";
 
 import {
   Dev,
@@ -11,8 +11,8 @@ import {
   Home_Todo_Box_Display_Box,
 } from "../../Styles/home_Field";
 
-import Home_Todo from "../Home_Todo_Item/Home_Todo_Item";
-import useNavigation from "../../../router/router";
+import Home_Todo from "../Home_Todo_Item/Home_Todo_Item.jsx";
+import useNavigation from "../../../router/router.js";
 
 function Home_Field({ name }) {
   const { navigateField, navigateCreateTodo } = useNavigation();

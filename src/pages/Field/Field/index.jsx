@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import { Dev, Field_Box, Field_Grid_Box } from "../../../styles/Field";
 
 import Field_item from "../../../Components/Field/Grid_Item/Grid_Item.jsx";
-import Header from "../../../Components/Header/Header";
-import All_search from "../../../Components/Page/Search_Ber/Search_Ber";
+import Header from "../../../Components/Header/Header.jsx";
+import All_search from "../../../Components/Page/Search_Ber/Search_Ber.jsx";
 
-import axiosInstance from "../../../Api/Token/Intersaptor";
-import { Sotre_Field } from "../../../store/store";
+import axiosInstance from "../../../Api/Token/Intersaptor.js";
+import { Sotre_Field } from "../../../store/store.js";
 
 function Field() {
   localStorage.removeItem("Field");

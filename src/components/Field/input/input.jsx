@@ -5,8 +5,8 @@ import {
   Update_input_span,
   Update_input_input,
 } from "../../styles/update_input";
-import CustomDropdown from "../../Dropdown_Input/Dropdown_Input";
-import { Sotre_Field } from "../../../store/store";
+import CustomDropdown from "../../Dropdown_Input/Dropdown_Input.jsx";
+import { Sotre_Field } from "../../../store/store.js";
 
 export default function Field_input({ name, value }) {
   const [imageSelected, setImageSelected] = useState(false);

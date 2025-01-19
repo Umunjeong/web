@@ -7,11 +7,11 @@ import {
   From_else_Box,
 } from "../../../styles/updateField";
 
-import Header from "../../../Components/Header/Header";
-import All_check from "../../../Components/Page/Check_Bar/Check_Ber";
+import Header from "../../../Components/Header/Header.jsx";
+import All_check from "../../../Components/Page/Check_Bar/Check_Ber.jsx";
 
-import Field_input from "../../../Components/Field/Input/Input";
-import Submit_button from "../../../Components/Page/Submit_button/Submit_button";
+import Field_input from "../../../Components/Field/Input/Input.jsx";
+import Submit_button from "../../../Components/Page/Submit_button/Submit_button.jsx";
 
 function UpdateField() {
   const Group = localStorage.getItem("Group");

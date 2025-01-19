@@ -9,7 +9,7 @@ import {
   GotoHome,
 } from ".././../styles/notFound";
 
-import Header from "../../Components/Header/Header"
+import Header from "../../Components/Header/Header.jsx"
 
 function NotFound() {
   const navigate = useNavigate(); // navigate 함수 사용

@@ -2,19 +2,19 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import { Route, Routes, Navigate, BrowserRouter } from "react-router-dom";
 
-import FirstPage from "./pages/FirstPage/index";
-import Signin from "./pages/Signin/index";
-import Signup_signup from "./pages/Signup";
-import Home from "./pages/Home/index";
-import Field from "./pages/Field/Field/index";
-import Pin from "./pages/Pin/Pin/index";
-import CreatePin from "./pages/Pin/CreatePin/index";
-import UpdatePin from "./pages/Pin/UpdatePin/index";
-import CreateField from "./pages/Field/CreateField/index";
-import UpdateField from "./pages/Field/UpdateField/index";
-import CreateTodo from "./pages/Todo/CreateTodo/index";
-import UpdateTodo from "./pages/Todo/UpdateTodo/index";
-import NotFound from "./pages/NotFound/index";
+import FirstPage from "./pages/FirstPage/index.jsx";
+import Signin from "./pages/Signin/index.jsx";
+import Signup_signup from "./pages/Signup.jsx";
+import Home from "./pages/Home/index.jsx";
+import Field from "./pages/Field/Field/index.jsx";
+import Pin from "./pages/Pin/Pin/index.jsx";
+import CreatePin from "./pages/Pin/CreatePin/index.jsx";
+import UpdatePin from "./pages/Pin/UpdatePin/index.jsx";
+import CreateField from "./pages/Field/CreateField/index.jsx";
+import UpdateField from "./pages/Field/UpdateField/index.jsx";
+import CreateTodo from "./pages/Todo/CreateTodo/index.jsx";
+import UpdateTodo from "./pages/Todo/UpdateTodo/index.jsx";
+import NotFound from "./pages/NotFound/index.jsx";
 
 function App() {
   const queryClient = new QueryClient();
