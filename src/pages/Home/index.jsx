@@ -2,7 +2,7 @@
 import { Dev, Field_Box } from "../../styles/Home";
 import { useEffect } from "react";
 
-import Header from "../../Components/Header/header";
+import Header from "../../Components/Header/header.jsx";
 import Home_Field from "../../Components/Home/Home_Field_Box/Home_Field_Box";
 
 import useNavigation from "../../router/router";
