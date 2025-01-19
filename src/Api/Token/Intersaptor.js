@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IssuanceToken, CheckToken } from "./Token";
+import { IssuanceToken, CheckToken } from "./Token.js";
 
 const axiosInstance = axios.create({
   baseURL: "http://localhost:3000",

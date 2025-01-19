@@ -1,4 +1,4 @@
-import axiosInstance from "./Token/Intersaptor";
+import axiosInstance from "./Token/Intersaptor.js";
 
 //추가
 export const FieldPost = async (group, name, img) => {

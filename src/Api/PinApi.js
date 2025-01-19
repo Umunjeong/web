@@ -1,4 +1,4 @@
-import axiosInstance from "../api/token/Intersaptor";
+import axiosInstance from "./Token/Intersaptor.js"
 
 //추가
 export const PinPost = async (group, field, pin, link, img) => {
