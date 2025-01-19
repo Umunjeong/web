@@ -4,7 +4,7 @@ import {
   Dev,
   Field_search_name_Box,
   Field_search_name,
-} from "../../styles/all_ search";
+} from "../../Styles/all_ search";
 
 function All_check({ name }) {
   return (

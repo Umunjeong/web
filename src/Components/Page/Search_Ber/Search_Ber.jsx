@@ -8,7 +8,7 @@ import {
   SearchContainer,
   SearchInput,
   SearchIcon,
-} from "../../styles/all_ search";
+} from "../../Styles/all_ search";
 
 import search from "../../../Assets/Img/Search/Img_Search.png";
 
