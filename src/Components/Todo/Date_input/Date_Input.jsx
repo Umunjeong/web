@@ -6,7 +6,7 @@ import {
   InputWrapper,
   StyledInput,
   StyledSpan,
-} from "../../styles/todo_date_input";
+} from "../../Styles/todo_date_input";
 import { Sotre_Todo } from "../../../store/store.js";
 
 function Todo_date_input({ type, date_Type }) {

@@ -9,7 +9,7 @@ import {
 
 import Field_Primary_Image from "../../../Assets/Img/Primarys/Img_Primary-Field.png";
 
-import { FieldDelete } from "../../../api/FieldApi.js";
+import { FieldDelete } from "../../../Api/FieldApi.js";
 import useNavigation from "../../../router/router.js";
 
 function Field_item({ id, name, pincount, img }) {
