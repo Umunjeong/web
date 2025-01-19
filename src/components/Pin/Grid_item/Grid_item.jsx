@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Dev, Img_Box, Img, Info_Box, Update_Box } from "../../Styles/pin_item";
 import Pin_Primary_Image from "../../../Assets/Img/Primarys/Img_Primary_Pin.png";
 
-import { PinDelete } from "../../../api/PinApi";
+import { PinDelete } from "../../../Api/PinApi";
 
 import useNavigation from "../../../router/router";
 

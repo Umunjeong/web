@@ -1,7 +1,7 @@
 import { Dev } from "../../Styles/update_submit_button";
 import { ToDoPatch, ToDoPost, ToDoDelete } from "../../../Api/TodoApi";
-import { FieldPatch, FieldPost } from "../../../api/FieldApi";
-import { PinPatch, PinPost } from "../../../api/PinApi";
+import { FieldPatch, FieldPost } from "../../../Api/FieldApi";
+import { PinPatch, PinPost } from "../../../Api/PinApi";
 import useNavigation from "../../../router/router";
 
 import { Sotre_Todo } from "../../../store/store";

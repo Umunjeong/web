@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Dev, Field_Box, Field_Grid_Box } from "../../../styles/Field";
 
 import Field_item from "../../../Components/Field/Grid_Item/Grid_Item";
-import Header from "../../../components/header/header";
+import Header from "../../../Components/Header/Header";
 import All_search from "../../../Components/Page/Search_Ber/Search_Ber";
 
 import axiosInstance from "../../../Api/Token/Intersaptor";

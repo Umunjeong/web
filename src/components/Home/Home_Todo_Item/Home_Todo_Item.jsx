@@ -1,6 +1,4 @@
-import PropTypes from "prop-types";
-import { useNavigate } from "react-router-dom";
-
+import useNavigation from "../../../router/router";
 import { Dev, Home_Todo_Work_spen } from "../../styles/home_Todo";
 
 function Home_Todo({
@@ -11,7 +9,7 @@ function Home_Todo({
   name,
   state,
 }) {
-  const Navigat = useNavigate();
+  const { navigateUpdateTodo } = useNavigation();
 
   const goTo_UpDate_Todo_Heldle = () => {
     localStorage.setItem("Todo_id", id);
@@ -20,7 +18,7 @@ function Home_Todo({
     localStorage.setItem("Todo_EndDate", Todo_EndDate);
     localStorage.setItem("Group", name);
     localStorage.setItem("ToodoState", state);
-    Navigat("/updateTodo");
+    navigateUpdateTodo();
   };
 
   return (
@@ -40,11 +38,5 @@ function Home_Todo({
     </Dev>
   );
 }
-
-Home_Todo.propTypes = {
-  Todo_Name: PropTypes.string.isRequired,
-  Todo_WtartDate: PropTypes.string.isRequired,
-  Todo_EndDate: PropTypes.string.isRequired,
-};
 
 export default Home_Todo;

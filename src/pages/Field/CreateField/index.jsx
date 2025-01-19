@@ -9,9 +9,9 @@ import {
   From_else_Box,
 } from "../../../styles/createField";
 
-import Header from "../../../components/header/header";
+import Header from "../../../Components/Header/Header";
 import All_check from "../../../Components/Page/Check_Bar/Check_Ber";
-import Field_input from "../../../Components/Field/input/input";
+import Field_input from "../../../Components/Field/Input/Input";
 import Submit_button from "../../../Components/Page/Submit_button/Submit_button";
 
 function CreateField() {

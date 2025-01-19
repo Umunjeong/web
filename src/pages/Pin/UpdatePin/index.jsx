@@ -10,7 +10,7 @@ import {
   From_else_Box,
 } from "../../../styles/updatePin";
 
-import Header from "../../../Components/Header/header";
+import Header from "../../../Components/Header/Header";
 import All_check from "../../../Components/Page/Check_Bar/Check_Ber";
 
 import Pin_input from "../../../Components/Pin/Input/Input";

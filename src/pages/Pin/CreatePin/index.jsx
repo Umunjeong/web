@@ -8,7 +8,7 @@ import {
   From_else_Box,
 } from "../../../styles/createPin";
 
-import Header from "../../../Components/Header/header.jsx";
+import Header from "../../../Components/Header/Header.jsx";
 import All_check from "../../../Components/Page/Check_Bar/Check_Ber";
 
 import Pin_input from "../../../Components/Pin/Input/Input.jsx";

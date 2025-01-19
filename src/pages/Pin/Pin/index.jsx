@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Dev, Pin_Box, Pin_Grid_Box } from "../../../styles/Pin";
 
 import Pin_item from "../../../Components/Pin/Grid_item/Grid_item.jsx";
-import Header from "../../../Components/Header/header.jsx";
+import Header from "../../../Components/Header/Header.jsx";
 import All_search from "../../../Components/Page/Search_Ber/Search_Ber";
 
 import axiosInstance from "../../../Api/Token/Intersaptor.js";
