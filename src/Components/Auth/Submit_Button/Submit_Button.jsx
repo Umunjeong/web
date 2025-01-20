@@ -63,7 +63,7 @@ const Auth_Button = ({ name, type }) => {
 
       if (data.type === "success") {
         alert(
-          "회원가입에 성공하였습니다. 이메일을 확인하여 인증후 제 로그인 하여주세요"
+          "회원가입에 성공하였습니다. 이메일을 확인하여 인증후 다시 로그인 해주세요."
         );
         navigateFirstPage();
       } else {
