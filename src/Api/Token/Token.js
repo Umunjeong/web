@@ -21,12 +21,10 @@ export const IssuanceToken = async (navigateSignin) => {
       localStorage.setItem("accessToken", newAccessToken);
       navigateSignin();
     } else {
-      console.log("로그인이 필요합니다, 로그인으로 이동합니다.");
       navigateSignin();
     }
   } catch (error) {
-    console.log("토큰 재발급 오류:", error);
-    console.log("로그인이 필요합니다, 로그인으로 이동합니다.");
+    localStorage.removeItem("accessToken");
     navigateSignin();
   }
 };
