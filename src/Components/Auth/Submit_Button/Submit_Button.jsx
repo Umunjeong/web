@@ -18,7 +18,7 @@ const Auth_Button = ({ name, type }) => {
   const authsigninFromSubmit = async () => {
     try {
       const response = await axios.post(
-        "https://port-0-umunjeong-server-m637n0dz9587ba58.sel4.cloudtype.app//auth/signin",
+        "https://port-0-umunjeong-server-m637n0dz9587ba58.sel4.cloudtype.app/auth/signin",
         {
           email: EmailData,
           password: PasswordData,
