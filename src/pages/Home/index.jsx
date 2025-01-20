@@ -66,8 +66,6 @@ function Home() {
       !localStorage.getItem("accessToken") ||
       !localStorage.getItem("refreshToken")
     ) {
-      alert("토큰이 없어서 홈으로 이동합니다.");
-      console.log("토큰이 없어서 홈으로 이동합니다.");
       navigateSignin();
     }
   }, []);
