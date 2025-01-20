@@ -7,10 +7,10 @@ import {
 } from "../../Styles/auth_button.js";
 import { Sotre_auth } from "../../../store/store.js";
 import useNavigation from "../../../router/router.js";
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const Auth_Button = ({ name, type }) => {
   const { EmailData, PasswordData } = Sotre_auth();
-  const apiUrl = process.env.REACT_APP_API_URL;
 
   const { navigateHome, navigateSignin, navigateSignup, navigateFirstPage } =
     useNavigation();
@@ -49,7 +49,7 @@ const Auth_Button = ({ name, type }) => {
   const authSignupFromSubmit = async () => {
     try {
       const response = await axios.post(
-        `${apiUrl}/auth/signup`,
+        `${apiUrl}/auth/sign`,
         {
           email: EmailData,
           password: PasswordData,

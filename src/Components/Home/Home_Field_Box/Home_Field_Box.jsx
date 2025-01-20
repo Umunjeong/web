@@ -13,7 +13,7 @@ import {
 
 import Home_Todo from "../Home_Todo_Item/Home_Todo_Item.jsx";
 import useNavigation from "../../../router/router.js";
-const apiUrl = process.env.REACT_APP_API_URL;
+const apiUrl = import.meta.env.VITE_API_URL;
 
 function Home_Field({ name }) {
   const { navigateField, navigateCreateTodo } = useNavigation();

@@ -6,7 +6,7 @@ const useNavigation = () => {
   return {
     navigateHome: () => navigate("/home"),
     navigateFirstPage: () => navigate("/firstPage"),
-    navigateSignin: () => navigate("/signin"),
+    navigateSignin: () => console.log("error"), // 변경
     navigateSignup: () => navigate("/signup"),
     navigateField: () => navigate("/field"),
     navigatePin: () => navigate("/pin"),

@@ -1,5 +1,5 @@
 import axiosInstance from "./Token/Intersaptor.js";
-const apiUrl = process.env.REACT_APP_API_URL;
+const apiUrl = import.meta.env.VITE_API_URL;
 
 //추가
 export const FieldPost = async (group, name, img) => {

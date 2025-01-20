@@ -1,8 +1,8 @@
 import axios from "axios";
+const apiUrl = import.meta.env.VITE_API_URL;
 
 export const IssuanceToken = async (navigateSignin) => {
   const refreshToken = localStorage.getItem("refreshToken");
-  const apiUrl = process.env.REACT_APP_API_URL;
 
   if (!refreshToken) {
     console.log("로그인이 필요합니다, 로그인으로 이동합니다.");
