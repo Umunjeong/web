@@ -28,15 +28,6 @@ function Signin() {
     setShowPassword((prevState) => !prevState);
   };
 
-  const { navigateHome } = useNavigation();
-
-  const accessToken = localStorage.getItem("accessToken");
-  const refreshToken = localStorage.getItem("refreshToken");
-
-  if (accessToken && refreshToken) {
-    navigateHome();
-  }
-
   return (
     <Dev>
       <StyleHeroImageBox>
