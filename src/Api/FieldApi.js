@@ -1,4 +1,5 @@
 import axiosInstance from "./Token/Intersaptor.js";
+const apiUrl = process.env.REACT_APP_API_URL;
 
 //추가
 export const FieldPost = async (group, name, img) => {
@@ -11,7 +12,7 @@ export const FieldPost = async (group, name, img) => {
     }
 
     const response = await axiosInstance.post(
-      "http://localhost:3000/field/post",
+      `${apiUrl}/field/post`,
       formData,
       {
         headers: {
@@ -41,7 +42,7 @@ export const FieldPatch = async (id, afterGroup, afterField, img) => {
     }
 
     const response = await axiosInstance.patch(
-      "http://localhost:3000/field/patch",
+      `${apiUrl}/field/patch`,
       formData,
       {
         headers: {
@@ -62,14 +63,11 @@ export const FieldPatch = async (id, afterGroup, afterField, img) => {
 //삭제
 export const FieldDelete = async (id) => {
   try {
-    const response = await axiosInstance.delete(
-      "http://localhost:3000/field/delete",
-      {
-        data: {
-          id,
-        },
-      }
-    );
+    const response = await axiosInstance.delete(`${apiUrl}/field/delete`, {
+      data: {
+        id,
+      },
+    });
 
     if (response.data.type === "success") {
       return "success";

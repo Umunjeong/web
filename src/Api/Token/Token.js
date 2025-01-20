@@ -2,6 +2,7 @@ import axios from "axios";
 
 export const IssuanceToken = async (navigateSignin) => {
   const refreshToken = localStorage.getItem("refreshToken");
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   if (!refreshToken) {
     console.log("로그인이 필요합니다, 로그인으로 이동합니다.");
@@ -11,7 +12,7 @@ export const IssuanceToken = async (navigateSignin) => {
 
   try {
     // 서버에 토큰 발급 요청
-    const response = await axios.post("http://localhost:3000/token/issuance", {
+    const response = await axios.post(`${apiUrl}/token/issuance`, {
       refreshToken: refreshToken,
     });
 
@@ -38,7 +39,7 @@ export const CheckToken = async (accessToken) => {
 
   try {
     const response = await axios.post(
-      "http://localhost:3000/token/check",
+      `${apiUrl}/token/check`,
       {},
       {
         headers: {

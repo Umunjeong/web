@@ -10,6 +10,7 @@ import useNavigation from "../../../router/router.js";
 
 const Auth_Button = ({ name, type }) => {
   const { EmailData, PasswordData } = Sotre_auth();
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   const { navigateHome, navigateSignin, navigateSignup, navigateFirstPage } =
     useNavigation();
@@ -18,7 +19,7 @@ const Auth_Button = ({ name, type }) => {
   const authsigninFromSubmit = async () => {
     try {
       const response = await axios.post(
-        "https://port-0-umunjeong-server-m637n0dz9587ba58.sel4.cloudtype.app/auth/signin",
+        `${apiUrl}/auth/signin`,
         {
           email: EmailData,
           password: PasswordData,
@@ -48,7 +49,7 @@ const Auth_Button = ({ name, type }) => {
   const authSignupFromSubmit = async () => {
     try {
       const response = await axios.post(
-        "https://port-0-umunjeong-server-m637n0dz9587ba58.sel4.cloudtype.app/auth/signup",
+        `${apiUrl}/auth/signup`,
         {
           email: EmailData,
           password: PasswordData,

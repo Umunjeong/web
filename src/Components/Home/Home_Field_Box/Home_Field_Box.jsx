@@ -13,6 +13,7 @@ import {
 
 import Home_Todo from "../Home_Todo_Item/Home_Todo_Item.jsx";
 import useNavigation from "../../../router/router.js";
+const apiUrl = process.env.REACT_APP_API_URL;
 
 function Home_Field({ name }) {
   const { navigateField, navigateCreateTodo } = useNavigation();
@@ -33,15 +34,12 @@ function Home_Field({ name }) {
     const fetchTodos = async () => {
       const date = getCurrentDate();
       try {
-        const response = await axiosInstance.get(
-          "http://localhost:3000/todolist/",
-          {
-            params: {
-              date,
-              group: group,
-            },
-          }
-        );
+        const response = await axiosInstance.get(`${apiUrl}/todolist/`, {
+          params: {
+            date,
+            group: group,
+          },
+        });
 
         if (response.data.type === "success") {
           const todoData = Object.values(response.data.todoInfo);

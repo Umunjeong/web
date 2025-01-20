@@ -1,4 +1,5 @@
 import axiosInstance from "./Token/Intersaptor.js";
+const apiUrl = process.env.REACT_APP_API_URL;
 
 //추가
 export const ToDoPost = async (
@@ -9,16 +10,13 @@ export const ToDoPost = async (
   todoEndDay
 ) => {
   try {
-    const response = await axiosInstance.post(
-      "http://localhost:3000/todolist/post",
-      {
-        group,
-        name,
-        state,
-        todoStartDay,
-        todoEndDay,
-      }
-    );
+    const response = await axiosInstance.post(`${apiUrl}/todolist/post`, {
+      group,
+      name,
+      state,
+      todoStartDay,
+      todoEndDay,
+    });
     if (response.data.type === "success") {
       return "success";
     }
@@ -37,17 +35,14 @@ export const ToDoPatch = async (
   afterEndDay
 ) => {
   try {
-    const response = await axiosInstance.patch(
-      "http://localhost:3000/todolist/patch",
-      {
-        id,
-        afterGroup,
-        afterTodo,
-        state,
-        afterStartDay,
-        afterEndDay,
-      }
-    );
+    const response = await axiosInstance.patch(`${apiUrl}/todolist/patch`, {
+      id,
+      afterGroup,
+      afterTodo,
+      state,
+      afterStartDay,
+      afterEndDay,
+    });
     if (response.data.type === "success") {
       return "success";
     }
@@ -59,14 +54,11 @@ export const ToDoPatch = async (
 //삭제
 export const ToDoDelete = async (id) => {
   try {
-    const response = await axiosInstance.delete(
-      "http://localhost:3000/todolist/delete",
-      {
-        data: {
-          id,
-        },
-      }
-    );
+    const response = await axiosInstance.delete(`${apiUrl}/todolist/delete`, {
+      data: {
+        id,
+      },
+    });
 
     if (response.data.type === "success") {
       return "success";

@@ -1,4 +1,5 @@
-import axiosInstance from "./Token/Intersaptor.js"
+import axiosInstance from "./Token/Intersaptor.js";
+const apiUrl = process.env.REACT_APP_API_URL;
 
 //추가
 export const PinPost = async (group, field, pin, link, img) => {
@@ -13,15 +14,11 @@ export const PinPost = async (group, field, pin, link, img) => {
       formData.append("img", img); // 이미지 파일을 FormData에 추가
     }
 
-    const response = await axiosInstance.post(
-      "http://localhost:3000/pin/post",
-      formData,
-      {
-        headers: {
-          "Content-Type": "multipart/form-data", // 헤더에 multipart/form-data 명시
-        },
-      }
-    );
+    const response = await axiosInstance.post(`${apiUrl}/pin/post`, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data", // 헤더에 multipart/form-data 명시
+      },
+    });
 
     if (response.data.type === "success") {
       return "success";
@@ -53,7 +50,7 @@ export const PinPatch = async (
     }
 
     const response = await axiosInstance.patch(
-      "http://localhost:3000/pin/patch",
+      `${apiUrl}/pin/patch`,
       formData,
       {
         headers: {
@@ -74,14 +71,11 @@ export const PinPatch = async (
 //삭제
 export const PinDelete = async (id) => {
   try {
-    const response = await axiosInstance.delete(
-      "http://localhost:3000/pin/delete",
-      {
-        data: {
-          id: id,
-        },
-      }
-    );
+    const response = await axiosInstance.delete(`${apiUrl}/pin/delete`, {
+      data: {
+        id: id,
+      },
+    });
 
     if (response.data.type === "success") {
       return "success";

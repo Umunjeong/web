@@ -1,8 +1,9 @@
 import axios from "axios";
 import { IssuanceToken, CheckToken } from "./Token.js";
+const apiUrl = process.env.REACT_APP_API_URL;
 
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: `${apiUrl}`,
 });
 
 axiosInstance.interceptors.request.use(
