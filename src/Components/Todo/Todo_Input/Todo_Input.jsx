@@ -13,7 +13,7 @@ export default function Todo_input({ name, value }) {
 
   // zustand 상태 값과 메서드 가져오기
   const {
-    setTodoGropData,
+    setTodoGroupData,
     setTodoNameData,
     setTodoStartDateData,
     setTodoEndDateData,
@@ -46,7 +46,7 @@ export default function Todo_input({ name, value }) {
   const setStateValue = (inputValue) => {
     switch (name) {
       case "소속 그룹 이름":
-        setTodoGropData(inputValue);
+        setTodoGroupData(inputValue);
         break;
       case "일정 이름":
         setTodoNameData(inputValue);
@@ -114,7 +114,7 @@ export default function Todo_input({ name, value }) {
         {name === "소속 그룹 이름" && (
           <CustomDropdown
             value={getStateValue() || "app"}
-            onChange={(selectedValue) => setTodoGropData(selectedValue)}
+            onChange={(selectedValue) => setTodoGroupData(selectedValue)}
           />
         )}
 

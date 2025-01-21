@@ -14,7 +14,6 @@ export const Sotre_Todo = create((set) => ({
   TodoStartDateData: "",
   TodoEndDateData: "",
   TodoStateData: "",
-
   setTodoGroupData: (TodoGroupData) => set({ TodoGroupData }),
   setTodoNameData: (TodoNameData) => set({ TodoNameData }),
   setTodoStartDateData: (TodoStartDateData) => set({ TodoStartDateData }),
