@@ -28,7 +28,7 @@ export default function Submit_button({ control, type }) {
   const CreateSubmit = async () => {
     const CreateSubmit = window.confirm("추가 하시겠습니까?");
     if (CreateSubmit) {
-      if (control === "Todo") {
+      if (control === "Todo" || control === "todo") {
         response = await ToDoPost(
           TodoGroupData,
           TodoNameData,
@@ -103,7 +103,7 @@ export default function Submit_button({ control, type }) {
   const DeleteSubmit = async () => {
     const DeleteSubmit = window.confirm("삭제 하시겠습니까?");
     if (DeleteSubmit) {
-      if (control === "Todo") {
+      if (control === "todo" || control === "Todo") {
         response = await ToDoDelete(localStorage.getItem("Todo_id"));
       } else {
         console.log("control 값 이상", control);

@@ -18,24 +18,22 @@ import All_check from "../../../Components/Page/Check_Bar/Check_Ber.jsx";
 import Todo_input from "../../../Components/Todo/Todo_Input/Todo_Input.jsx";
 import Submit_button from "../../../Components/Page/Submit_button/Submit_button.jsx";
 import Todo_date_input from "../../../Components/Todo/Date_input/Date_Input.jsx";
+import { Sotre_Todo } from "../../../store/store.js";
+import { useEffect } from "react";
 
 export default function CreateTodo() {
   const Group_Name = localStorage.getItem("Group");
   const name = localStorage.getItem("Todo_Name");
+  const { TodoGroupData, setTodoGroupData } = Sotre_Todo();
+
+  useEffect(() => {
+    setTodoGroupData(Group_Name);
+  }, []);
 
   // 상태 관리
   const [todoName, setTodoName] = useState(""); // 할일 이름 상태
   const [GroupName, setGroupName] = useState(Group_Name); // 소속 분야 이름 상태
   const [toodoState, setTodoState] = useState("진행중");
-
-  // 입력 값 변경 핸들러
-  const handleTodoNameChange = (newValue) => {
-    setTodoName(newValue); // 할일 이름 업데이트
-  };
-
-  const handleFieldNameChange = (newValue) => {
-    setGroupName(newValue); // 소속 그룹 이름 업데이트
-  };
 
   return (
     <Dev>
@@ -46,25 +44,16 @@ export default function CreateTodo() {
           <From_name_Box>
             <Todo_input
               name="소속 그룹 이름"
-              onChange={handleFieldNameChange}
-              value={GroupName} // 선택된 값으로 업데이트
+              value={TodoGroupData} // 선택된 값으로 업데이트
             />
-            <Todo_input
-              name="일정 이름"
-              onChange={handleTodoNameChange}
-              value={todoName}
-            />
+            <Todo_input name="일정 이름" value={todoName} />
           </From_name_Box>
           <From_else_Box>
             <Date_input_Box>
               <Todo_date_input date_Type="start" type="create" />
               <Todo_date_input date_Type="end" type="create" />
             </Date_input_Box>
-            <Todo_input
-              name="일정 상테"
-              value={toodoState}
-              onChange={handleTodoNameChange} // 상태 업데이트 함수 전달
-            />
+            <Todo_input name="일정 상테" value={toodoState} />
           </From_else_Box>
         </From_Box>
         <Button_Box>

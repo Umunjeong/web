@@ -2,8 +2,10 @@ import styled from "@emotion/styled";
 
 export const Dev = styled.div`
   background-color: #3f3f3f;
-  width: 24%;
+  width: 420px;
   height: 70vh;
+  padding-right: 60px;
+  padding-left: 60px;
 `;
 
 export const Home_Feld_Name = styled.div`
@@ -25,7 +27,7 @@ export const Home_Todo_Box = styled.div`
   margin-top: 8px;
   border-radius: 20px;
   height: 64vh;
-  width: 100%;
+  width: 420px;
 `;
 
 export const Home_Todo_Box_Topber_Box = styled.div`
@@ -59,7 +61,6 @@ export const Home_Todo_Box_Display_Box = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
   overflow-y: auto;
   max-height: 58vh;
 `;

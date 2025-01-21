@@ -8,10 +8,11 @@ export const Dev = styled.div`
 `;
 
 export const Field_Box = styled.div`
-  width: 100%;
   height: 88vh;
+  width: 100vw;
   display: flex;
-  justify-content: center;
+  flex-wrap: nowrap; /* 내부 아이템이 줄바꿈 없이 한 줄에 표시되도록 설정 */
+  justify-content: flex-start; /* 아이템들이 왼쪽으로 정렬되게 */
   align-items: center;
-  justify-content: space-evenly;
+  overflow-x: auto;
 `;

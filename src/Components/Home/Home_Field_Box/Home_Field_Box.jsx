@@ -18,9 +18,7 @@ const apiUrl = import.meta.env.VITE_API_URL;
 function Home_Field({ name }) {
   const { navigateField, navigateCreateTodo } = useNavigation();
   const [todos, setTodos] = useState([]);
-  const group = localStorage.getItem("Group")
-    ? localStorage.getItem("Group")
-    : name;
+  const group = name;
 
   const getCurrentDate = () => {
     const date = new Date();
@@ -82,6 +80,7 @@ function Home_Field({ name }) {
         <Home_Todo_Box_Display_Box>
           {todos.map((todo) => (
             <Home_Todo
+              key={todo.id}
               id={todo.id}
               Todo_Name={todo.name}
               Todo_WtartDate={todo.start}

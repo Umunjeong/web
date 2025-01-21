@@ -75,7 +75,7 @@ function Home() {
       <Header></Header>
       <Field_Box>
         <Field_Box>
-          {["web", "server", "app"].map((name, index) => (
+          {["web", "server", "app", "work", "other"].map((name, index) => (
             <Home_Field key={index} name={name} />
           ))}
         </Field_Box>

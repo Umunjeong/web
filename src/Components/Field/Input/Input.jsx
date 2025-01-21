@@ -39,7 +39,6 @@ export default function Field_input({ name, value }) {
   }, [name, value]);
 
   const setStateValue = (inputValue) => {
-    console.log(inputValue);
     switch (name) {
       case "소속 그룹 이름":
         setFieldGroupData(inputValue);
@@ -50,19 +49,19 @@ export default function Field_input({ name, value }) {
     }
   };
 
-  const handleInputChange = (eventOrValue) => {
+  const handleInputChange = (event) => {
     if (name === "이미지") {
-      const file = eventOrValue.target?.files?.[0];
+      const file = event.target?.files?.[0];
       if (file) {
         setImageFile(file); // 이미지 파일 상태에 저장
         setImageSelected(true);
         setFieldImgData(file); // 파일을 상태에 저장 (필요한 경우)
       }
-    } else if (typeof eventOrValue === "object" && eventOrValue.target) {
-      const inputValue = eventOrValue.target.value;
+    } else if (typeof event === "object" && event.target) {
+      const inputValue = event.target.value;
       setStateValue(inputValue);
     } else {
-      setStateValue(eventOrValue);
+      setStateValue(event);
     }
   };
 
