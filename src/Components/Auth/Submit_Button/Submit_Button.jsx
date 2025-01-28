@@ -49,7 +49,7 @@ const Auth_Button = ({ name, type }) => {
   const authSignupFromSubmit = async () => {
     try {
       const response = await axios.post(
-        `${apiUrl}/auth/sign`,
+        `${apiUrl}/auth/signup`,
         {
           email: EmailData,
           password: PasswordData,
