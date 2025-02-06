@@ -101,3 +101,4 @@ const Auth_Button = ({ name, type }) => {
 };
 
 export default Auth_Button;
+

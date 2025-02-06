@@ -55,7 +55,13 @@ function Home_Field({ name }) {
   }, [group]);
 
   const goToF_ield_Heldle = (name) => {
-    if (name === "web" || name === "server" || name === "app") {
+    if (
+      name === "web" ||
+      name === "server" ||
+      name === "app" ||
+      name === "other" ||
+      name === "work"
+    ) {
       localStorage.setItem("Group", name);
       navigateField();
     }
