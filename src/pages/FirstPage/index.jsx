@@ -11,7 +11,7 @@ import { useEffect } from "react";
 
 import useNavigation from "../../router/router.js";
 
-import HeroImage from "../../Assets/Img/FirstPage/Img_FirstPage_Hero.png";
+import HeroImage from "../../Assets/Img/Auth/Img_Hero.svg";
 import Logo from "../../Assets/Img/Logos/Img_umunjeong-Black_Logo.png";
 
 function FirstPage() {

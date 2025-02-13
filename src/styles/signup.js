@@ -10,11 +10,14 @@ export const Dev = styled.div`
 export const StyleHeroImageBox = styled.div`
   width: 50%;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const StyleHeroImage = styled.img`
-  width: 100%;
-  height: 100vh;
+  width: 70%;
+  height: 70vh;
 `;
 
 export const StyleSignupBox = styled.div`

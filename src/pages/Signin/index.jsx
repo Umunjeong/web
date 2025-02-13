@@ -10,7 +10,7 @@ import {
   EyeIcon,
 } from "../../styles/signin.js";
 
-import HeroImage from "../../Assets/Img/Auth/Img_Signin_Hero.png";
+import HeroImage from "../../Assets/Img/Auth/Img_Hero.svg";
 import Logo from "../../Assets/Img/Logos/Img_umunjeong-Black_Logo.png";
 
 import Auth_input from "../../Components/Auth/Input/Input.jsx";
@@ -19,14 +19,12 @@ import Auth_Button from "../../Components/Auth/Submit_Button/Submit_Button.jsx";
 import showPassword from "../../Assets/Img/Auth/Img_Passeord_Show.png";
 import hidepassword from "../../Assets/Img/Auth/Img_Password_Hide.png";
 
-function Signin() {
+const Signin = () => {
   const [showPasswordType, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
   };
-
-  
 
   return (
     <Dev>
@@ -59,6 +57,6 @@ function Signin() {
       </StyleSigninBox>
     </Dev>
   );
-}
+};
 
 export default Signin;

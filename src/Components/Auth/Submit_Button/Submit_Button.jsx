@@ -17,6 +17,10 @@ const Auth_Button = ({ name, type }) => {
 
   // 로그인 서버통신 함수
   const authsigninFromSubmit = async () => {
+    if (EmailData === "" || PasswordData === "") {
+      alert("이메일과 비밀번호를 입력해주세요.");
+      return;
+    }
     try {
       const response = await axios.post(
         `${apiUrl}/auth/signin`,
@@ -101,4 +105,3 @@ const Auth_Button = ({ name, type }) => {
 };
 
 export default Auth_Button;
-

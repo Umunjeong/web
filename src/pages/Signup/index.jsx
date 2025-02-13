@@ -10,7 +10,7 @@ import {
   EyeIcon,
 } from "../../styles/signup.js";
 
-import HeroImage from "../../Assets/Img/Auth/Img_Signup_Hero.png";
+import HeroImage from "../../Assets/Img/Auth/Img_Hero.svg";
 import Logo from "../../Assets/Img/Logos/Img_umunjeong-Black_Logo.png";
 
 import Auth_Input from "../../Components/Auth/Input/Input.jsx";
