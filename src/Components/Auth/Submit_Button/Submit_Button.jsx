@@ -43,6 +43,7 @@ const Auth_Button = ({ name, type }) => {
         navigateHome();
       } else {
         alert("로그인에 실패하였습니다.");
+        console.log(EmailData, PasswordData, data);
       }
     } catch (error) {
       alert("로그인에 실패하였습니다.");

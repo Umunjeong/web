@@ -50,3 +50,8 @@ export const Sotre_Pin = create((set) => ({
   setFetchPinsData: (FetchPinsData) => set({ FetchPinsData }),
   setPinSearchDara: (PinSearchData) => set({ PinSearchData }),
 }));
+
+export const Sotre_User = create((set) => ({
+  UserInfo: [],
+  setUserInfo: (UserInfo) => set({ UserInfo }),
+}));

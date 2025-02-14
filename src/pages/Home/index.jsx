@@ -4,6 +4,7 @@ import { useEffect } from "react";
 
 import Header from "../../Components/Header/Header.jsx";
 import Home_Field from "../../Components/Home/Home_Field_Box/Home_Field_Box.jsx";
+import { getUserInfo } from "../../Api/user.js";
 
 import useNavigation from "../../router/router.js";
 import {
@@ -11,6 +12,7 @@ import {
   Sotre_Todo,
   Sotre_Field,
   Sotre_Pin,
+  Sotre_User,
 } from "../../store/store.js";
 
 function Home() {
@@ -31,6 +33,13 @@ function Home() {
 
   const { setPinFieldData, setPinNameData, setPinLinkData, setFetchPinsData } =
     Sotre_Pin();
+
+  const { setUserInfo, UserInfo } = Sotre_User();
+
+  const Fun_serUserInfo = async () => {
+    const interests = await getUserInfo();
+    setUserInfo(interests);
+  };
 
   useEffect(() => {
     localStorage.removeItem("changeStartDate");
@@ -68,14 +77,17 @@ function Home() {
     ) {
       navigateSignin();
     }
+
+    Fun_serUserInfo();
   }, []);
 
+  //web,app,server,walk,outer
   return (
     <Dev>
       <Header></Header>
       <Field_Box>
         <Field_Box>
-          {["web", "server", "app", "work", "other"].map((name, index) => (
+          {UserInfo.map((name, index) => (
             <Home_Field key={index} name={name} />
           ))}
         </Field_Box>

@@ -20,14 +20,6 @@ function Home_Field({ name }) {
   const [todos, setTodos] = useState([]);
   const group = name;
 
-  const getCurrentDate = () => {
-    const date = new Date();
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, "0");
-    const day = String(date.getDate()).padStart(2, "0");
-    return `${year}-${month}-${day}`;
-  };
-
   useEffect(() => {
     const fetchTodos = async () => {
       const date = getCurrentDate();
@@ -41,7 +33,6 @@ function Home_Field({ name }) {
 
         if (response.data.type === "success") {
           const todoData = Object.values(response.data.todoInfo);
-
           setTodos(todoData);
         } else {
           console.error("Failed to fetch todos:", response.data);
@@ -53,6 +44,15 @@ function Home_Field({ name }) {
 
     fetchTodos();
   }, [group]);
+
+  // 현재 날짜를 가져오는 함ㄹ수
+  const getCurrentDate = () => {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  };
 
   const goToF_ield_Heldle = (name) => {
     if (

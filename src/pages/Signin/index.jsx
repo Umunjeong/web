@@ -18,6 +18,7 @@ import Auth_Button from "../../Components/Auth/Submit_Button/Submit_Button.jsx";
 
 import showPassword from "../../Assets/Img/Auth/Img_Passeord_Show.png";
 import hidepassword from "../../Assets/Img/Auth/Img_Password_Hide.png";
+import { useEffect } from "react";
 
 const Signin = () => {
   const [showPasswordType, setShowPassword] = useState(false);
@@ -25,6 +26,11 @@ const Signin = () => {
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
   };
+
+  useEffect(() => {
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
+  }, []);
 
   return (
     <Dev>

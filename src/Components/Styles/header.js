@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const StyleHeader = styled.header`
   background-color: black;
-  width: 100%;
+  width: 100vw;
   height: 12vh;
   display: flex;
   align-items: center;
@@ -19,9 +19,10 @@ export const StyleLogo = styled.img`
 `;
 
 export const StyleMemu = styled.div`
+  display: flex;
+  justify-content: space-evenly;
   width: 10%;
   height: 22%;
-  margin-right: 28%;
 `;
 
 export const StyleSpen = styled.span`
